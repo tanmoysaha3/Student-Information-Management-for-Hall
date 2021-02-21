@@ -17,3 +17,8 @@ Verify Email,
 Edit profile,
 Admin-user access level,
 Show total registered user number,
+
+
+
+# Not for now
+Upload and change profile picture
