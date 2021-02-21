@@ -70,8 +70,15 @@ public class Register extends AppCompatActivity {
                 String fullName = mFullName.getText().toString();
                 String phone = mPhone.getText().toString();
 
+                String split_second = email.substring(email.indexOf("@")+1);
+
                 if(TextUtils.isEmpty(email)) {
                     mEmail.setError("Email is required");
+                    return;
+                }
+
+                if((!"student.just.edu.bd".equals(split_second)) && (!"just.edu.bd".equals(split_second))) {
+                    mEmail.setError("Enter university email");
                     return;
                 }
 
