@@ -14,5 +14,6 @@ Verify Email,
 
 
 # Next
+Edit profile,
 Admin-user access level,
 Show total registered user number,
