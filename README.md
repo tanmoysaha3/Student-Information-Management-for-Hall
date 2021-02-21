@@ -5,11 +5,12 @@ Register Page,
 Login Page,
 Reset Password,
 Profile Page,
+Filter email as student.just.edu.bd & just.edu.bd,
+Verify Email,
 
 
 # On way
-Filter email as student.just.edu.bd & just.edu.bd (kept as comment),
-Verify Email,
+
 
 
 # Next
