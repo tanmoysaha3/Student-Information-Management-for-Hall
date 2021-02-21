@@ -13,6 +13,7 @@ Verify Email,
 
 
 # On way
+Change Password, Edit Profile
 
 
 
