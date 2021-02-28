@@ -11,6 +11,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -36,6 +37,8 @@ public class Register extends AppCompatActivity {
     FirebaseAuth fAuth;
     FirebaseFirestore fStore;
     String userID;
+    ImageButton back_button;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +50,7 @@ public class Register extends AppCompatActivity {
         mPassword=findViewById(R.id.Password);
         mPhone=findViewById(R.id.Phone);
         mStudentID=findViewById(R.id.StudentID);
+        back_button = findViewById(R.id.back_button);
 
         mRegisterButton=findViewById(R.id.registerButton);
         mLoginTextButton=findViewById(R.id.loginText);
@@ -83,7 +87,7 @@ public class Register extends AppCompatActivity {
                 }
 
                 if(TextUtils.isEmpty(password)) {
-                    mPassword.setError("Password is required");
+                    mPassword.setError("Set Password");
                     return;
                 }
 
@@ -93,7 +97,7 @@ public class Register extends AppCompatActivity {
                 }
 
                 if(TextUtils.isEmpty(studentID)) {
-                    mStudentID.setError("Student ID is required");
+                    mStudentID.setError("Student ID is missing");
                     return;
                 }
 
@@ -149,6 +153,16 @@ public class Register extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getApplicationContext(),Login.class));
+            }
+        });
+
+
+
+
+        back_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onBackPressed();
             }
         });
     }

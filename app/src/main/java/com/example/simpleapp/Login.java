@@ -22,6 +22,8 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
+
+
 public class Login extends AppCompatActivity {
     EditText mEmail,mPassword;
     Button mLoginButton;
@@ -42,6 +44,8 @@ public class Login extends AppCompatActivity {
         mLoginButton=findViewById(R.id.loginButton);
         mRegisterTextButton=findViewById((R.id.registerText));
         mresetPasswordLink=findViewById(R.id.resetPasswordLink);
+
+
 
         mLoginButton.setOnClickListener(new View.OnClickListener() {
             @Override
