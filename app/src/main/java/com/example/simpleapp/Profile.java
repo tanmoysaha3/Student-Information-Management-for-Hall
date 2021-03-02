@@ -3,7 +3,10 @@ package com.example.simpleapp;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -18,6 +21,7 @@ public class Profile extends AppCompatActivity {
     FirebaseAuth fAuth;
     FirebaseFirestore fStore;
     String userID;
+    ImageButton back_button, edit_button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +32,7 @@ public class Profile extends AppCompatActivity {
         mStudentId=findViewById(R.id.profileStudentId);
         mEmail=findViewById(R.id.profileEmail);
         mPhone=findViewById(R.id.profilePhone);
+        back_button = findViewById(R.id.back_button);
 
         fAuth=FirebaseAuth.getInstance();
         fStore=FirebaseFirestore.getInstance();
@@ -44,5 +49,14 @@ public class Profile extends AppCompatActivity {
                 mPhone.setText(documentSnapshot.getString("phone"));
             }
         });
+
+        back_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onBackPressed();
+            }
+        });
+
+
     }
 }
