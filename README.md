@@ -9,20 +9,17 @@ Login Page,
 Reset Password,
 Profile Page,
 Filter email as student.just.edu.bd & just.edu.bd,
-Verify Email,
+Verify Email(commented),
+Change Password(removed by other), Update profile(with image)
 
 
 # On way
-Change Password, Edit Profile
+
 
 
 
 # Next
-Edit profile,
 Admin-user access level,
 Show total registered user number,
 
 
-
-# Not for now
-Upload and change profile picture

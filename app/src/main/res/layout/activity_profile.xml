@@ -60,7 +60,7 @@
                 tools:ignore="MissingConstraints" />
 
             <com.blogspot.atifsoftwares.circularimageview.CircularImageView
-                android:id="@+id/profile_picture"
+                android:id="@+id/profileImage"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 android:layout_gravity="center"
@@ -72,7 +72,6 @@
                 app:c_border_color="@color/colorPrimary"
                 app:c_border_width="4dp"
                 app:c_shadow_radius="@android:integer/config_longAnimTime" />
-
 
             <TextView
                 android:id="@+id/profileEmail"
@@ -223,7 +222,49 @@
 
             </RelativeLayout>
 
+            <Button
+                android:id="@+id/changeProfileButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@android:color/darker_gray"
+                android:text="Change Profile"
+                android:textColor="#000000"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.497"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.799" />
 
+            <TextView
+                android:id="@+id/addressFeild"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="285dp"
+                android:text="Address"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.538" />
+
+            <TextView
+                android:id="@+id/profileAddress"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="145dp"
+                android:layout_marginEnd="16dp"
+                android:text="Your Address"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.407"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.542" />
 
         </LinearLayout>
 
