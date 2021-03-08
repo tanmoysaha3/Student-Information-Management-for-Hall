@@ -10,13 +10,13 @@
     android:paddingLeft="10dp"
     android:paddingRight="10dp"
     android:background="#B5F1B7"
-    tools:context=".Login">
+    tools:context=".Admin.AdminLogin">
 
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/splash"
+        android:background=""
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -30,27 +30,11 @@
             android:layout_marginTop="10dp"
             android:padding="15dp">
 
-            <Button
-                android:id="@+id/admin_button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="ADMin"
-                android:background="@drawable/help_button"
-                android:layout_gravity="end"
-                />
-
-            <com.airbnb.lottie.LottieAnimationView
-                android:id="@+id/progressBar"
+            <ImageView
                 android:layout_width="150dp"
                 android:layout_height="150dp"
-                android:layout_gravity="center"
-                android:scaleType="fitCenter"
-                android:layout_weight="1"
-                android:layout_marginTop="-62dp"
-                app:lottie_autoPlay="true"
-                app:lottie_loop="true"
-                app:lottie_rawRes="@raw/just"
-                tools:ignore="MissingClass,MissingConstraints" />
+                android:src="@drawable/logo"
+                android:layout_gravity="center"/>
 
 
 
@@ -81,36 +65,13 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="8dp"
                 android:fontFamily="serif"
-                android:text="Enter Email to login"
+                android:text="Use Master Password to login"
                 android:textColor="@color/colorPrimary"
-                android:textSize="15dp"
+                android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
 
-            <EditText
-                android:id="@+id/Email"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginLeft="16dp"
-                android:layout_marginTop="50dp"
-                android:layout_marginEnd="16dp"
-                android:layout_marginRight="16dp"
-                android:backgroundTint="@color/colorPrimary"
-                android:backgroundTintMode="screen"
-                android:ems="5"
-                android:fontFamily="serif"
-                android:hint="Email"
-                android:inputType="textEmailAddress"
-                android:padding="10dp"
-                android:textColor="@color/colorPrimary"
-                android:textColorHint="#A1000000"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.414" />
+
 
             <EditText
                 android:id="@+id/Password"
@@ -125,7 +86,7 @@
                 android:backgroundTintMode="screen"
                 android:ems="5"
                 android:fontFamily="serif"
-                android:hint="Password"
+                android:hint="Master Password"
                 android:inputType="textPassword"
                 android:padding="10dp"
                 android:textColor="@color/colorPrimary"
@@ -167,7 +128,7 @@
                 android:layout_marginRight="16dp"
                 android:background="@drawable/help_button"
                 android:fontFamily="serif"
-                android:text="@string/login"
+                android:text="GO"
                 android:textStyle="bold"
                 android:textColor="@color/colorPrimary"
                 android:textSize="25sp"
@@ -177,26 +138,6 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.591" />
-
-            <TextView
-                android:id="@+id/registerText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="20dp"
-                android:fontFamily="serif"
-                android:text="@string/new_create_account"
-                android:textColor="@color/colorPrimary"
-                android:clickable="true"
-                android:textColorLink="@color/white"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.484"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.655" />
 
             <ProgressBar
                 android:id="@+id/loginProgressBar"
@@ -218,11 +159,5 @@
 
 
     </ScrollView>
-
-
-
-
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

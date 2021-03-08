@@ -11,6 +11,7 @@
     tools:context=".SpashScreen">
 
     <LinearLayout
+        android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/profile_bg"
@@ -41,6 +42,9 @@
 
 
     </LinearLayout>
+
+
+
 
 
 
