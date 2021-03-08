@@ -14,7 +14,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -33,6 +32,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class EditProfile extends AppCompatActivity {
+
     private static final String TAG = "TAG";
     EditText mProfileName, mProfilePhone, mProfileAddr;
     ImageView mProfileImageV;
@@ -40,7 +40,6 @@ public class EditProfile extends AppCompatActivity {
     FirebaseAuth fAuth;
     FirebaseFirestore fStore;
     FirebaseUser user;
-    ImageButton back_button;
     StorageReference storageReference;
 
     @SuppressLint("WrongViewCast")
@@ -64,7 +63,6 @@ public class EditProfile extends AppCompatActivity {
         mProfileAddr=findViewById(R.id.changeAddress);
         mProfileImageV=findViewById(R.id.changePImage);
         mUpdateProfileButton=findViewById(R.id.updateProfileButton);
-        back_button = findViewById(R.id.back_button);
 
         StorageReference profileRef=storageReference.child("users/"+fAuth.getCurrentUser().getUid()+"/profile.jpg");
         profileRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
@@ -142,13 +140,6 @@ public class EditProfile extends AppCompatActivity {
             @Override
             public void onFailure(@NonNull Exception e) {
                 Toast.makeText(getApplicationContext(), "Failed", Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        back_button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                onBackPressed();
             }
         });
     }

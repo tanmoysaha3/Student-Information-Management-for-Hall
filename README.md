@@ -1,5 +1,7 @@
 # Student-Information-Management-for-Hall
 
+# Warning: Never update without knowing your code have no error.
+
 # 
 Minimum SDK Version - API 24, Android 7.0
 

@@ -1,16 +1,22 @@
 package com.example.simpleapp;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ImageButton;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -24,14 +30,15 @@ import com.google.firebase.storage.StorageReference;
 import com.squareup.picasso.Picasso;
 
 public class Profile extends AppCompatActivity {
+
     TextView mName, mStudentId, mEmail, mPhone, mAddress;
     FirebaseAuth fAuth;
     FirebaseFirestore fStore;
     String userID;
+    Button mChangePassButton, mChangeProfileButton;
     FirebaseUser user;
     ImageView mProfileImage;
     StorageReference storageReference;
-    ImageButton back_button,mchangeProfileButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,9 +50,9 @@ public class Profile extends AppCompatActivity {
         mEmail=findViewById(R.id.profileEmail);
         mPhone=findViewById(R.id.profilePhone);
         mAddress=findViewById(R.id.profileAddress);
+        mChangePassButton=findViewById(R.id.changePassButton);
         mProfileImage=findViewById(R.id.profileImage);
-        mchangeProfileButton=findViewById(R.id.changeProfileButton);
-        back_button = findViewById(R.id.back_button);
+        mChangeProfileButton=findViewById(R.id.changeProfileButton);
 
         fAuth=FirebaseAuth.getInstance();
         fStore=FirebaseFirestore.getInstance();
@@ -73,14 +80,45 @@ public class Profile extends AppCompatActivity {
             }
         });
 
-        back_button.setOnClickListener(new View.OnClickListener() {
+        mChangePassButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                onBackPressed();
+            public void onClick(View v) {
+                EditText changePass = new EditText(v.getContext());
+                AlertDialog.Builder passwordResetDialog = new AlertDialog.Builder(v.getContext());
+                passwordResetDialog.setTitle("Change Password");
+                passwordResetDialog.setMessage("Enter new password");
+                passwordResetDialog.setView(changePass);
+
+                passwordResetDialog.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        String newPass=changePass.getText().toString();
+                        user.updatePassword(newPass).addOnSuccessListener(new OnSuccessListener<Void>() {
+                            @Override
+                            public void onSuccess(Void aVoid) {
+                                Toast.makeText(Profile.this, "Password changed successfully", Toast.LENGTH_SHORT).show();
+                            }
+                        }).addOnFailureListener(new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull Exception e) {
+                                Toast.makeText(Profile.this, "Password change failed", Toast.LENGTH_SHORT).show();
+                            }
+                        });
+                    }
+                });
+
+                passwordResetDialog.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                    }
+                });
+
+                passwordResetDialog.create().show();
             }
         });
 
-        mchangeProfileButton.setOnClickListener(new View.OnClickListener() {
+        mChangeProfileButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i=new Intent(v.getContext(),EditProfile.class);
