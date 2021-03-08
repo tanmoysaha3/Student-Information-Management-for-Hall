@@ -7,7 +7,6 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -26,14 +25,13 @@ import com.squareup.picasso.Picasso;
 
 public class Profile extends AppCompatActivity {
     TextView mName, mStudentId, mEmail, mPhone, mAddress;
-    Button mChangeProfileButton;
     FirebaseAuth fAuth;
     FirebaseFirestore fStore;
     String userID;
     FirebaseUser user;
     ImageView mProfileImage;
     StorageReference storageReference;
-    ImageButton back_button, edit_button;
+    ImageButton back_button,mchangeProfileButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,7 +44,7 @@ public class Profile extends AppCompatActivity {
         mPhone=findViewById(R.id.profilePhone);
         mAddress=findViewById(R.id.profileAddress);
         mProfileImage=findViewById(R.id.profileImage);
-        mChangeProfileButton=findViewById(R.id.changeProfileButton);
+        mchangeProfileButton=findViewById(R.id.changeProfileButton);
         back_button = findViewById(R.id.back_button);
 
         fAuth=FirebaseAuth.getInstance();
@@ -82,7 +80,7 @@ public class Profile extends AppCompatActivity {
             }
         });
 
-        mChangeProfileButton.setOnClickListener(new View.OnClickListener() {
+        mchangeProfileButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i=new Intent(v.getContext(),EditProfile.class);
