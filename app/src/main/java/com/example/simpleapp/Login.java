@@ -15,7 +15,6 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.simpleapp.Admin.AdminLogin;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -27,7 +26,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class Login extends AppCompatActivity {
     EditText mEmail,mPassword;
-    Button mLoginButton,madmin_button;
+    Button mLoginButton;
     TextView mRegisterTextButton, mresetPasswordLink;
     ProgressBar mProgressBar;
     FirebaseAuth fAuth;
@@ -43,7 +42,6 @@ public class Login extends AppCompatActivity {
 
         fAuth=FirebaseAuth.getInstance();
         mLoginButton=findViewById(R.id.loginButton);
-        madmin_button=findViewById(R.id.admin_button);
         mRegisterTextButton=findViewById((R.id.registerText));
         mresetPasswordLink=findViewById(R.id.resetPasswordLink);
 
@@ -97,12 +95,7 @@ public class Login extends AppCompatActivity {
             }
         });
 
-        madmin_button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), AdminLogin.class));
-            }
-        });
+
 
         mresetPasswordLink.setOnClickListener(new View.OnClickListener() {
             @Override
