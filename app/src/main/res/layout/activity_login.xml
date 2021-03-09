@@ -30,15 +30,6 @@
             android:layout_marginTop="10dp"
             android:padding="15dp">
 
-            <Button
-                android:id="@+id/admin_button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="ADMin"
-                android:background="@drawable/help_button"
-                android:layout_gravity="end"
-                />
-
             <com.airbnb.lottie.LottieAnimationView
                 android:id="@+id/progressBar"
                 android:layout_width="150dp"
@@ -46,7 +37,7 @@
                 android:layout_gravity="center"
                 android:scaleType="fitCenter"
                 android:layout_weight="1"
-                android:layout_marginTop="-62dp"
+                android:layout_marginTop="0dp"
                 app:lottie_autoPlay="true"
                 app:lottie_loop="true"
                 app:lottie_rawRes="@raw/just"

@@ -14,6 +14,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -34,9 +35,10 @@ import java.util.Map;
 public class EditProfile extends AppCompatActivity {
 
     private static final String TAG = "TAG";
-    EditText mProfileName, mProfilePhone, mProfileAddr;
+    EditText mProfileName, mProfilePhone, mProfileAddr, mProfileDepartment, mProfileStudentId, mProfileYear;
     ImageView mProfileImageV;
     Button mUpdateProfileButton;
+    ImageButton back_button;
     FirebaseAuth fAuth;
     FirebaseFirestore fStore;
     FirebaseUser user;
@@ -52,6 +54,9 @@ public class EditProfile extends AppCompatActivity {
         String fullName = data.getStringExtra("fullName");
         String phone = data.getStringExtra("phone");
         String address = data.getStringExtra("address");
+        String department = data.getStringExtra("department");
+        String studentid = data.getStringExtra("studentid");
+        String year = data.getStringExtra("year");
 
         fAuth = FirebaseAuth.getInstance();
         fStore=FirebaseFirestore.getInstance();
@@ -61,7 +66,11 @@ public class EditProfile extends AppCompatActivity {
         mProfileName=findViewById(R.id.changeName);
         mProfilePhone=findViewById(R.id.changePhone);
         mProfileAddr=findViewById(R.id.changeAddress);
+        mProfileDepartment=findViewById(R.id.changeDepartment);
+        mProfileStudentId=findViewById(R.id.changeStudentId);
+        mProfileYear=findViewById(R.id.changeYear);
         mProfileImageV=findViewById(R.id.changePImage);
+        back_button=findViewById(R.id.back_button);
         mUpdateProfileButton=findViewById(R.id.updateProfileButton);
 
         StorageReference profileRef=storageReference.child("users/"+fAuth.getCurrentUser().getUid()+"/profile.jpg");
@@ -81,6 +90,13 @@ public class EditProfile extends AppCompatActivity {
             }
         });
 
+        back_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onBackPressed();
+            }
+        });
+
         mUpdateProfileButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -94,6 +110,9 @@ public class EditProfile extends AppCompatActivity {
                 edited.put("phone",mProfilePhone.getText().toString());
                 edited.put("fullName",mProfileName.getText().toString());
                 edited.put("address",mProfileAddr.getText().toString());
+                edited.put("department",mProfileDepartment.getText().toString());
+                edited.put("studentid",mProfileStudentId.getText().toString());
+                edited.put("year",mProfileYear.getText().toString());
                 docRef.update((edited)).addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void aVoid) {
@@ -108,6 +127,9 @@ public class EditProfile extends AppCompatActivity {
         mProfileName.setText(fullName);
         mProfilePhone.setText(phone);
         mProfileAddr.setText(address);
+        mProfileDepartment.setText(department);
+        mProfileStudentId.setText(studentid);
+        mProfileYear.setText(year);
 
 
         Log.d(TAG,"onCreate: " + fullName + " " + phone);

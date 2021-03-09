@@ -12,6 +12,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -31,11 +32,11 @@ import com.squareup.picasso.Picasso;
 
 public class Profile extends AppCompatActivity {
 
-    TextView mName, mStudentId, mEmail, mPhone, mAddress;
+    TextView mName, mStudentId, mEmail, mPhone, mAddress, mdepartment, myear;
     FirebaseAuth fAuth;
     FirebaseFirestore fStore;
     String userID;
-    Button mChangePassButton, mChangeProfileButton;
+    ImageButton mChangeProfileButton,back_button,home_button;
     FirebaseUser user;
     ImageView mProfileImage;
     StorageReference storageReference;
@@ -47,10 +48,13 @@ public class Profile extends AppCompatActivity {
 
         mName=findViewById(R.id.profileName);
         mStudentId=findViewById(R.id.profileStudentId);
+        mdepartment=findViewById(R.id.profileDepartment);
+        myear=findViewById(R.id.profileyear);
         mEmail=findViewById(R.id.profileEmail);
         mPhone=findViewById(R.id.profilePhone);
         mAddress=findViewById(R.id.profileAddress);
-        mChangePassButton=findViewById(R.id.changePassButton);
+        back_button=findViewById(R.id.back_button);
+        home_button=findViewById(R.id.HomeButton);
         mProfileImage=findViewById(R.id.profileImage);
         mChangeProfileButton=findViewById(R.id.changeProfileButton);
 
@@ -77,46 +81,26 @@ public class Profile extends AppCompatActivity {
                 mEmail.setText(documentSnapshot.getString("email"));
                 mPhone.setText(documentSnapshot.getString("phone"));
                 mAddress.setText(documentSnapshot.getString("address"));
+                mdepartment.setText(documentSnapshot.getString("department"));
+                myear.setText(documentSnapshot.getString("year"));
             }
         });
 
-        mChangePassButton.setOnClickListener(new View.OnClickListener() {
+
+        back_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onBackPressed();
+            }
+        });
+
+        home_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                EditText changePass = new EditText(v.getContext());
-                AlertDialog.Builder passwordResetDialog = new AlertDialog.Builder(v.getContext());
-                passwordResetDialog.setTitle("Change Password");
-                passwordResetDialog.setMessage("Enter new password");
-                passwordResetDialog.setView(changePass);
-
-                passwordResetDialog.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        String newPass=changePass.getText().toString();
-                        user.updatePassword(newPass).addOnSuccessListener(new OnSuccessListener<Void>() {
-                            @Override
-                            public void onSuccess(Void aVoid) {
-                                Toast.makeText(Profile.this, "Password changed successfully", Toast.LENGTH_SHORT).show();
-                            }
-                        }).addOnFailureListener(new OnFailureListener() {
-                            @Override
-                            public void onFailure(@NonNull Exception e) {
-                                Toast.makeText(Profile.this, "Password change failed", Toast.LENGTH_SHORT).show();
-                            }
-                        });
-                    }
-                });
-
-                passwordResetDialog.setNegativeButton("No", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-
-                    }
-                });
-
-                passwordResetDialog.create().show();
+                startActivity(new Intent(getApplicationContext(),MainActivity.class));
             }
         });
+
 
         mChangeProfileButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -125,6 +109,9 @@ public class Profile extends AppCompatActivity {
                 i.putExtra("fullName",mName.getText().toString());
                 i.putExtra("phone",mPhone.getText().toString());
                 i.putExtra("address",mAddress.getText().toString());
+                i.putExtra("department",mdepartment.getText().toString());
+                i.putExtra("year",myear.getText().toString());
+                i.putExtra("studentid",mStudentId.getText().toString());
                 startActivity(i);
             }
         });
