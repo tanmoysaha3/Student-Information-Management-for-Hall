@@ -2,4 +2,8 @@
     <string name="app_name">Simple app</string>
     <string name="new_create_account">New? Create Account</string>
     <string name="login">Login</string>
+    <string name="hall_name">Hall Name</string>
+    <string name="create_a_hall">Create a Hall</string>
+    <string name="hall_list">Hall List:</string>
+    <string name="create">Create</string>
 </resources>

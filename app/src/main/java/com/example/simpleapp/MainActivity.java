@@ -2,6 +2,7 @@ package com.example.simpleapp;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -22,7 +23,7 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.squareup.picasso.Picasso;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     TextView memailVerifyMsg;
     Button mProfileButton, mEmailVerifyResendButton;
     FirebaseFirestore fStore;
@@ -31,12 +32,18 @@ public class MainActivity extends AppCompatActivity {
     FirebaseUser user;
     ImageView mProfileImage;
     StorageReference storageReference;
+    CardView mHall, mFloor, mRoom, mSeat, mStudent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        mHall=findViewById(R.id.hall);
+        mFloor=findViewById(R.id.floor);
+        mRoom=findViewById(R.id.room);
+        mSeat=findViewById(R.id.seat);
+        mStudent=findViewById(R.id.student);
         mProfileButton=findViewById(R.id.profilePageLink);
         memailVerifyMsg=findViewById(R.id.emailVerifyMsg);
         mEmailVerifyResendButton=findViewById(R.id.verifyEmailButton);
@@ -45,6 +52,12 @@ public class MainActivity extends AppCompatActivity {
         userID=fAuth.getCurrentUser().getUid();
 
         final FirebaseUser user=fAuth.getCurrentUser();
+
+        mHall.setOnClickListener(this);
+        mFloor.setOnClickListener(this);
+        mRoom.setOnClickListener(this);
+        mSeat.setOnClickListener(this);
+        mStudent.setOnClickListener(this);
 
 
         fAuth=FirebaseAuth.getInstance();
@@ -92,5 +105,40 @@ public class MainActivity extends AppCompatActivity {
         FirebaseAuth.getInstance().signOut();
         startActivity(new Intent(getApplicationContext(),Login.class));
         finish();
+    }
+
+    @Override
+    public void onClick(View v) {
+
+        if(v.getId()==R.id.hall)
+        {
+            Intent intent = new Intent(MainActivity.this,Hall.class);
+            startActivity(intent);
+        }
+
+        else if(v.getId()==R.id.floor)
+        {
+            Intent intent = new Intent(MainActivity.this,Floor.class);
+            startActivity(intent);
+        }
+
+        else if(v.getId()==R.id.room)
+        {
+            Intent intent = new Intent(MainActivity.this,Room.class);
+            startActivity(intent);
+        }
+
+        else if(v.getId()==R.id.seat)
+        {
+            Intent intent = new Intent(MainActivity.this,Seat.class);
+            startActivity(intent);
+        }
+
+        else if(v.getId()==R.id.student)
+        {
+            Intent intent = new Intent(MainActivity.this,Student.class);
+            startActivity(intent);
+        }
+
     }
 }
