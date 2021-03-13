@@ -13,6 +13,8 @@ Profile Page,
 Filter email as student.just.edu.bd & just.edu.bd,
 Verify Email(commented),
 Change Password(removed by other), Update profile(with image)
+Admin-user access level,
+Admin functions (add hall, floor, room, seat, search student details)
 
 
 # On way
