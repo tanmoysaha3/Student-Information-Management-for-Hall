@@ -23,7 +23,7 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.squareup.picasso.Picasso;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class MainActivity extends AppCompatActivity /*implements View.OnClickListener*/ {
     TextView memailVerifyMsg;
     Button mProfileButton, mEmailVerifyResendButton;
     FirebaseFirestore fStore;
@@ -53,11 +53,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         final FirebaseUser user=fAuth.getCurrentUser();
 
-        mHall.setOnClickListener(this);
+  /*      mHall.setOnClickListener(this);
         mFloor.setOnClickListener(this);
         mRoom.setOnClickListener(this);
         mSeat.setOnClickListener(this);
-        mStudent.setOnClickListener(this);
+        mStudent.setOnClickListener(this);*/
 
 
         fAuth=FirebaseAuth.getInstance();
@@ -107,7 +107,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         finish();
     }
 
-    @Override
+    /*@Override
     public void onClick(View v) {
 
         if(v.getId()==R.id.hall)
@@ -140,5 +140,5 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             startActivity(intent);
         }
 
-    }
+    }*/
 }

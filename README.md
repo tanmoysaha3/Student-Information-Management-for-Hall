@@ -14,7 +14,12 @@ Filter email as student.just.edu.bd & just.edu.bd,
 Verify Email(commented),
 Change Password(removed by other), Update profile(with image)
 Admin-user access level,
-Admin functions (add hall, floor, room, seat, search student details)
+Admin functions (add hall, floor, room, seat, search student details)(removed)
+
+Verification function improved
+Re-structured admin functions
+Admin - Register,Verify,Login,Add seat,Assign Seat,
+See empty & assigned seats & students
 
 
 # On way
@@ -23,7 +28,6 @@ Admin functions (add hall, floor, room, seat, search student details)
 
 
 # Next
-Admin-user access level,
-Show total registered user number,
+
 
 
