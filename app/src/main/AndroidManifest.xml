@@ -10,7 +10,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.SimpleApp">
-        <activity android:name=".ShowStuDetails"></activity>
+        <activity android:name=".SuperAdmin"></activity>
+        <activity android:name=".ShowStuDetails" />
         <activity android:name=".SeeStuDetails" />
         <activity android:name=".Admin" />
         <activity android:name=".AddSeat" />
