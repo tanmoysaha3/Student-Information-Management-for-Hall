@@ -26,6 +26,13 @@ import java.util.Map;
 
 public class AdminRegister extends AppCompatActivity {
 
+    EditText mAdminFullName, mAdminEmail, mAdminPassword;
+    Button mAdminRegisterButton;
+    TextView mLoginTextButton;
+    FirebaseAuth fAuth;
+    FirebaseFirestore fStore;
+    ProgressBar mProgressBar;
+
     EditText mFullName, mEmail, mPassword;
     Button mRegisterButton;
     TextView mLoginTextButton;
@@ -100,7 +107,7 @@ public class AdminRegister extends AppCompatActivity {
 
                         DocumentReference documentReference = fStore.collection("Unverified Admins").document(documentID);
                         Map<String,Object> user = new HashMap<>();
-                        user.put("Full Name",fullName);
+                        user.put("Full_Name",fullName);
                         user.put("Email",email);
                         documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override

@@ -18,6 +18,12 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 public class VerifyEmail extends AppCompatActivity {
 
+    private static final String TAG = "TAG";
+    Button mSendVerificationEmailButton, mCheckIfVerifiedButton;
+    ImageButton mRefreshPageButton;
+    FirebaseAuth fAuth;
+    FirebaseFirestore fStore;
+
     Button mVerifyEmailButton, mGoToProfileButton;
     FirebaseAuth fAuth;
     FirebaseFirestore fStore;

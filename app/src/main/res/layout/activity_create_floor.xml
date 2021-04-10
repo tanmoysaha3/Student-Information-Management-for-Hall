@@ -4,63 +4,82 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HallAdmin">
+    tools:context=".CreateFloor">
 
-    <Button
-        android:id="@+id/seatCreateButton"
+    <Spinner
+        android:id="@+id/hallIdSpinner"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Create Seat"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.168" />
+        app:layout_constraintVertical_bias="0.205" />
 
-    <Button
-        android:id="@+id/officialAssignButton"
+    <TextView
+        android:id="@+id/textViewHallId"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Assign Official"
+        android:text="Hall No"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.272" />
+        app:layout_constraintVertical_bias="0.14" />
 
-    <Button
-        android:id="@+id/seatAssignButton"
+    <EditText
+        android:id="@+id/createdFloorsNumber"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Assign Seat"
+        android:ems="10"
+        android:hint="Floors Number"
+        android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.373" />
+        app:layout_constraintVertical_bias="0.389" />
 
     <Button
-        android:id="@+id/logoutButtonAdmin"
+        android:id="@+id/createNewFloors"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="logoutAdmin"
-        android:text="LogOut"
-        app:backgroundTint="#009688"
+        android:text="Create"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.96" />
+        app:layout_constraintVertical_bias="0.499" />
 
-    <Button
-        android:id="@+id/seeEmptyStudentsButton"
+    <TextView
+        android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="See Empty Students"
+        android:text="Total created floor"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.118"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.53" />
+        app:layout_constraintVertical_bias="0.287" />
+
+    <TextView
+        android:id="@+id/showPreCreatedFloorsNo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.675"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.287" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

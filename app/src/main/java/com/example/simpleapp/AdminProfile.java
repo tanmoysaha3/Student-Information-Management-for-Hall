@@ -40,6 +40,15 @@ public class AdminProfile extends AppCompatActivity {
     ImageView mProfileImage;
     StorageReference storageReference;
 
+    TextView mName, mPosition, mEmail, mPhone, mAddress, mDept, mDOB;
+    FirebaseAuth fAuth;
+    FirebaseFirestore fStore;
+    String userID;
+    Button mChangePassButton, mChangeProfileButton;
+    FirebaseUser user;
+    ImageView mProfileImage;
+    StorageReference storageReference;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

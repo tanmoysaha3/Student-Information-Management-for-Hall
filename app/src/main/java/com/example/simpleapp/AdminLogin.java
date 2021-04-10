@@ -30,6 +30,18 @@ import com.google.firebase.firestore.FirebaseFirestore;
 public class AdminLogin extends AppCompatActivity {
 
     private static final String TAG = "TAG";
+
+    private static final int WAIT_TIME = 3 * 60 * 1000;
+    private int loginAttempts = 3;
+
+    EditText mAdminLEmail,mAdminLPassword;
+    Button mLoginButton;
+    TextView mAdminRegisterTextButton, mResetPasswordLink;
+    ProgressBar mProgressBar;
+    FirebaseAuth fAuth;
+    FirebaseFirestore fStore;
+
+    private static final String TAG = "TAG";
     EditText mEmail,mPassword;
     Button mLoginButton;
     TextView mRegisterTextButton, mResetPasswordLink;
@@ -71,8 +83,6 @@ public class AdminLogin extends AppCompatActivity {
                 }
 
                 mProgressBar.setVisibility(View.VISIBLE);
-
-                //authenticate the user
 
                 fAuth.signInWithEmailAndPassword(email,password).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
                     @Override

@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity /*implements View.OnClickLis
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mHall=findViewById(R.id.hall);
+        /*mHall=findViewById(R.id.hall);
         mFloor=findViewById(R.id.floor);
         mRoom=findViewById(R.id.room);
         mSeat=findViewById(R.id.seat);
@@ -138,7 +138,7 @@ public class MainActivity extends AppCompatActivity /*implements View.OnClickLis
         {
             Intent intent = new Intent(MainActivity.this,Student.class);
             startActivity(intent);
-        }
+        }*/
 
     }*/
 }

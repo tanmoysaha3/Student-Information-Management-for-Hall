@@ -41,17 +41,19 @@ public class AdminEditProfile extends AppCompatActivity {
     FirebaseUser user;
     StorageReference storageReference;
 
+    private static final String TAG = "TAG";
+    EditText mProfilePosition, mProfilePhone, mProfileAddr, mProfileDOB, mProfileDept;
+    ImageView mProfileImageV;
+    Button mUpdateProfileButton;
+    FirebaseAuth fAuth;
+    FirebaseFirestore fStore;
+    FirebaseUser user;
+    StorageReference storageReference;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_edit_profile);
-
-        Intent data = getIntent();
-        String position=data.getStringExtra("Position");
-        String phone = data.getStringExtra("Phone");
-        String address = data.getStringExtra("Address");
-        String dOB = data.getStringExtra("Date of Birth");
-        String dept =data.getStringExtra("Department");
 
         fAuth = FirebaseAuth.getInstance();
         fStore=FirebaseFirestore.getInstance();
@@ -97,7 +99,7 @@ public class AdminEditProfile extends AppCompatActivity {
                 Map<String,Object> edited =new HashMap<>();
                 edited.put("Position",mProfilePosition.getText().toString());
                 edited.put("Phone",mProfilePhone.getText().toString());
-                edited.put("Date of Birth",mProfileDOB.getText().toString());
+                edited.put("Date_of_Birth",mProfileDOB.getText().toString());
                 edited.put("Address",mProfileAddr.getText().toString());
                 edited.put("Department",mProfileDept.getText().toString());
                 docRef.update((edited)).addOnSuccessListener(new OnSuccessListener<Void>() {
@@ -110,16 +112,8 @@ public class AdminEditProfile extends AppCompatActivity {
                 });
             }
         });
-
-        mProfilePosition.setText(position);
-        mProfilePhone.setText(phone);
-        mProfileAddr.setText(address);
-        mProfileDOB.setText(dOB);
-        mProfileDept.setText(dept);
-
-
-        Log.d(TAG,"onCreate: " + dOB + " " + phone);
     }
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -131,6 +125,7 @@ public class AdminEditProfile extends AppCompatActivity {
             }
         }
     }
+
     private void uploadImageToFirebase(Uri imageUri) {
         final StorageReference fileRef=storageReference.child("users/"+fAuth.getCurrentUser().getUid()+"/profile.jpg");
         fileRef.putFile(imageUri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {

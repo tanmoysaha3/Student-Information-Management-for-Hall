@@ -10,37 +10,35 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.SimpleApp">
-        <activity android:name=".HallAdmin"></activity>
+        <activity android:name=".VerifyEmail"></activity>
         <activity android:name=".SuperAdmin" />
-        <activity android:name=".ShowStuDetails" />
-        <activity android:name=".SeeStuDetails" />
-        <activity android:name=".Admin" />
-        <activity android:name=".AddSeat" />
-        <activity android:name=".AddRoom" />
-        <activity android:name=".AddHall" />
-        <activity android:name=".AddFloor" />
-        <activity android:name=".Student" />
-        <activity android:name=".Seat" />
-        <activity android:name=".Room" />
-        <activity android:name=".Floor" />
-        <activity android:name=".Hall" />
+        <activity android:name=".SeatAssign" />
+        <activity android:name=".OfficialAssign" />
+        <activity android:name=".HallAdminAssign" />
+        <activity android:name=".HallAdmin" />
+        <activity android:name=".CreateSeat" />
+        <activity android:name=".CreateRoom" />
+        <activity android:name=".CreateHall" />
+        <activity android:name=".CreateFloor" />
+        <activity android:name=".CheckAdminLevel" />
+        <activity android:name=".AdminRegister" />
+        <activity android:name=".AdminProfile" />
+        <activity android:name=".AdminLogin" />
+        <activity android:name=".AdminEditProfile" />
         <activity android:name=".EditProfile" />
         <activity android:name=".Profile" />
         <activity android:name=".SpashScreen">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
-        <activity android:name=".Login" />
+        <activity android:name=".Login" >
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+        </activity>
         <activity android:name=".Register" />
         <activity android:name=".MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
 
         <meta-data
