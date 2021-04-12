@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -15,35 +15,41 @@ import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 
-public class ShowStuDetails extends AppCompatActivity {
+public class CheckAdminLevel extends AppCompatActivity {
 
-    TextView mShowwStuName, mShowStuPhone;
     FirebaseAuth fAuth;
     FirebaseFirestore fStore;
-    String userID;
-    FirebaseUser user;
+    FirebaseUser fUser;
+    String x;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_show_stu_details);
-
-        Intent data = getIntent();
-        String vStudentId = data.getStringExtra("vStudentId");
-
-        mShowwStuName=findViewById(R.id.showStuName);
-        mShowStuPhone=findViewById(R.id.showStuPhone);
 
         fAuth=FirebaseAuth.getInstance();
         fStore=FirebaseFirestore.getInstance();
-        //userID=fAuth.getCurrentUser().getUid();
 
-        DocumentReference documentReference=fStore.collection("users").document(vStudentId);
+        fUser = fAuth.getCurrentUser();
+        String email=fUser.getEmail();
+        String documentId=email.substring(0,email.indexOf("@"));
+
+        DocumentReference documentReference=fStore.collection("Verified Admins").document(documentId);
         documentReference.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
             @Override
             public void onEvent(@Nullable DocumentSnapshot documentSnapshot, @Nullable FirebaseFirestoreException e) {
-                mShowwStuName.setText(documentSnapshot.getString("fullName"));
-                mShowStuPhone.setText(documentSnapshot.getString("phone"));
+                x=documentSnapshot.getString("IsAdmin");
+                if(x.equals("1")) {
+                    startActivity(new Intent(getApplicationContext(), SuperAdmin.class));
+                }
+                else if(x.equals("0")){
+                    Toast.makeText(CheckAdminLevel.this, "You are not admin", Toast.LENGTH_SHORT).show();
+
+                    startActivity(new Intent(getApplicationContext(), AdminProfile.class));
+                }
+                else if(x.equals("2")){
+                    startActivity(new Intent(getApplicationContext(), HallAdmin.class));
+                }
+                finish();
             }
         });
     }

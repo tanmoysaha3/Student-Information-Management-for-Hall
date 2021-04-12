@@ -12,7 +12,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -30,11 +29,21 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.squareup.picasso.Picasso;
 
-public class Profile extends AppCompatActivity {
+public class AdminProfile extends AppCompatActivity {
 
-    TextView mName, mStudentId, mEmail, mPhone, mAddress, mDept, mDOB, mSeatId;
+    TextView mName, mPosition, mEmail, mPhone, mAddress, mDept, mDOB;
     FirebaseAuth fAuth;
     FirebaseFirestore fStore;
+    String userID;
+    Button mChangePassButton, mChangeProfileButton;
+    FirebaseUser user;
+    ImageView mProfileImage;
+    StorageReference storageReference;
+
+    TextView mName, mPosition, mEmail, mPhone, mAddress, mDept, mDOB;
+    FirebaseAuth fAuth;
+    FirebaseFirestore fStore;
+    String userID;
     Button mChangePassButton, mChangeProfileButton;
     FirebaseUser user;
     ImageView mProfileImage;
@@ -43,16 +52,15 @@ public class Profile extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_profile);
+        setContentView(R.layout.activity_admin_profile);
 
         mName=findViewById(R.id.profileName);
-        mStudentId=findViewById(R.id.profileStudentId);
+        mPosition=findViewById(R.id.profilePosition);
         mEmail=findViewById(R.id.profileEmail);
         mPhone=findViewById(R.id.profilePhone);
         mAddress=findViewById(R.id.profileAddress);
         mDept=findViewById(R.id.profileDept);
         mDOB=findViewById(R.id.profileDOB);
-        mSeatId=findViewById(R.id.profileSeatId);
         mChangePassButton=findViewById(R.id.changePassButton);
         mProfileImage=findViewById(R.id.profileImage);
         mChangeProfileButton=findViewById(R.id.changeProfileButton);
@@ -70,20 +78,19 @@ public class Profile extends AppCompatActivity {
 
         user=fAuth.getCurrentUser();
         String x=user.getEmail();
-        String studentID=x.substring(0,x.indexOf("."));
+        String documentID=x.substring(0,x.indexOf("@"));
 
-        DocumentReference documentReference=fStore.collection("Verified Students").document(studentID);
+        DocumentReference documentReference=fStore.collection("Verified Admins").document(documentID);
         documentReference.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
             @Override
             public void onEvent(@Nullable DocumentSnapshot documentSnapshot, @Nullable FirebaseFirestoreException e) {
-                mName.setText(documentSnapshot.getString("Full_Name"));
-                mStudentId.setText(documentSnapshot.getString("StudentID"));
+                mName.setText(documentSnapshot.getString("Full Name"));
+                mPosition.setText(documentSnapshot.getString("Position"));
                 mEmail.setText(documentSnapshot.getString("Email"));
                 mPhone.setText(documentSnapshot.getString("Phone"));
                 mAddress.setText(documentSnapshot.getString("Address"));
                 mDept.setText(documentSnapshot.getString("Department"));
-                mDOB.setText(documentSnapshot.getString("Date_of_Birth"));
-                mSeatId.setText(documentSnapshot.getString("Seat_Id"));
+                mDOB.setText(documentSnapshot.getString("Date of Birth"));
             }
         });
 
@@ -103,12 +110,12 @@ public class Profile extends AppCompatActivity {
                         user.updatePassword(newPass).addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
                             public void onSuccess(Void aVoid) {
-                                Toast.makeText(Profile.this, "Password changed successfully", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(AdminProfile.this, "Password changed successfully", Toast.LENGTH_SHORT).show();
                             }
                         }).addOnFailureListener(new OnFailureListener() {
                             @Override
                             public void onFailure(@NonNull Exception e) {
-                                Toast.makeText(Profile.this, "Password change failed", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(AdminProfile.this, "Password change failed", Toast.LENGTH_SHORT).show();
                             }
                         });
                     }
@@ -128,10 +135,12 @@ public class Profile extends AppCompatActivity {
         mChangeProfileButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i=new Intent(v.getContext(),EditProfile.class);
+                Intent i=new Intent(v.getContext(),AdminEditProfile.class);
+                i.putExtra("Position",mPosition.getText().toString());
                 i.putExtra("Phone",mPhone.getText().toString());
                 i.putExtra("Address",mAddress.getText().toString());
-                i.putExtra("Date_of_Birth",mDOB.getText().toString());
+                i.putExtra("Date of Birth",mDOB.getText().toString());
+                i.putExtra("Department",mDept.getText().toString());
                 startActivity(i);
             }
         });
@@ -139,7 +148,7 @@ public class Profile extends AppCompatActivity {
 
     public void logout(View view){
         FirebaseAuth.getInstance().signOut();
-        startActivity(new Intent(getApplicationContext(),Login.class));
+        startActivity(new Intent(getApplicationContext(), AdminLogin.class));
         finish();
     }
 }

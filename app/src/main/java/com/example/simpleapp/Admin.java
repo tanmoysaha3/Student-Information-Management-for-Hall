@@ -13,8 +13,8 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 public class Admin extends AppCompatActivity {
 
-    Button mAddSAdminButton, mSeeAllUser, mCreateHallButton, mCreateFloorButton, mCreateRoomButton,
-            mCreateSeatButton, mSeeStuDetailsButton;
+    Button mAddSAdminButton, mSeeAllUser, mSeeStuDetailsButton, mCreateUniqueSeatButton, mSeeEmptySeatsButton,
+            mAdminProfileButton, mSeeAssignedSeatsButton, mSeeAssignedStudentsButton, mSeeEmptyStudentsButton;
     String userID;
     FirebaseAuth fAuth;
     FirebaseFirestore fStore;
@@ -25,10 +25,12 @@ public class Admin extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin);
 
-        mCreateHallButton=findViewById(R.id.createHallButton);
-        mCreateFloorButton=findViewById(R.id.createFloorButton);
-        mCreateRoomButton=findViewById(R.id.createRoomButton);
-        mCreateSeatButton=findViewById(R.id.createSeatButton);
+        mAdminProfileButton=findViewById(R.id.adminProfileButton);
+        mCreateUniqueSeatButton=findViewById(R.id.createUniqueSeatButton);
+        mSeeEmptySeatsButton=findViewById(R.id.seeEmptySeatsButton);
+        mSeeAssignedSeatsButton=findViewById(R.id.seeAssignedSeatsButton);
+        mSeeAssignedStudentsButton=findViewById(R.id.seeAssignedStudentsButton);
+        mSeeEmptyStudentsButton=findViewById(R.id.seeEmptyStudentsButton);
         mSeeStuDetailsButton=findViewById(R.id.seeStuDetailsButton);
         fAuth=FirebaseAuth.getInstance();
         fStore=FirebaseFirestore.getInstance();
@@ -36,46 +38,52 @@ public class Admin extends AppCompatActivity {
         userID=fAuth.getCurrentUser().getUid();
         fUser=fAuth.getCurrentUser();
 
-        mCreateHallButton.setOnClickListener(new View.OnClickListener() {
+        mCreateUniqueSeatButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(),AddHall.class));
+                startActivity(new Intent(getApplicationContext(),AddUniqueSeat.class));
             }
         });
 
-        mCreateFloorButton.setOnClickListener(new View.OnClickListener() {
+        mSeeEmptySeatsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(),AddFloor.class));
+                startActivity(new Intent(getApplicationContext(),SeeEmptySeats.class));
             }
         });
 
-        mCreateRoomButton.setOnClickListener(new View.OnClickListener() {
+        mSeeAssignedSeatsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(),AddRoom.class));
+                startActivity(new Intent(getApplicationContext(),SeeAssignedSeats.class));
             }
         });
 
-        mCreateSeatButton.setOnClickListener(new View.OnClickListener() {
+        mSeeAssignedStudentsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(),AddSeat.class));
+                startActivity(new Intent(getApplicationContext(),SeeAssignedStudents.class));
             }
         });
 
-        mSeeStuDetailsButton.setOnClickListener(new View.OnClickListener() {
+        mSeeEmptyStudentsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(),SeeStuDetails.class));
+                startActivity(new Intent(getApplicationContext(),SeeEmptyStudents.class));
             }
         });
 
+        mAdminProfileButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(),AdminProfile.class));
+            }
+        });
     }
 
-    public void logoutAdmin(View view){
+    public void logoutAdmin(View view) {
         FirebaseAuth.getInstance().signOut();
-        startActivity(new Intent(getApplicationContext(),Login.class));
+        startActivity(new Intent(getApplicationContext(), AdminLogin.class));
         finish();
     }
 }
