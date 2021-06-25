@@ -49,6 +49,9 @@ public class CheckAdminLevel extends AppCompatActivity {
                 else if(x.equals("2")){
                     startActivity(new Intent(getApplicationContext(), HallAdmin.class));
                 }
+                else if(x.equals("3")){
+                    startActivity(new Intent(getApplicationContext(), Official.class));
+                }
                 finish();
             }
         });

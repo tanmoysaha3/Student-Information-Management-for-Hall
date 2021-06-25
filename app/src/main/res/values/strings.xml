@@ -6,4 +6,26 @@
     <string name="create_a_hall">Create a Hall</string>
     <string name="hall_list">Hall List:</string>
     <string name="create">Create</string>
+
+    <string-array name="DeptNames">
+        <item>CSE</item>
+        <item>EEE</item>
+        <item>ChE</item>
+        <item>Physics</item>
+        <item>Math</item>
+        <item>English</item>
+    </string-array>
+
+    <string-array name="Years">
+        <item>21</item>
+        <item>20</item>
+        <item>19</item>
+        <item>18</item>
+        <item>17</item>
+        <item>16</item>
+        <item>15</item>
+        <item>14</item>
+        <item>13</item>
+        <item>12</item>
+    </string-array>
 </resources>

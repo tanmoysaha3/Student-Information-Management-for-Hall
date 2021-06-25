@@ -3,6 +3,7 @@
     package="com.example.simpleapp">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:icon="@mipmap/ic_launcher"
@@ -10,60 +11,135 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.SimpleApp">
-<<<<<<< HEAD
-        <activity android:name=".HallAdmin"></activity>
-        <activity android:name=".ShowStuDetails" />
-        <activity android:name=".SeeStuDetails" />
-        <activity android:name=".Admin" />
-        <activity android:name=".AddSeat" />
-        <activity android:name=".AddRoom" />
-        <activity android:name=".AddHall" />
-        <activity android:name=".AddFloor" />
-        <activity android:name=".Student" />
-        <activity android:name=".Seat" />
-        <activity android:name=".Room" />
-        <activity android:name=".Floor" />
-        <activity android:name=".Hall" />
-=======
-        <activity android:name=".VerifyEmail"></activity>
-        <activity android:name=".SuperAdmin" />
-        <activity android:name=".SeatAssign" />
-        <activity android:name=".OfficialAssign" />
-        <activity android:name=".HallAdminAssign" />
-        <activity android:name=".HallAdmin" />
-        <activity android:name=".CreateSeat" />
-        <activity android:name=".CreateRoom" />
-        <activity android:name=".CreateHall" />
-        <activity android:name=".CreateFloor" />
-        <activity android:name=".CheckAdminLevel" />
-        <activity android:name=".AdminRegister" />
-        <activity android:name=".AdminProfile" />
-        <activity android:name=".AdminLogin" />
-        <activity android:name=".AdminEditProfile" />
->>>>>>> origin/master
-        <activity android:name=".EditProfile" />
-        <activity android:name=".Profile" />
-        <activity android:name=".SpashScreen">
-        </activity>
-        <activity android:name=".Login" >
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
+        <activity android:name=".OfficialRemove"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" ></activity>
+        <activity android:name=".Official"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".HallAdminRemove"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".SeeStuList"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".SeeFilteredStudents"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".SearchStudent"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".FilterStudents"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Dashboard"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".OfficialAssign"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".SeatAssign"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".CreateSeat"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".HallAdminAssign"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".AdminEditProfile"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".AdminProfile"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".HallAdmin"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".AdminLogin"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".AdminRegister"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".CreateRoom"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".CreateFloor"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".CreateHall"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".SuperAdmin"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".CheckAdminLevel"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".EditProfile"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Profile"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Login"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
-        <activity android:name=".Register" />
-        <activity android:name=".MainActivity">
-
-        </activity>
+        <activity
+            android:name=".VerifyEmail"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Register"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".MainActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".SeeStuDetails"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".SpashScreen"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
 
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
 
-        <activity
-            android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
-            android:theme="@style/Base.Theme.AppCompat" />
     </application>
 
 </manifest>
