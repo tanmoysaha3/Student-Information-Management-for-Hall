@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:background="@color/colorPrimaryDark"
+    tools:context=".Super_Admin.Screate.Hall">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="15dp"
+        tools:ignore="MissingConstraints">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@null"
+            >
+
+            <LinearLayout
+                android:id="@+id/R1"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:orientation="vertical"
+                android:background="@null"
+                tools:ignore="MissingConstraints">
+
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@null"
+                    >
+                    <LinearLayout
+                        android:id="@+id/Rm"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        tools:ignore="MissingConstraints">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/create_a_hall"
+                            android:textAlignment="center"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="22sp"
+                            android:layout_marginTop="8dp"
+                            android:fontFamily="sans-serif-black"
+                            android:textStyle="bold"
+                            android:layout_gravity="center"
+                            />
+
+                        <Spinner
+                            android:id="@+id/assignedhalladmin"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:visibility="gone"
+                            android:entries="@array/invisible"/>
+
+                        <Spinner
+                            android:id="@+id/assignedhallofficials"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:visibility="gone"
+                            android:entries="@array/invisible"/>
+
+
+
+                        <EditText
+                            android:id="@+id/hallname"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="25dp"
+                            android:layout_marginEnd="5dp"
+                            android:layout_marginRight="5dp"
+                            android:backgroundTint="@color/colorPrimary"
+                            android:backgroundTintMode="src_in"
+                            android:ems="5"
+                            android:background="@drawable/bottom_button"
+                            android:fontFamily="sans-serif"
+                            android:hint="@string/hall_name"
+                            android:inputType="textCapWords"
+                            android:padding="10dp"
+                            android:textColor="@color/colorPrimary"
+                            android:textColorHint="@color/colorPrimary"
+                            />
+
+                        <Spinner
+                            android:id="@+id/halltype"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="25dp"
+                            android:layout_marginEnd="5dp"
+                            android:layout_marginRight="5dp"
+                            android:backgroundTint="@color/colorPrimary"
+                            android:backgroundTintMode="src_in"
+                            android:ems="5"
+                            android:background="@drawable/bottom_button"
+                            android:entries="@array/halltype"
+                            android:fontFamily="serif"
+                            android:padding="10dp"
+                            android:textColor="@color/colorPrimary">
+
+                        </Spinner>
+
+
+                        <Button
+                            android:id="@+id/createhall"
+                            android:layout_width="90dp"
+                            android:layout_height="30dp"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="21dp"
+                            android:background="@drawable/item"
+                            android:fontFamily="sans-serif-black"
+                            android:text="@string/create"
+                            android:textColor="@drawable/item"
+                            android:textStyle="bold"
+                            android:textSize="15sp"/>
+
+
+
+
+                    </LinearLayout>
+                </ScrollView>
+
+            </LinearLayout>
+
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/R3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_below="@id/R1"
+                app:cardBackgroundColor="@color/colorPrimaryDark"
+                >
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:elevation="5dp"
+                    android:text="@string/hall_list"
+                    android:layout_margin="5dp"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="15sp"
+                    android:fontFamily="sans-serif-black"
+                    android:layout_gravity="center"
+                    />
+
+            </androidx.cardview.widget.CardView>
+
+            <ListView
+                android:id="@+id/ListViewHall"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/R3"
+                />
+
+
+
+
+
+
+
+        </RelativeLayout>
+
+
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

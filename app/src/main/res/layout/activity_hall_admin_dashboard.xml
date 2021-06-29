@@ -1,0 +1,636 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:padding="15dp"
+    android:orientation="vertical"
+    android:background="@null"
+    tools:context=".HallAdmin.HallAdminDashboard">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        tools:ignore="MissingConstraints">
+
+        <LinearLayout
+            android:id="@+id/R1"
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            android:background="#E96AF1EC"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:orientation="vertical"
+            tools:ignore="MissingConstraints">
+
+            <com.blogspot.atifsoftwares.circularimageview.CircularImageView
+                android:id="@+id/profileImage"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_gravity="start"
+                android:layout_marginTop="25dp"
+                android:background="@null"
+                android:cropToPadding="true"
+                android:src="@drawable/ic_person_black_24dp"
+                app:c_border="true"
+                app:c_border_color="@null"
+                app:c_border_width="4dp"
+                app:c_shadow_radius="@android:integer/config_longAnimTime"
+                tools:ignore="MissingConstraints" />
+
+            <Button
+                android:id="@+id/createhallofficialsbutton"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginTop="-35dp"
+                android:background="@drawable/ic_baseline_add_24"
+                android:backgroundTint="@color/best"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hall Admin"
+                android:textStyle="bold"
+                android:textColor="@color/colorPrimary"
+                android:textSize="25sp"
+                android:layout_marginLeft="16dp"
+                android:textAlignment="center"
+                android:layout_gravity="center"
+                android:layout_marginTop="-69dp"
+                />
+
+            <Button
+                android:id="@+id/logoutButton"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="end"
+                android:layout_marginTop="-74dp"
+                android:onClick="halladminlogout"
+                android:backgroundTint="@color/best"
+                android:background="@drawable/ic_baseline_power_settings_new_24"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="OnClick" />
+
+
+
+
+
+
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+
+
+
+
+    <LinearLayout
+        android:id="@+id/R2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="130dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints">
+
+
+        <ScrollView
+            android:id="@+id/scrollView2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="5dp"
+            android:scrollbarStyle="outsideInset"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="0dp"
+                tools:ignore="MissingConstraints">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:weightSum="2"
+                    android:gravity="center"
+                    android:background="@null"
+                    android:orientation="vertical"
+                    >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="140dp"
+                        android:orientation="horizontal"
+                        android:layout_weight="1"
+                        android:clipToPadding="false"
+                        android:gravity="center">
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/Roomcard"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:layout_margin="15dp"
+                            android:layout_marginBottom="10dp"
+                            >
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:layout_width="64dp"
+                                    android:layout_height="64dp"
+                                    android:padding="2dp"
+                                    android:src="@drawable/manager1"/>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Room"
+                                    android:textStyle="bold"
+                                    android:layout_marginTop="5dp"
+                                    android:textSize="20sp"
+                                    android:fontFamily="serif"
+                                    android:textColor="@color/colorPrimary"/>
+
+
+                            </LinearLayout>
+
+
+
+                        </androidx.cardview.widget.CardView>
+
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/seatcard"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:layout_margin="15dp"
+                            android:layout_marginBottom="10dp"
+                            >
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:layout_width="64dp"
+                                    android:layout_height="64dp"
+                                    android:padding="2dp"
+                                    android:src="@drawable/employee1"/>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Seat"
+                                    android:textStyle="bold"
+                                    android:layout_marginTop="5dp"
+                                    android:textSize="20sp"
+                                    android:fontFamily="serif"
+                                    android:textColor="@color/colorPrimary"/>
+
+
+                            </LinearLayout>
+
+
+
+                        </androidx.cardview.widget.CardView>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:orientation="horizontal"
+                        android:layout_weight="1"
+                        android:layout_marginTop="20dp"
+                        android:clipToPadding="false"
+                        android:gravity="center">
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/assignseatcard"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:layout_margin="10dp"
+                            android:clickable="false"
+                            >
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:id="@+id/sign"
+                                    android:layout_width="40dp"
+                                    android:layout_height="40dp"
+                                    android:layout_marginLeft="10dp"
+                                    android:layout_centerVertical="true"
+                                    android:layout_alignParentLeft="true"
+                                    android:src="@drawable/assign"/>
+
+                                <TextView
+                                    android:layout_toRightOf="@+id/sign"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Assign a seat"
+                                    android:layout_marginLeft="30dp"
+                                    android:gravity="center"
+                                    android:textAlignment="center"
+                                    android:textStyle="bold"
+                                    android:layout_centerVertical="true"
+                                    android:textSize="20sp"
+                                    android:fontFamily="serif"
+                                    android:textColor="@color/colorPrimary"/>
+
+                                <ImageView
+                                    android:layout_width="30dp"
+                                    android:layout_height="30dp"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginRight="15dp"
+                                    android:backgroundTint="@color/colorPrimaryDark"
+                                    android:src="@drawable/ic_baseline_double_arrow_24"
+                                    />
+
+
+                            </RelativeLayout>
+
+
+
+                        </androidx.cardview.widget.CardView>
+
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:orientation="horizontal"
+                        android:layout_weight="1"
+                        android:clipToPadding="false"
+                        android:gravity="center">
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/assignedseatcard"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:layout_margin="10dp"
+                            android:clickable="false"
+                            >
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:id="@+id/sign1"
+                                    android:layout_width="40dp"
+                                    android:layout_height="40dp"
+                                    android:layout_marginLeft="10dp"
+                                    android:layout_centerVertical="true"
+                                    android:layout_alignParentLeft="true"
+                                    android:src="@drawable/filledbed"/>
+
+                                <TextView
+                                    android:layout_toRightOf="@+id/sign1"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="All assigned seats"
+                                    android:layout_marginLeft="30dp"
+                                    android:gravity="center"
+                                    android:textAlignment="center"
+                                    android:textStyle="bold"
+                                    android:layout_centerVertical="true"
+                                    android:textSize="20sp"
+                                    android:fontFamily="serif"
+                                    android:textColor="@color/colorPrimary"/>
+
+                                <ImageView
+                                    android:layout_width="30dp"
+                                    android:layout_height="30dp"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginRight="15dp"
+                                    android:backgroundTint="@color/colorPrimaryDark"
+                                    android:src="@drawable/ic_baseline_double_arrow_24"
+                                    />
+
+
+                            </RelativeLayout>
+
+
+
+                        </androidx.cardview.widget.CardView>
+
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:orientation="horizontal"
+                        android:layout_weight="1"
+                        android:clipToPadding="false"
+                        android:gravity="center">
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/emptyseatcard"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:layout_margin="10dp"
+                            android:clickable="false"
+                            >
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:id="@+id/sign2"
+                                    android:layout_width="40dp"
+                                    android:layout_height="40dp"
+                                    android:layout_marginLeft="10dp"
+                                    android:layout_centerVertical="true"
+                                    android:layout_alignParentLeft="true"
+                                    android:src="@drawable/emptybed"/>
+
+                                <TextView
+                                    android:layout_toRightOf="@+id/sign2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Empty seats"
+                                    android:layout_marginLeft="30dp"
+                                    android:gravity="center"
+                                    android:textAlignment="center"
+                                    android:textStyle="bold"
+                                    android:layout_centerVertical="true"
+                                    android:textSize="20sp"
+                                    android:fontFamily="serif"
+                                    android:textColor="@color/colorPrimary"/>
+
+                                <ImageView
+                                    android:layout_width="30dp"
+                                    android:layout_height="30dp"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginRight="15dp"
+                                    android:backgroundTint="@color/colorPrimaryDark"
+                                    android:src="@drawable/ic_baseline_double_arrow_24"
+                                    />
+
+
+                            </RelativeLayout>
+
+
+
+                        </androidx.cardview.widget.CardView>
+
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:orientation="horizontal"
+                        android:layout_weight="1"
+                        android:clipToPadding="false"
+                        android:gravity="center">
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/assignstudentcard"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:layout_margin="10dp"
+                            android:clickable="false"
+                            >
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:id="@+id/sign3"
+                                    android:layout_width="40dp"
+                                    android:layout_height="40dp"
+                                    android:layout_marginLeft="10dp"
+                                    android:layout_centerVertical="true"
+                                    android:layout_alignParentLeft="true"
+                                    android:src="@drawable/assign"/>
+
+                                <TextView
+                                    android:layout_toRightOf="@+id/sign3"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Assign a student"
+                                    android:layout_marginLeft="30dp"
+                                    android:gravity="center"
+                                    android:textAlignment="center"
+                                    android:textStyle="bold"
+                                    android:layout_centerVertical="true"
+                                    android:textSize="20sp"
+                                    android:fontFamily="serif"
+                                    android:textColor="@color/colorPrimary"/>
+
+                                <ImageView
+                                    android:layout_width="30dp"
+                                    android:layout_height="30dp"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginRight="15dp"
+                                    android:backgroundTint="@color/colorPrimaryDark"
+                                    android:src="@drawable/ic_baseline_double_arrow_24"
+                                    />
+
+
+                            </RelativeLayout>
+
+
+
+                        </androidx.cardview.widget.CardView>
+
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:orientation="horizontal"
+                        android:layout_weight="1"
+                        android:clipToPadding="false"
+                        android:gravity="center">
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/assignedstudentcard"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:layout_margin="10dp"
+                            android:clickable="false"
+                            >
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:id="@+id/sign4"
+                                    android:layout_width="40dp"
+                                    android:layout_height="40dp"
+                                    android:layout_marginLeft="10dp"
+                                    android:layout_centerVertical="true"
+                                    android:layout_alignParentLeft="true"
+                                    android:src="@drawable/assigned"/>
+
+                                <TextView
+                                    android:layout_toRightOf="@+id/sign4"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="All assigned students"
+                                    android:layout_marginLeft="30dp"
+                                    android:gravity="center"
+                                    android:textAlignment="center"
+                                    android:textStyle="bold"
+                                    android:layout_centerVertical="true"
+                                    android:textSize="20sp"
+                                    android:fontFamily="serif"
+                                    android:textColor="@color/colorPrimary"/>
+
+                                <ImageView
+                                    android:layout_width="30dp"
+                                    android:layout_height="30dp"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginRight="15dp"
+                                    android:backgroundTint="@color/colorPrimaryDark"
+                                    android:src="@drawable/ic_baseline_double_arrow_24"
+                                    />
+
+
+                            </RelativeLayout>
+
+
+
+                        </androidx.cardview.widget.CardView>
+
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:orientation="horizontal"
+                        android:layout_weight="1"
+                        android:clipToPadding="false"
+                        android:gravity="center">
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/emptystudentcard"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:layout_margin="10dp"
+                            android:clickable="false"
+                            >
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:id="@+id/sign5"
+                                    android:layout_width="40dp"
+                                    android:layout_height="40dp"
+                                    android:layout_marginLeft="10dp"
+                                    android:layout_centerVertical="true"
+                                    android:layout_alignParentLeft="true"
+                                    android:src="@drawable/wait"/>
+
+                                <TextView
+                                    android:layout_toRightOf="@+id/sign5"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Not assigned students"
+                                    android:layout_marginLeft="30dp"
+                                    android:gravity="center"
+                                    android:textAlignment="center"
+                                    android:textStyle="bold"
+                                    android:layout_centerVertical="true"
+                                    android:textSize="20sp"
+                                    android:fontFamily="serif"
+                                    android:textColor="@color/colorPrimary"/>
+
+                                <ImageView
+                                    android:layout_width="30dp"
+                                    android:layout_height="30dp"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginRight="15dp"
+                                    android:backgroundTint="@color/colorPrimaryDark"
+                                    android:src="@drawable/ic_baseline_double_arrow_24"
+                                    />
+
+
+                            </RelativeLayout>
+
+
+
+                        </androidx.cardview.widget.CardView>
+
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+
+
+
+
+
+
+
+
+            </LinearLayout>
+
+
+        </ScrollView>
+
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

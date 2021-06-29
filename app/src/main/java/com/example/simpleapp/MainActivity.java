@@ -3,7 +3,12 @@ package com.example.simpleapp;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -14,6 +19,14 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.simpleapp.HallAdmin.HallAdminDashboard;
+import com.example.simpleapp.HallAdmin.HallAdminLogin;
+import com.example.simpleapp.HallOfficials.HallOfficialDashboard;
+import com.example.simpleapp.HallOfficials.HallOfficialLogin;
+import com.example.simpleapp.Students.StudentDashboard;
+import com.example.simpleapp.Students.StudentLogin;
+import com.example.simpleapp.Super_Admin.MainDashboard;
+import com.example.simpleapp.Super_Admin.SuperLogin;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
@@ -23,122 +36,81 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.squareup.picasso.Picasso;
 
-public class MainActivity extends AppCompatActivity /*implements View.OnClickListener*/ {
-    TextView memailVerifyMsg;
-    Button mProfileButton, mEmailVerifyResendButton;
-    FirebaseFirestore fStore;
-    FirebaseAuth fAuth;
-    String userID;
-    FirebaseUser user;
-    ImageView mProfileImage;
-    StorageReference storageReference;
-    CardView mHall, mFloor, mRoom, mSeat, mStudent;
+public class MainActivity extends AppCompatActivity{
+    @Override
+    public void onBackPressed() {
+
+    }
+
+    DrawerLayout drawerLayout;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        /*mHall=findViewById(R.id.hall);
-        mFloor=findViewById(R.id.floor);
-        mRoom=findViewById(R.id.room);
-        mSeat=findViewById(R.id.seat);
-        mStudent=findViewById(R.id.student);
-        mProfileButton=findViewById(R.id.profilePageLink);
-        memailVerifyMsg=findViewById(R.id.emailVerifyMsg);
-        mEmailVerifyResendButton=findViewById(R.id.verifyEmailButton);
-        mProfileImage=findViewById(R.id.profileImage);
-        fAuth=FirebaseAuth.getInstance();
-        userID=fAuth.getCurrentUser().getUid();
 
-        final FirebaseUser user=fAuth.getCurrentUser();
+        drawerLayout = findViewById(R.id.drawer_layout);
 
-  /*      mHall.setOnClickListener(this);
-        mFloor.setOnClickListener(this);
-        mRoom.setOnClickListener(this);
-        mSeat.setOnClickListener(this);
-        mStudent.setOnClickListener(this);*/
-
-
-        fAuth=FirebaseAuth.getInstance();
-        fStore=FirebaseFirestore.getInstance();
-        storageReference= FirebaseStorage.getInstance().getReference();
-        StorageReference profileRef=storageReference.child("users/"+fAuth.getCurrentUser().getUid()+"/profile.jpg");
-        profileRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
-            @Override
-            public void onSuccess(Uri uri) {
-                Picasso.get().load(uri).into(mProfileImage);
-            }
-        });
-
-        if(!user.isEmailVerified()) {
-            memailVerifyMsg.setVisibility(View.VISIBLE);
-            mEmailVerifyResendButton.setVisibility(View.VISIBLE);
-
-            mEmailVerifyResendButton.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(final View v) {
-                    user.sendEmailVerification().addOnSuccessListener(new OnSuccessListener<Void>() {
-                        @Override
-                        public void onSuccess(Void aVoid) {
-                            Toast.makeText(v.getContext(),"Verification email has been sent", Toast.LENGTH_SHORT).show();
-                        }
-                    }).addOnFailureListener(new OnFailureListener() {
-                        @Override
-                        public void onFailure(@NonNull Exception e) {
-                            Log.d("tag","onFailure: Email not sent."+e.getMessage());
-                        }
-                    });
-                }
-            });
-        }
-
-        mProfileButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(),Profile.class));
-            }
-        });
     }
 
-    public void logout(View view){
-        FirebaseAuth.getInstance().signOut();
-        startActivity(new Intent(getApplicationContext(),Login.class));
-        finish();
+    public void ClickMenu(View view){
+        //open drawer
+        opendrawer(drawerLayout);
     }
 
-    /*@Override
-    public void onClick(View v) {
+    public static void opendrawer(DrawerLayout drawerLayout) {
+        drawerLayout.openDrawer(GravityCompat.START);
+    }
 
-        if(v.getId()==R.id.hall)
-        {
-            Intent intent = new Intent(MainActivity.this,Hall.class);
-            startActivity(intent);
+    public void ClickLogo(View view){
+        //close drawer
+        closedrawer(drawerLayout);
+    }
+
+    public static void closedrawer(DrawerLayout drawerLayout) {
+        if(drawerLayout.isDrawerOpen(GravityCompat.START)){
+            drawerLayout.closeDrawer(GravityCompat.START);
         }
+    }
 
-        else if(v.getId()==R.id.floor)
-        {
-            Intent intent = new Intent(MainActivity.this,Floor.class);
-            startActivity(intent);
-        }
+    public void ClickHome (View view){
+        recreate();
+    }
 
-        else if(v.getId()==R.id.room)
-        {
-            Intent intent = new Intent(MainActivity.this,Room.class);
-            startActivity(intent);
-        }
+    public void ClickA (View view){
+        redirectActivity(this,MainDashboard.class);
+    }
 
-        else if(v.getId()==R.id.seat)
-        {
-            Intent intent = new Intent(MainActivity.this,Seat.class);
-            startActivity(intent);
-        }
+    public void ClickB(View view){
+        redirectActivity(this,HallAdminDashboard.class);
 
-        else if(v.getId()==R.id.student)
-        {
-            Intent intent = new Intent(MainActivity.this,Student.class);
-            startActivity(intent);
-        }*/
+    }
 
-    }*/
+    public void ClickLogout(View view){
+        redirectActivity(this,HallOfficialDashboard.class);
+
+    }
+
+    public void ClickStudent(View view){
+        redirectActivity(this,StudentDashboard.class);
+
+    }
+
+
+
+    public static void redirectActivity(Activity activity, Class aClass) {
+        Intent intent=new Intent(activity,aClass);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        activity.startActivity(intent);
+
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        closedrawer(drawerLayout);
+    }
+
 }

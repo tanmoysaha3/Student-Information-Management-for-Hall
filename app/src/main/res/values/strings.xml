@@ -7,25 +7,82 @@
     <string name="hall_list">Hall List:</string>
     <string name="create">Create</string>
 
-    <string-array name="DeptNames">
-        <item>CSE</item>
-        <item>EEE</item>
-        <item>ChE</item>
-        <item>Physics</item>
-        <item>Math</item>
-        <item>English</item>
-    </string-array>
 
-    <string-array name="Years">
-        <item>21</item>
-        <item>20</item>
-        <item>19</item>
-        <item>18</item>
-        <item>17</item>
-        <item>16</item>
-        <item>15</item>
-        <item>14</item>
-        <item>13</item>
-        <item>12</item>
-    </string-array>
+    <array name="hallid">
+        <item>hall no 1</item>
+        <item>hall no 2</item>
+        <item>hall no 3</item>
+        <item>hall no 4</item>
+        <item>hall no 5</item>
+        <item>hall no 6</item>
+        <item>hall no 7</item>
+        <item>hall no 8</item>
+        <item>hall no 9</item>
+        <item>hall no 10</item>
+    </array>
+    <array name="halltype">
+        <item>Boys Hall</item>
+        <item>Girls Hall</item>
+    </array>
+
+    <array name="floorname">
+        <item>1st Floor</item>
+        <item>2nd Floor</item>
+        <item>3rd Floor</item>
+        <item>4th Floor</item>
+        <item>5th Floor</item>
+        <item>6th Floor</item>
+        <item>7th Floor</item>
+        <item>8th Floor</item>
+        <item>9th Floor</item>
+        <item>10th Floor</item>
+    </array>
+
+    <array name="roomname">
+        <item>Room No 1</item>
+        <item>Room No 2</item>
+        <item>Room No 3</item>
+        <item>Room No 4</item>
+        <item>Room No 5</item>
+        <item>Room No 6</item>
+        <item>Room No 7</item>
+        <item>Room No 8</item>
+        <item>Room No 9</item>
+        <item>Room No 10</item>
+        <item>Room No 11</item>
+        <item>Room No 12</item>
+        <item>Room No 13</item>
+        <item>Room No 14</item>
+        <item>Room No 16</item>
+        <item>Room No 17</item>
+        <item>Room No 18</item>
+        <item>Room No 19</item>
+        <item>Room No 20</item>
+
+    </array>
+
+    <array name="seatname">
+        <item>Seat No 1</item>
+        <item>Seat No 2</item>
+        <item>Seat No 3</item>
+        <item>Seat No 4</item>
+        <item>Seat No 5</item>
+        <item>Seat No 6</item>
+
+
+    </array>
+
+    <array name="dept">
+        <item>EEE</item>
+        <item>CSE</item>
+        <item>CHE</item>
+
+
+    </array>
+
+    <array name="invisible">
+        <item>Not Assigned</item>
+    </array>
+
+
 </resources>
