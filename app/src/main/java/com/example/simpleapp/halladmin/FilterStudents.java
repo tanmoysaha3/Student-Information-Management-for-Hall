@@ -1,4 +1,4 @@
-package com.example.simpleapp;
+package com.example.simpleapp.halladmin;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,6 +11,8 @@ import android.widget.Spinner;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.simpleapp.R;
+import com.example.simpleapp.halladmin.SeeFilteredStudents;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.CollectionReference;
@@ -130,7 +132,7 @@ public class FilterStudents extends AppCompatActivity {
                 String floor=mStuFloorSpinner.getSelectedItem().toString();
                 String room=mStuRoomSpinner.getSelectedItem().toString();
 
-                Intent i=new Intent(v.getContext(),SeeFilteredStudents.class);
+                Intent i=new Intent(v.getContext(), SeeFilteredStudents.class);
                 i.putExtra("Dept",dept);
                 i.putExtra("Year",year);
                 i.putExtra("Hall_Id",hall);

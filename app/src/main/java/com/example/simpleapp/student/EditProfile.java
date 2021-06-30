@@ -1,5 +1,6 @@
-package com.example.simpleapp;
+package com.example.simpleapp.student;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
@@ -15,6 +16,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.simpleapp.R;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
@@ -29,10 +31,10 @@ import com.squareup.picasso.Picasso;
 import java.util.HashMap;
 import java.util.Map;
 
-public class AdminEditProfile extends AppCompatActivity {
+public class EditProfile extends AppCompatActivity {
 
     private static final String TAG = "TAG";
-    EditText mProfilePosition, mProfilePhone, mProfileAddr, mProfileDOB, mProfileDept;
+    EditText mProfilePhone, mProfileAddr, mProfileDOB;
     ImageView mProfileImageV;
     Button mUpdateProfileButton;
     FirebaseAuth fAuth;
@@ -40,23 +42,22 @@ public class AdminEditProfile extends AppCompatActivity {
     FirebaseUser user;
     StorageReference storageReference;
 
+    @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_admin_edit_profile);
+        setContentView(R.layout.activity_edit_profile);
 
         fAuth = FirebaseAuth.getInstance();
         fStore=FirebaseFirestore.getInstance();
         user=fAuth.getCurrentUser();
         String x=user.getEmail();
-        String documentID=x.substring(0,x.indexOf("@"));
+        String studentID=x.substring(0,x.indexOf("."));
         storageReference= FirebaseStorage.getInstance().getReference();
 
-        mProfilePosition=findViewById(R.id.changePosition);
         mProfilePhone=findViewById(R.id.changePhone);
         mProfileDOB=findViewById(R.id.changeDOB);
         mProfileAddr=findViewById(R.id.changeAddress);
-        mProfileDept=findViewById(R.id.changeDept);
         mProfileImageV=findViewById(R.id.changePImage);
         mUpdateProfileButton=findViewById(R.id.updateProfileButton);
 
@@ -73,7 +74,7 @@ public class AdminEditProfile extends AppCompatActivity {
             public void onClick(View v) {
                 Intent openGalleryIntent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
                 startActivityForResult(openGalleryIntent,1000);
-                Toast.makeText(AdminEditProfile.this, "Profile Image clicked", Toast.LENGTH_SHORT).show();
+                Toast.makeText(EditProfile.this, "Profile Image clicked", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -81,29 +82,26 @@ public class AdminEditProfile extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(mProfileDOB.getText().toString().isEmpty() || mProfilePhone.getText().toString().isEmpty()) {
-                    Toast.makeText(AdminEditProfile.this, "One or more fields are empty", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(EditProfile.this, "One or more fields are empty", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
-                DocumentReference docRef=fStore.collection("Verified Admins").document(documentID);
+                DocumentReference docRef=fStore.collection("Verified Students").document(studentID);
                 Map<String,Object> edited =new HashMap<>();
-                edited.put("Position",mProfilePosition.getText().toString());
                 edited.put("Phone",mProfilePhone.getText().toString());
                 edited.put("Date_of_Birth",mProfileDOB.getText().toString());
                 edited.put("Address",mProfileAddr.getText().toString());
-                edited.put("Department",mProfileDept.getText().toString());
                 docRef.update((edited)).addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void aVoid) {
-                        Toast.makeText(AdminEditProfile.this, "Profile updated", Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(getApplicationContext(), AdminProfile.class));
+                        Toast.makeText(EditProfile.this, "Profile updated", Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(getApplicationContext(), Profile.class));
                         finish();
                     }
                 });
             }
         });
     }
-
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -115,13 +113,12 @@ public class AdminEditProfile extends AppCompatActivity {
             }
         }
     }
-
     private void uploadImageToFirebase(Uri imageUri) {
         final StorageReference fileRef=storageReference.child("users/"+fAuth.getCurrentUser().getUid()+"/profile.jpg");
         fileRef.putFile(imageUri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
             @Override
             public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                Toast.makeText(AdminEditProfile.this, "Image Uploaded", Toast.LENGTH_SHORT).show();
+                Toast.makeText(EditProfile.this, "Image Uploaded", Toast.LENGTH_SHORT).show();
                 fileRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
                     @Override
                     public void onSuccess(Uri uri) {

@@ -1,4 +1,4 @@
-package com.example.simpleapp;
+package com.example.simpleapp.superadmin;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,6 +7,15 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.simpleapp.R;
+import com.example.simpleapp.admin.AdminLogin;
+import com.example.simpleapp.admin.AdminProfile;
+import com.example.simpleapp.superadmin.CreateFloor;
+import com.example.simpleapp.superadmin.CreateHall;
+import com.example.simpleapp.superadmin.CreateRoom;
+import com.example.simpleapp.superadmin.Dashboard;
+import com.example.simpleapp.superadmin.HallAdminAssign;
+import com.example.simpleapp.superadmin.HallAdminRemove;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -32,7 +41,7 @@ public class SuperAdmin extends AppCompatActivity {
         mHallCreateButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(),CreateHall.class));
+                startActivity(new Intent(getApplicationContext(), CreateHall.class));
             }
         });
 
@@ -46,14 +55,14 @@ public class SuperAdmin extends AppCompatActivity {
         mRoomCreateButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(),CreateRoom.class));
+                startActivity(new Intent(getApplicationContext(), CreateRoom.class));
             }
         });
 
         mHallAdminAssignButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(),HallAdminAssign.class));
+                startActivity(new Intent(getApplicationContext(), HallAdminAssign.class));
             }
         });
 
@@ -67,14 +76,14 @@ public class SuperAdmin extends AppCompatActivity {
         mHallAdminRemoveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(),HallAdminRemove.class));
+                startActivity(new Intent(getApplicationContext(), HallAdminRemove.class));
             }
         });
 
         mSAdminProfileFAB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(),AdminProfile.class));
+                startActivity(new Intent(getApplicationContext(), AdminProfile.class));
             }
         });
     }

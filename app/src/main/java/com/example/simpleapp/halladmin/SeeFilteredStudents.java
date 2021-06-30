@@ -1,4 +1,4 @@
-package com.example.simpleapp;
+package com.example.simpleapp.halladmin;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,13 +11,16 @@ import androidx.paging.PagedList;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.simpleapp.adapter.FirestoreAdapterStudent;
+import com.example.simpleapp.adapter.ModelStudent;
+import com.example.simpleapp.R;
 import com.firebase.ui.firestore.SnapshotParser;
 import com.firebase.ui.firestore.paging.FirestorePagingOptions;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 
-public class SeeFilteredStudents extends AppCompatActivity implements FirestoreAdapterStudent.OnListItemClick{
+public class SeeFilteredStudents extends AppCompatActivity implements FirestoreAdapterStudent.OnListItemClick {
 
     FirebaseFirestore firebaseFirestore;
     RecyclerView mFilteredStudentsRecView;

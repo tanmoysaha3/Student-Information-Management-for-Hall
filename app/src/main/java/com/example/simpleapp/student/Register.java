@@ -1,4 +1,4 @@
-package com.example.simpleapp;
+package com.example.simpleapp.student;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,6 +14,8 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.simpleapp.R;
+import com.example.simpleapp.VerifyEmail;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.AuthResult;
@@ -119,7 +121,7 @@ public class Register extends AppCompatActivity {
                             }
                         });
 
-                        startActivity(new Intent(getApplicationContext(),VerifyEmail.class));
+                        startActivity(new Intent(getApplicationContext(), VerifyEmail.class));
                         finish();
                     }
                 }).addOnFailureListener(new OnFailureListener() {

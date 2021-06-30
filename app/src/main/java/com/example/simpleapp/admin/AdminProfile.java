@@ -1,4 +1,4 @@
-package com.example.simpleapp;
+package com.example.simpleapp.admin;
 
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -16,6 +16,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.simpleapp.R;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;

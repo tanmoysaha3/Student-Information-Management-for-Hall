@@ -1,4 +1,4 @@
-package com.example.simpleapp;
+package com.example.simpleapp.halladmin;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,6 +7,16 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.simpleapp.R;
+import com.example.simpleapp.admin.AdminLogin;
+import com.example.simpleapp.admin.AdminProfile;
+import com.example.simpleapp.halladmin.CreateSeat;
+import com.example.simpleapp.halladmin.FilterStudents;
+import com.example.simpleapp.halladmin.OfficialAssign;
+import com.example.simpleapp.halladmin.OfficialRemove;
+import com.example.simpleapp.halladmin.SearchStudent;
+import com.example.simpleapp.halladmin.SeatAssign;
+import com.example.simpleapp.halladmin.SeeStuList;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -87,7 +97,7 @@ public class HallAdmin extends AppCompatActivity {
         mOfficialRemoveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(),OfficialRemove.class));
+                startActivity(new Intent(getApplicationContext(), OfficialRemove.class));
             }
         });
 

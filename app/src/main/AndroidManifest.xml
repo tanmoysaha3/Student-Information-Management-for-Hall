@@ -10,102 +10,102 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.SimpleApp">
-        <activity android:name=".OfficialRemove"
+        <activity android:name=".halladmin.OfficialRemove"
             android:configChanges="orientation"
             android:screenOrientation="portrait" ></activity>
         <activity android:name=".Official"
             android:configChanges="orientation"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".HallAdminRemove"
+            android:name=".superadmin.HallAdminRemove"
             android:configChanges="orientation"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".SeeStuList"
+            android:name=".halladmin.SeeStuList"
             android:configChanges="orientation"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".SeeFilteredStudents"
+            android:name=".halladmin.SeeFilteredStudents"
             android:configChanges="orientation"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".SearchStudent"
+            android:name=".halladmin.SearchStudent"
             android:configChanges="orientation"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".FilterStudents"
+            android:name=".halladmin.FilterStudents"
             android:configChanges="orientation"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Dashboard"
+            android:name=".superadmin.Dashboard"
             android:configChanges="orientation"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".OfficialAssign"
+            android:name=".halladmin.OfficialAssign"
             android:configChanges="orientation"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".SeatAssign"
+            android:name=".halladmin.SeatAssign"
             android:configChanges="orientation"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".CreateSeat"
+            android:name=".halladmin.CreateSeat"
             android:configChanges="orientation"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".HallAdminAssign"
+            android:name=".superadmin.HallAdminAssign"
             android:configChanges="orientation"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".AdminEditProfile"
+            android:name=".admin.AdminEditProfile"
             android:configChanges="orientation"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".AdminProfile"
+            android:name=".admin.AdminProfile"
             android:configChanges="orientation"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".HallAdmin"
+            android:name=".halladmin.HallAdmin"
             android:configChanges="orientation"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".AdminLogin"
+            android:name=".admin.AdminLogin"
             android:configChanges="orientation"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".AdminRegister"
+            android:name=".admin.AdminRegister"
             android:configChanges="orientation"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".CreateRoom"
+            android:name=".superadmin.CreateRoom"
             android:configChanges="orientation"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".CreateFloor"
+            android:name=".superadmin.CreateFloor"
             android:configChanges="orientation"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".CreateHall"
+            android:name=".superadmin.CreateHall"
             android:configChanges="orientation"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".SuperAdmin"
+            android:name=".superadmin.SuperAdmin"
             android:configChanges="orientation"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".CheckAdminLevel"
+            android:name=".admin.CheckAdminLevel"
             android:configChanges="orientation"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".EditProfile"
+            android:name=".student.EditProfile"
             android:configChanges="orientation"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Profile"
+            android:name=".student.Profile"
             android:configChanges="orientation"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Login"
+            android:name=".student.Login"
             android:configChanges="orientation"
             android:screenOrientation="portrait">
             <intent-filter>
@@ -119,15 +119,11 @@
             android:configChanges="orientation"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Register"
+            android:name=".student.Register"
             android:configChanges="orientation"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".MainActivity"
-            android:configChanges="orientation"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".SeeStuDetails"
+            android:name=".halladmin.SeeStuDetails"
             android:configChanges="orientation"
             android:screenOrientation="portrait" />
     </application>

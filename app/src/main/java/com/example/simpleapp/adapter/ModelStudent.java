@@ -1,4 +1,4 @@
-package com.example.simpleapp;
+package com.example.simpleapp.adapter;
 
 public class ModelStudent {
     String StudentID;

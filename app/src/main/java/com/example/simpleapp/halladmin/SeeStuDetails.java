@@ -1,4 +1,4 @@
-package com.example.simpleapp;
+package com.example.simpleapp.halladmin;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,6 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.simpleapp.R;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
@@ -89,7 +90,7 @@ public class SeeStuDetails extends AppCompatActivity {
                             @Override
                             public void onSuccess(Void aVoid) {
                                 Log.d(TAG, "DocumentSnapshot successfully deleted!");
-                                startActivity(new Intent(getApplicationContext(),HallAdmin.class));
+                                startActivity(new Intent(getApplicationContext(), HallAdmin.class));
                             }
                         }).addOnFailureListener(new OnFailureListener() {
                     @Override

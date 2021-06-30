@@ -1,4 +1,4 @@
-package com.example.simpleapp;
+package com.example.simpleapp.student;
 
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -16,6 +16,10 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.simpleapp.R;
+import com.example.simpleapp.VerifyEmail;
+import com.example.simpleapp.admin.AdminLogin;
+import com.example.simpleapp.admin.CheckAdminLevel;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.AuthResult;
@@ -86,7 +90,7 @@ public class Login extends AppCompatActivity {
                             startActivity(new Intent(getApplicationContext(), Profile.class));
                             finish();
                         } else {
-                            startActivity(new Intent(getApplicationContext(),VerifyEmail.class));
+                            startActivity(new Intent(getApplicationContext(), VerifyEmail.class));
                             finish();
                         }
                     }
@@ -124,7 +128,7 @@ public class Login extends AppCompatActivity {
         mAdminLoginTextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(),AdminLogin.class));
+                startActivity(new Intent(getApplicationContext(), AdminLogin.class));
             }
         });
 

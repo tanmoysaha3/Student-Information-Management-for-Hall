@@ -1,4 +1,4 @@
-package com.example.simpleapp;
+package com.example.simpleapp.halladmin;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -12,6 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.simpleapp.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;

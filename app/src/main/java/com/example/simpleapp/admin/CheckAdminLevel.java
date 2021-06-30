@@ -1,4 +1,4 @@
-package com.example.simpleapp;
+package com.example.simpleapp.admin;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,6 +7,9 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.simpleapp.halladmin.HallAdmin;
+import com.example.simpleapp.Official;
+import com.example.simpleapp.superadmin.SuperAdmin;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
