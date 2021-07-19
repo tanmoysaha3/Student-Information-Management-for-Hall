@@ -11,6 +11,60 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SimpleApp">
 
+        <activity android:name=".Student.StudentProfile"></activity>
+        <activity android:name=".Student.StudentDashboard">
+
+        </activity>
+        <activity android:name=".Student.StudentLogin" />
+        <activity android:name=".HallOfficials.HallOfficialLogin" />
+        <activity android:name=".HallOfficials.HallOfficialsProfile" />
+        <activity android:name=".HallOfficials.HallOfficialsEditProfile" />
+        <activity android:name=".HallOfficials.HallOfficialsDashboard" />
+        <activity android:name=".HallAdmin.HallAdminProfile" />
+        <activity android:name=".SuperAdmin.SuperAdminEditProfile" />
+        <activity android:name=".SuperAdmin.SuperAdminProfile" />
+        <activity android:name=".Student.StudentEditProfile" />
+        <activity android:name=".Student.StudentEditProfile1" />
+        <activity android:name=".HallAdmin.Create.NotAssignedStudents" />
+        <activity android:name=".HallAdmin.StudentAssign.Assignstudent3" />
+        <activity android:name=".HallAdmin.StudentAssign.Assignstudent2" />
+        <activity android:name=".HallAdmin.StudentAssign.Assignstudent1" />
+        <activity android:name=".HallAdmin.StudentAssign.Assignstudent" />
+        <activity android:name=".HallAdmin.Create.HSeat3" />
+        <activity android:name=".HallAdmin.Create.HSeat2" />
+        <activity android:name=".HallAdmin.Create.HSeat1" />
+        <activity android:name=".HallAdmin.Create.HSeat" />
+        <activity android:name=".HallAdmin.Create.HRoom2" />
+        <activity android:name=".HallAdmin.Create.HRoom1" />
+        <activity android:name=".HallAdmin.Create.HRoom" />
+        <activity android:name=".SuperAdmin.AssignHallAdmin" />
+        <activity android:name=".SuperAdmin.SStudent">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".SuperAdmin.Screate.Hall" />
+        <activity android:name=".SuperAdmin.Screate.Floor" />
+        <activity android:name=".SuperAdmin.Screate.Room" />
+        <activity android:name=".SuperAdmin.SHallOfficials" />
+        <activity android:name=".SuperAdmin.SHallAdmin" />
+        <activity android:name=".HallAdmin.HallOfficialRegister" />
+        <activity android:name=".HallAdmin.HallAdminDashboard" />
+        <activity android:name=".Student.StudentResister" />
+        <activity android:name=".SuperAdmin.HallAdminCreate" />
+        <activity android:name=".SuperAdmin.SuperRegister" />
+        <activity android:name=".SuperAdmin.SuperLogin" />
+        <activity android:name=".HallAdmin.HallAdminLogin" />
+        <activity android:name=".SuperAdmin.MainDashboard" />
+        <activity android:name=".SpashScreen" />
+        <activity android:name=".MainActivity"/>
+
+        <activity
+            android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
+            android:theme="@style/Base.Theme.AppCompat" />
     </application>
 
 </manifest>

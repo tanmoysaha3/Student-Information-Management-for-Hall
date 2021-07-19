@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
+    tools:context=".Student.StudentEditProfile">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Please, Fill up this form to continue"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            android:textColor="@color/best"
+            android:fontFamily="sans-serif-black"
+            android:layout_margin="20dp"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:text="Select Blood Group:"
+            android:layout_marginLeft="15dp"
+            android:textColor="@color/best"
+            android:fontFamily="sans-serif-black"/>
+
+        <Spinner
+            android:id="@+id/edit_bloodgroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="15dp"
+            android:backgroundTint="@color/colorPrimary"
+            android:backgroundTintMode="src_in"
+            android:ems="10"
+            android:background="@drawable/bottom_button"
+            android:entries="@array/blood_group"
+            android:fontFamily="sans-serif"
+            android:padding="15dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textColor="@color/colorPrimary">
+
+        </Spinner>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:layout_marginTop="15dp"
+            android:text="Select Department:"
+            android:layout_marginLeft="15dp"
+            android:textColor="@color/best"
+            android:fontFamily="sans-serif-black"/>
+
+        <Spinner
+            android:id="@+id/edit_department"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="15dp"
+            android:backgroundTint="@color/colorPrimary"
+            android:backgroundTintMode="src_in"
+            android:ems="10"
+            android:background="@drawable/bottom_button"
+            android:entries="@array/dept"
+            android:fontFamily="sans-serif"
+            android:padding="15dp"
+            android:textColor="@color/colorPrimary">
+
+        </Spinner>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:layout_marginTop="15dp"
+            android:text="Select Batch:"
+            android:layout_marginLeft="15dp"
+            android:textColor="@color/best"
+            android:fontFamily="sans-serif-black"/>
+
+        <Spinner
+            android:id="@+id/edit_batch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="15dp"
+            android:backgroundTint="@color/colorPrimary"
+            android:backgroundTintMode="src_in"
+            android:ems="10"
+            android:background="@drawable/bottom_button"
+            android:entries="@array/batch"
+            android:fontFamily="sans-serif"
+            android:padding="15dp"
+            android:textColor="@color/colorPrimary">
+
+        </Spinner>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="NB: Make sure that your information is correct."
+            android:textAlignment="center"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:textColor="@color/best"
+            android:fontFamily="sans-serif"
+            android:layout_margin="20dp"
+            />
+
+        <Button
+            android:id="@+id/savestinfo"
+            android:layout_below="@id/Password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Go"
+            android:textSize="20sp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="25dp"
+            android:textColor="@drawable/item"
+            android:textStyle="bold"
+            android:background="@drawable/item"
+            />
+
+
+
+
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_gravity="top"
+    android:gravity="top"
+    android:background="#FFFFFF"
+    android:orientation="vertical"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        tools:ignore="MissingConstraints">
+
+
+        <TextView
+            android:id="@+id/NSTUDENTNAME"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="textStart"
+            android:paddingLeft="15dp"
+            android:text="Student Name"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textColor="@color/colorPrimary"
+            android:textSize="20sp"
+            android:layout_marginBottom="10dp"
+            android:fontFamily="sans-serif-black"
+            tools:ignore="RtlCompat" />
+
+        <TextView
+            android:id="@+id/DEPARTMENT"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="textStart"
+            android:paddingLeft="15dp"
+            android:text="Department"
+            android:layout_below="@id/NSTUDENTNAME"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:layout_marginBottom="10dp"
+            android:textColor="@color/colorPrimary"
+            android:textSize="17sp"
+            android:fontFamily="sans-serif"
+            tools:ignore="RtlCompat" />
+
+        <TextView
+            android:id="@+id/YEAR"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="textStart"
+            android:paddingLeft="15dp"
+            android:text="Year"
+            android:layout_below="@id/DEPARTMENT"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textColor="@color/colorPrimary"
+            android:textSize="15sp"
+            android:layout_marginBottom="10dp"
+            android:fontFamily="sans-serif"
+            tools:ignore="RtlCompat" />
+
+    </RelativeLayout>
+
+
+
+
+
+</LinearLayout>
+
+
+
