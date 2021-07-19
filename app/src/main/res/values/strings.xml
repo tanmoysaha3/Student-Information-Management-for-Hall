@@ -1,24 +1,139 @@
 <resources>
     <string name="app_name">Simple app</string>
-    <string-array name="DeptNames">
-        <item>CSE</item>
-        <item>EEE</item>
-        <item>ChE</item>
-        <item>Physics</item>
-        <item>Math</item>
-        <item>English</item>
-    </string-array>
+    <string name="new_create_account">New? Create Account</string>
+    <string name="login">Login</string>
+    <string name="hall_name">Hall Name</string>
+    <string name="create_a_hall">Create a Hall</string>
+    <string name="hall_list">Hall List:</string>
+    <string name="create">Create</string>
 
-    <string-array name="Years">
-        <item>21</item>
-        <item>20</item>
-        <item>19</item>
-        <item>18</item>
-        <item>17</item>
-        <item>16</item>
-        <item>15</item>
-        <item>14</item>
-        <item>13</item>
-        <item>12</item>
-    </string-array>
+
+    <array name="hallid">
+        <item>hall no 1</item>
+        <item>hall no 2</item>
+        <item>hall no 3</item>
+        <item>hall no 4</item>
+        <item>hall no 5</item>
+        <item>hall no 6</item>
+        <item>hall no 7</item>
+        <item>hall no 8</item>
+        <item>hall no 9</item>
+        <item>hall no 10</item>
+    </array>
+    <array name="halltype">
+        <item>Boys Hall</item>
+        <item>Girls Hall</item>
+    </array>
+
+    <array name="floorname">
+        <item>1st Floor</item>
+        <item>2nd Floor</item>
+        <item>3rd Floor</item>
+        <item>4th Floor</item>
+        <item>5th Floor</item>
+        <item>6th Floor</item>
+        <item>7th Floor</item>
+        <item>8th Floor</item>
+        <item>9th Floor</item>
+        <item>10th Floor</item>
+    </array>
+
+    <array name="roomname">
+        <item>Room No 1</item>
+        <item>Room No 2</item>
+        <item>Room No 3</item>
+        <item>Room No 4</item>
+        <item>Room No 5</item>
+        <item>Room No 6</item>
+        <item>Room No 7</item>
+        <item>Room No 8</item>
+        <item>Room No 9</item>
+        <item>Room No 10</item>
+        <item>Room No 11</item>
+        <item>Room No 12</item>
+        <item>Room No 13</item>
+        <item>Room No 14</item>
+        <item>Room No 16</item>
+        <item>Room No 17</item>
+        <item>Room No 18</item>
+        <item>Room No 19</item>
+        <item>Room No 20</item>
+
+    </array>
+
+    <array name="seatname">
+        <item>Seat No 1</item>
+        <item>Seat No 2</item>
+        <item>Seat No 3</item>
+        <item>Seat No 4</item>
+        <item>Seat No 5</item>
+        <item>Seat No 6</item>
+
+
+    </array>
+
+    <array name="dept">
+        <item>EEE</item>
+        <item>CSE</item>
+        <item>CHE</item>
+        <item>IPE</item>
+        <item>APPT</item>
+        <item>CHEMISTRY</item>
+
+    </array>
+
+    <array name="blood_group">
+        <item>A+</item>
+        <item>A-</item>
+        <item>B+</item>
+        <item>B-</item>
+        <item>O+</item>
+        <item>O-</item>
+        <item>AB+</item>
+        <item>AB-</item>
+    </array>
+
+    <array name="batch">
+        <item>2k07</item>
+        <item>2k08</item>
+        <item>2k09</item>
+        <item>2k10</item>
+        <item>2k11</item>
+        <item>2k12</item>
+        <item>2k13</item>
+        <item>2k14</item>
+        <item>2k15</item>
+        <item>2k16</item>
+        <item>2k17</item>
+        <item>2k18</item>
+        <item>2k19</item>
+        <item>2k20</item>
+        <item>2k21</item>
+        <item>2k22</item>
+        <item>2k23</item>
+        <item>2k24</item>
+        <item>2k25</item>
+        <item>2k26</item>
+        <item>2k27</item>
+        <item>2k28</item>
+        <item>2k29</item>
+        <item>2k30</item>
+        <item>2k31</item>
+        <item>2k32</item>
+        <item>2k33</item>
+        <item>2k34</item>
+        <item>2k35</item>
+        <item>2k36</item>
+        <item>2k37</item>
+        <item>2k38</item>
+        <item>2k39</item>
+        <item>2k40</item>
+
+    </array>
+
+    <array name="invisible">
+        <item>Not Assigned</item>
+    </array>
+
+
 </resources>
