@@ -2,17 +2,17 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="?attr/actionBarSize"
-    android:orientation="horizontal"
-    android:background="@color/colorPrimaryDark"
-    android:gravity="center_vertical"
+    android:layout_height="200dp"
+    android:orientation="vertical"
+    android:background="@drawable/wbc"
     >
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center_vertical"
+        android:layout_height="40dp"
+        android:gravity="top"
         android:orientation="horizontal">
 
         <ImageView
@@ -21,7 +21,8 @@
             android:onClick="ClickMenu"
             android:padding="4dp"
             android:layout_marginStart="10dp"
-            android:src="@drawable/ic_baseline_menu_24" />
+            android:src="@drawable/ic_baseline_menu_24"
+            app:tint="@color/best" />
 
         <TextView
             android:layout_width="match_parent"
@@ -30,20 +31,61 @@
             android:text="JUST Hall Information Management"
             android:textAlignment="textStart"
             android:textColor="@color/best"
+            android:gravity="center_vertical"
+            android:layout_gravity="center_vertical"
             android:layout_marginStart="20dp"
             android:textSize="17sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            tools:ignore="RtlCompat" />
 
         <ImageView
-            android:layout_width="wrap_content"
+            android:layout_width="40dp"
             android:layout_height="match_parent"
-            android:layout_gravity="center"
-            android:padding="4dp"
+            android:padding="9dp"
             android:layout_marginEnd="10dp"
             android:src="@drawable/ic_baseline_more_vert_24"
             app:tint="@color/best" />
 
     </LinearLayout>
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        app:lottie_colorFilter="@color/best"
+        android:scaleType="fitCenter"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/just"
+        />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="-18dp"
+        android:layout_marginRight="25dp"
+        app:lottie_colorFilter="@color/best"
+        android:scaleType="fitCenter"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/just"
+        />
+
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="-22dp"
+        android:layout_marginRight="55dp"
+        app:lottie_colorFilter="@color/best"
+        android:scaleType="fitCenter"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/just"
+        />
 
 
 

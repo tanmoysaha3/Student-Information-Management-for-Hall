@@ -3,33 +3,49 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimaryDark"
+    android:background="@drawable/s"
     android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_height="280dp"
         android:orientation="vertical">
 
-        <ImageView
+
+
+        <com.airbnb.lottie.LottieAnimationView
             android:layout_width="match_parent"
-            android:layout_height="80dp"
-            android:layout_margin="16dp"
-            android:onClick="ClickLogo"
-            android:src="@drawable/logo" />
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:padding="20dp"
+            app:lottie_colorFilter="@color/best"
+            android:scaleType="fitCenter"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/just"
+            />
+
+
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fitsSystemWindows="true"
-            android:text="JASHORE UNIVERSITY OF SCIENCE AND TECHNOLOGY"
+            android:text="Halls Of JUST"
             android:textAlignment="center"
             android:textColor="@color/best"
-            android:textSize="15sp"
-            android:fontFamily="sans-serif-black"
+            android:textSize="25sp"
+            android:fontFamily="serif"
             android:textStyle="bold" />
 
 
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:layout_marginTop="30dp"
+            android:background="@color/best" />
 
     </LinearLayout>
 
@@ -38,33 +54,33 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/white"
+        android:background="#00000000"
         android:orientation="vertical">
 
-        <View
+        <TextView
             android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/best" />
+            android:layout_height="wrap_content"
+            android:fitsSystemWindows="true"
+            android:text="Login"
+            android:textAlignment="center"
+            android:textColor="@color/best"
+            android:textSize="25sp"
+            android:fontFamily="serif"
+            android:textStyle="bold" />
+
+
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
+            android:visibility="gone"
             android:layout_marginTop="20dp"
             android:layout_marginEnd="20dp"
             android:gravity="center_vertical"
             android:onClick="ClickHome"
             android:orientation="horizontal">
 
-
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_gravity="center"
-                android:background="@drawable/circle"
-                android:padding="4dp"
-                android:src="@drawable/ic_home_black_24dp"
-                app:tint="@color/best" />
 
         </LinearLayout>
 
@@ -78,13 +94,13 @@
             android:layout_marginEnd="20dp"
             android:gravity="center_vertical"
             android:onClick="ClickA"
+            android:clickable="true"
             android:orientation="horizontal">
 
             <ImageView
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_marginStart="5dp"
-                android:background="@drawable/circle"
                 android:padding="8dp"
                 android:src="@drawable/ic_baseline_login_24"
                 app:tint="@color/best" />
@@ -112,13 +128,13 @@
             android:layout_marginEnd="20dp"
             android:gravity="center_vertical"
             android:onClick="ClickB"
+            android:clickable="true"
             android:orientation="horizontal">
 
             <ImageView
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_marginStart="5dp"
-                android:background="@drawable/circle"
                 android:padding="8dp"
                 android:src="@drawable/ic_baseline_login_24"
                 app:tint="@color/best" />
@@ -146,13 +162,13 @@
             android:layout_marginEnd="20dp"
             android:gravity="center_vertical"
             android:onClick="ClickLogout"
+            android:clickable="true"
             android:orientation="horizontal">
 
             <ImageView
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_marginStart="5dp"
-                android:background="@drawable/circle"
                 android:padding="8dp"
                 android:src="@drawable/ic_baseline_login_24"
                 app:tint="@color/best" />
@@ -179,6 +195,7 @@
             android:layout_marginTop="10dp"
             android:layout_marginEnd="20dp"
             android:gravity="center_vertical"
+            android:clickable="true"
             android:onClick="ClickStudent"
             android:orientation="horizontal">
 
@@ -186,7 +203,6 @@
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_marginStart="5dp"
-                android:background="@drawable/circle"
                 android:padding="8dp"
                 android:src="@drawable/ic_baseline_login_24"
                 app:tint="@color/best" />
@@ -205,6 +221,8 @@
 
 
         </LinearLayout>
+
+
 
 
     </LinearLayout>
