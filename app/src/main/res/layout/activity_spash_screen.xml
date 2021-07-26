@@ -7,8 +7,48 @@
     android:gravity="center"
     android:orientation="vertical"
     android:padding="24dp"
-    android:background="@color/colorPrimaryDark"
     tools:context=".SpashScreen">
+
+
+    <TextView
+        android:id="@+id/t1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Hall Information System"
+        android:textSize="23sp"
+        android:textColor="@color/colorPrimary"
+        android:fontFamily="serif"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        />
+
+    <TextView
+        android:layout_below="@id/t1"
+        android:id="@+id/t2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Of"
+        android:layout_marginTop="11dp"
+        android:textSize="23sp"
+        android:textColor="@color/colorPrimary"
+        android:fontFamily="serif"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        />
+
+    <TextView
+        android:layout_below="@id/t2"
+        android:id="@+id/t3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="JUST"
+        android:layout_marginTop="11dp"
+        android:textSize="29sp"
+        android:textColor="#3B910D"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        />
 
     <RelativeLayout
         android:id="@+id/linearLayout2"
@@ -24,10 +64,10 @@
         <com.airbnb.lottie.LottieAnimationView
             android:id="@+id/progressBar"
             android:layout_width="match_parent"
-            android:layout_height="300dp"
+            android:layout_height="360dp"
             android:padding="60dp"
             android:layout_gravity="center"
-            android:layout_marginTop="100dp"
+            android:layout_marginTop="150dp"
             android:layout_marginBottom="100dp"
             android:layout_weight="4"
             android:scaleType="fitCenter"
