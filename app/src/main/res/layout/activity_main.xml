@@ -2,12 +2,11 @@
 <androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/drawer_layout"
-    android:background="@drawable/s"
-    tools:context=".MainActivity"
-    >
+    android:background="@drawable/s6"
+    tools:context=".MainActivity">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -17,23 +16,22 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
+
             <include
+                layout="@layout/drawer_toolbar"
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
-                layout="@layout/drawer_toolbar"/>
-
-
+                android:layout_height="200dp" />
 
 
             <com.blogspot.atifsoftwares.circularimageview.CircularImageView
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_gravity="center_horizontal"
+                android:layout_marginTop="-50dp"
                 android:cropToPadding="true"
                 android:src="@drawable/vc"
                 android:tint="@color/best"
                 app:c_border="true"
-                android:layout_marginTop="-50dp"
                 app:c_border_color="@color/best"
                 app:c_border_width="1dp"
                 app:c_shadow_radius="@android:integer/config_longAnimTime"
@@ -42,59 +40,55 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:justificationMode="inter_word"
-                android:fontFamily="sans-serif-black"
-                android:textAlignment="center"
-                android:layout_marginTop="19dp"
-                android:textSize="19sp"
-                android:layout_marginRight="10dp"
                 android:layout_marginLeft="10dp"
-                android:textColor="@color/best"
+                android:layout_marginTop="19dp"
+                android:layout_marginRight="10dp"
+                android:fontFamily="sans-serif-black"
+                android:justificationMode="inter_word"
                 android:text="Message from Vice-Chancellor"
-                />
+                android:textAlignment="center"
+                android:textColor="@color/best"
+                android:textSize="19sp" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:justificationMode="inter_word"
-                android:fontFamily="serif"
-                android:textAlignment="textStart"
+                android:layout_marginLeft="12dp"
                 android:layout_marginTop="19dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginLeft="10dp"
+                android:layout_marginRight="12dp"
+                android:fontFamily="serif"
+                android:justificationMode="inter_word"
                 android:lineSpacingExtra="4dp"
-                android:textSize="15sp"
+                android:text="@string/jashore_university_of_science_and_technology_just_has_started_a_steady_journey_of_reaching_a_new_height_of_excellence_in_research_and_to_achieve_a_unique_milestone_in_promoting_new_ideas_and_innovation_and_in_serving_the_nation_and_the_global_community_by_creating_enlightened_and_skilled_professionals_who_can_meet_the_challenges_of_the_21st_century_fostering_the_motto_of_being_the_employer_not_the_employee_in_keeping_with_this_purpose_just_has_already_been_declared_a_research_university_that_aims_at_generating_and_advancing_knowledge_by_cutting_edge_research_in_its_state_of_the_art_laboratories_and_in_the_congenial_academic_ambience_apart_from_these_just_has_international_and_local_collaboration_with_a_wide_range_of_reputed_academia_and_industry_our_focus_is_also_on_promoting_intellectual_leadership_through_innovation_and_outcome_based_education_and_fostering_social_commitment_through_community_affiliation_it_gives_me_immense_pleasure_that_the_concerted_efforts_of_the_faculty_members_and_students_both_from_home_and_abroad_have_added_feathers_in_our_cap_in_order_to_achieve_the_rest_of_the_noble_goals_and_turn_our_country_into_the_golden_bengal_envisioned_by_the_father_of_the_nation_bangabandhu_sheikh_mujibur_rahman_we_all_have_to_work_together_relentlessly_and_wholeheartedly"
+                android:textAlignment="textStart"
                 android:textColor="@color/best"
-                android:text="@string/jashore_university_of_science_and_technology_just_has_started_a_steady_journey_of_reaching_a_new_height_of_excellence_in_research_and_to_achieve_a_unique_milestone_in_promoting_new_ideas_and_innovation_and_in_serving_the_nation_and_the_global_community_by_creating_enlightened_and_skilled_professionals_who_can_meet_the_challenges_of_the_21st_century_fostering_the_motto_of_being_the_employer_not_the_employee_in_keeping_with_this_purpose_just_has_already_been_declared_a_research_university_that_aims_at_generating_and_advancing_knowledge_by_cutting_edge_research_in_its_state_of_the_art_laboratories_and_in_the_congenial_academic_ambience_apart_from_these_just_has_international_and_local_collaboration_with_a_wide_range_of_reputed_academia_and_industry_our_focus_is_also_on_promoting_intellectual_leadership_through_innovation_and_outcome_based_education_and_fostering_social_commitment_through_community_affiliation_it_gives_me_immense_pleasure_that_the_concerted_efforts_of_the_faculty_members_and_students_both_from_home_and_abroad_have_added_feathers_in_our_cap_in_order_to_achieve_the_rest_of_the_noble_goals_and_turn_our_country_into_the_golden_bengal_envisioned_by_the_father_of_the_nation_bangabandhu_sheikh_mujibur_rahman_we_all_have_to_work_together_relentlessly_and_wholeheartedly"/>
+                android:textSize="15sp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:justificationMode="inter_word"
-                android:fontFamily="sans-serif-black"
-                android:textAlignment="textStart"
-                android:layout_marginTop="29dp"
-                android:textSize="19sp"
-                android:textStyle="bold"
-                android:layout_marginRight="10dp"
                 android:layout_marginLeft="10dp"
+                android:layout_marginTop="29dp"
+                android:layout_marginRight="10dp"
+                android:fontFamily="sans-serif-black"
+                android:justificationMode="inter_word"
                 android:lineSpacingExtra="4dp"
-                android:textColor="@color/best"
                 android:text="Our Halls"
-                />
+                android:textAlignment="textStart"
+                android:textColor="@color/best"
+                android:textSize="19sp"
+                android:textStyle="bold" />
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="3dp"
                 android:layout_marginLeft="100dp"
-                android:layout_marginRight="10dp"
                 android:layout_marginTop="-12dp"
-                android:background="@color/best"
-                />
+                android:layout_marginRight="10dp"
+                android:background="@color/best" />
 
         </LinearLayout>
     </ScrollView>
-
 
 
     <RelativeLayout
@@ -103,13 +97,9 @@
         android:layout_gravity="start"
         android:background="@color/white">
 
-        <include
-            layout="@layout/main_nav_drawer"/>
+        <include layout="@layout/main_nav_drawer" />
 
     </RelativeLayout>
-
-
-
 
 
 </androidx.drawerlayout.widget.DrawerLayout>
