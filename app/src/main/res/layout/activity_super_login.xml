@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/colorPrimaryDark"
+    android:background="@drawable/s6"
     android:gravity="center"
     tools:context=".SuperAdmin.SuperLogin">
 
@@ -42,7 +42,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif-black"
             android:textStyle="bold"
-            android:textColor="#4A148C"
+            android:textColor="@color/best"
             android:text="Jashore University of Science and Technology"
             android:textAlignment="center"
             />
@@ -88,6 +88,9 @@
                         android:layout_marginRight="30dp"
                         android:layout_marginTop="25dp"
                         android:hint="Email"
+                        android:drawablePadding="10dp"
+                        android:drawableStart="@drawable/ic_email_black_24dp"
+                        android:drawableTint="@color/best"
                         android:inputType="textEmailAddress"
                         android:padding="15dp"
                         android:textColor="@color/best"
@@ -108,6 +111,9 @@
                         android:inputType="textPassword"
                         android:padding="15dp"
                         android:textColor="@color/best"
+                        android:drawablePadding="10dp"
+                        android:drawableStart="@drawable/ic_lock_black_24dp"
+                        android:drawableTint="@color/best"
                         android:textColorHint="@color/best"
                         />
 
@@ -136,34 +142,12 @@
                         android:layout_marginLeft="30dp"
                         android:layout_marginRight="30dp"
                         android:layout_marginTop="25dp"
-                        android:textColor="@drawable/item"
                         android:textStyle="bold"
-                        android:background="@drawable/item"
+                        android:textColor="@color/white"
+                        android:background="@drawable/border1"
                         />
 
-                    <TextView
-                        android:layout_below="@+id/loginButton"
-                        android:id="@+id/registerPageLink"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="New? Create Account Here"
-                        android:layout_marginTop="25dp"
-                        android:textAlignment="center"
-                        android:textColor="@color/colorPrimaryDark"
-                        android:textSize="19sp"
-                        />
 
-                    <ProgressBar
-                        android:layout_below="@id/registerPageLink"
-                        android:id="@+id/loginProgressBar"
-                        style="?android:attr/progressBarStyle"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:background="@null"
-                        android:visibility="invisible"
-                        android:backgroundTint="@color/colorPrimaryDark"
-                        android:layout_centerInParent="true"
-                        />
                 </RelativeLayout>
 
 
