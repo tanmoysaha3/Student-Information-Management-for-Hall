@@ -1,56 +1,51 @@
 package com.example.simpleapp.SuperAdmin;
 
+import android.app.Activity;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.simpleapp.R;
+import com.example.simpleapp.SuperAdmin.Screate.Hmodel;
 
 import java.util.List;
 
-public class SHallAdminAdapter extends RecyclerView.Adapter<SHallAdminAdapter.SHallViewHolder> {
+public class SHallAdminAdapter extends ArrayAdapter<SHallAdminModel> {
 
-    private Context mCtx;
-    private List<com.example.simpleapp.SuperAdmin.SHallAdminModel> hmList;
+    private Activity context;
+    private List<SHallAdminModel> sHallAdminModelList;
 
-    public SHallAdminAdapter(Context mCtx, List<com.example.simpleapp.SuperAdmin.SHallAdminModel> hmList) {
-        this.mCtx = mCtx;
-        this.hmList = hmList;
+    public SHallAdminAdapter(Activity context, List<SHallAdminModel> sHallAdminModelList ){
+        super(context, R.layout.recyclerview_halladminlist, sHallAdminModelList);
+        this.context = context;
+        this.sHallAdminModelList = sHallAdminModelList;
     }
 
     @NonNull
     @Override
-    public SHallViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(mCtx).inflate(R.layout.recyclerview_halladminlist,parent,false);
-        return new SHallViewHolder(view);
-    }
+    public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
+        LayoutInflater inflater = context.getLayoutInflater();
 
-    @Override
-    public void onBindViewHolder(@NonNull SHallViewHolder holder, int position) {
-        com.example.simpleapp.SuperAdmin.SHallAdminModel hm = hmList.get(position);
-        holder.textViewName.setText(hm.fullname);
-        holder.textViewName1.setText(hm.assignedhall);
-    }
+        View listViewItem = inflater.inflate(R.layout.recyclerview_halladminlist, null, true);
 
-    @Override
-    public int getItemCount() {
-        return hmList.size();
-    }
+        TextView textViewName = (TextView) listViewItem.findViewById(R.id.HALLADMINNAME);
+        TextView textViewName1 = (TextView) listViewItem.findViewById(R.id.ASSIGNHALLNAME);
 
-    class SHallViewHolder extends RecyclerView.ViewHolder {
-        TextView textViewName,textViewName1;
 
-        public SHallViewHolder(@NonNull View itemView) {
-            super(itemView);
+        SHallAdminModel sHallAdminModel= sHallAdminModelList.get(position);
 
-            textViewName = itemView.findViewById(R.id.HALLADMINNAME);
-            textViewName1 = itemView.findViewById(R.id.ASSIGNHALLNAME);
+        textViewName.setText(sHallAdminModel.getFullname());
+        textViewName1.setText(sHallAdminModel.getAssignedhall());
 
-        }
+
+        return listViewItem;
+
     }
 }

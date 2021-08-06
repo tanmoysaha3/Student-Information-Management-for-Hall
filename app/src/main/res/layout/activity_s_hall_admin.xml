@@ -11,7 +11,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="@color/colorPrimaryDark">
+        android:background="@drawable/s3">
         <ImageButton
             android:id="@+id/back_button"
             android:layout_width="wrap_content"
@@ -38,7 +38,7 @@
             android:id="@+id/assignhalladminpage"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:background="@drawable/assign"
+            android:background="@drawable/assignstudent"
             android:layout_centerVertical="true"
             android:layout_marginRight="15dp"
             android:layout_alignParentRight="true"
@@ -50,11 +50,11 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <androidx.recyclerview.widget.RecyclerView
+        <ListView
             android:id="@+id/recyclerView"
+            android:background="@drawable/s3"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
-
 
     </RelativeLayout>
 

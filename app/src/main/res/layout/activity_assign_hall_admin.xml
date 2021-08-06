@@ -10,7 +10,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="@color/colorPrimaryDark">
+        android:background="@drawable/s3">
         <ImageButton
             android:id="@+id/back_button"
             android:layout_width="wrap_content"
@@ -47,8 +47,9 @@
             android:layout_width="150dp"
             android:layout_height="150dp"
             android:layout_centerHorizontal="true"
-            android:src="@drawable/assign"
-            android:layout_margin="20dp"/>
+            android:src="@drawable/ic_baseline_person_add_alt_1_24"
+            android:layout_margin="20dp"
+            app:tint="@color/best" />
 
         <TextView
             android:id="@+id/tt1"
@@ -65,33 +66,24 @@
             />
 
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/card1"
+
+        <EditText
             android:layout_below="@+id/tt1"
+            android:id="@+id/adminname"
             android:layout_width="match_parent"
             android:layout_height="60dp"
-            app:cardCornerRadius="40dp"
-            android:layout_marginTop="10dp"
+            android:background="@drawable/bottom_button"
+            android:hint="Hall Admin Name"
+            android:padding="15dp"
+            android:layout_marginTop="30dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            app:cardBackgroundColor="@null"
-            >
-
-
-
-            <Spinner
-                android:id="@+id/adminname"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:padding="18dp"
-                />
-
-
-        </androidx.cardview.widget.CardView>
-
+            android:inputType="text"
+            android:textColor="@color/best"
+            android:textColorHint="@color/best"/>
         <TextView
             android:id="@+id/tt2"
-            android:layout_below="@id/card1"
+            android:layout_below="@id/adminname"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Select Hall :"
@@ -133,9 +125,9 @@
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
             android:layout_marginTop="35dp"
-            android:textColor="@drawable/item"
+            android:textColor="@color/white"
             android:textStyle="bold"
-            android:background="@drawable/item"
+            android:background="@drawable/border1"
             />
 
 
