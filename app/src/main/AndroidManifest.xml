@@ -55,7 +55,6 @@
         <activity android:name=".HallAdmin.HallAdminDashboard" />
         <activity android:name=".Student.StudentResister" />
         <activity android:name=".SuperAdmin.HallAdminCreate" />
-        <activity android:name=".SuperAdmin.SuperRegister" />
         <activity android:name=".SuperAdmin.SuperLogin" />
         <activity android:name=".HallAdmin.HallAdminLogin" />
         <activity android:name=".SuperAdmin.MainDashboard" />
