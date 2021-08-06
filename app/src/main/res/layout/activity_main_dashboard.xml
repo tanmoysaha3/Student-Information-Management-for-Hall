@@ -1,87 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
+    android:gravity="top"
+    android:padding="5dp"
     android:orientation="vertical"
-    android:background="@color/white"
     tools:context=".SuperAdmin.MainDashboard">
 
-    <androidx.cardview.widget.CardView
+
+    <RelativeLayout
+        android:id="@+id/R1"
         android:layout_width="match_parent"
-        android:layout_height="130dp"
-        app:contentPaddingBottom="@dimen/cardview_default_elevation"
+        android:layout_height="57dp"
+        android:background="@drawable/s3"
         tools:ignore="MissingConstraints">
 
-        <LinearLayout
-            android:id="@+id/R1"
-            android:layout_width="match_parent"
-            android:layout_height="130dp"
-            android:background="@color/colorPrimaryDark"
-            android:paddingLeft="15dp"
-            android:paddingRight="15dp"
-            android:gravity="center"
-            android:layout_gravity="center"
-            android:orientation="vertical"
-            tools:ignore="MissingConstraints">
+        <com.blogspot.atifsoftwares.circularimageview.CircularImageView
+            android:id="@+id/profileImage"
+            android:layout_width="?attr/actionBarSize"
+            android:layout_height="?attr/actionBarSize"
+            android:src="@drawable/ic_person_black_24dp"
+            android:layout_marginLeft="2dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="2dp"
+            tools:ignore="MissingConstraints" />
 
-            <com.blogspot.atifsoftwares.circularimageview.CircularImageView
-                android:id="@+id/profileImage"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:layout_gravity="start"
-                android:layout_marginTop="25dp"
-                android:background="@null"
-                android:cropToPadding="true"
-                android:src="@drawable/ic_person_black_24dp"
-                app:c_border="true"
-                app:c_border_color="@null"
-                app:c_border_width="4dp"
-                app:c_shadow_radius="@android:integer/config_longAnimTime"
-                tools:ignore="MissingConstraints" />
+        <Button
+            android:id="@+id/helpbutton1"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginRight="15dp"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@id/createhalladminbutton"
+            android:backgroundTint="@color/best"
+            android:background="@drawable/ic_baseline_help_24"
+            />
 
-            <Button
-                android:id="@+id/createhalladminbutton"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_gravity="end"
-                android:layout_marginTop="-35dp"
-                android:backgroundTint="@color/best"
-                android:background="@drawable/ic_baseline_add_circle_24"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+        <Button
+            android:id="@+id/createhalladminbutton"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginRight="15dp"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@id/logoutButton"
+            android:backgroundTint="@color/best"
+            android:background="@drawable/ic_baseline_add_circle_24"
+            />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Super Admin"
-                android:textStyle="bold"
-                android:textColor="@color/colorPrimary"
-                android:textSize="25sp"
-                android:layout_marginLeft="16dp"
-                android:textAlignment="center"
-                android:layout_gravity="center"
-                android:layout_marginTop="-69dp"
-                />
 
-            <Button
-                android:id="@+id/logoutButton"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_gravity="end"
-                android:layout_marginTop="-74dp"
-                android:onClick="superlogout"
-                android:backgroundTint="@color/best"
-                android:background="@drawable/ic_baseline_power_settings_new_24"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:ignore="OnClick" />
+        <Button
+            android:id="@+id/logoutButton"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/ic_baseline_power_settings_new_24"
+            android:backgroundTint="@color/best"
+            android:onClick="superlogout"
+            tools:ignore="OnClick" />
 
 
 
@@ -89,34 +68,44 @@
 
 
 
-        </LinearLayout>
 
-    </androidx.cardview.widget.CardView>
+
+    </RelativeLayout>
+
+    <com.smarteist.autoimageslider.SliderView
+        android:id="@+id/image_slider"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        app:sliderAnimationDuration="1200"
+        app:sliderAutoCycleDirection="back_and_forth"
+        app:sliderAutoCycleEnabled="true"
+        app:sliderIndicatorAnimationDuration="1200"
+        app:sliderIndicatorGravity="center_horizontal|bottom"
+        app:sliderIndicatorMargin="15dp"
+        app:sliderIndicatorOrientation="horizontal"
+        app:sliderIndicatorPadding="3dp"
+        app:sliderIndicatorRadius="2dp"
+        app:sliderIndicatorSelectedColor="@color/best"
+        app:sliderIndicatorUnselectedColor="@color/white"
+        app:sliderScrollTimeInSec="4"
+        app:sliderStartAutoCycle="true"/>
+
+
 
     <LinearLayout
         android:id="@+id/R2"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="130dp"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="20dp"
-        android:background="@color/background"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints">
 
 
         <ScrollView
             android:id="@+id/scrollView2"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="5dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            >
 
 
             <LinearLayout
@@ -138,7 +127,7 @@
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="140dp"
+                        android:layout_height="150dp"
                         android:orientation="horizontal"
                         android:layout_weight="1"
                         android:clipToPadding="false"
@@ -150,14 +139,15 @@
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
-                            android:layout_margin="15dp"
-                            android:layout_marginBottom="10dp"
+                            android:layout_marginRight="3dp"
+                            android:clickable="true"
                             >
 
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:gravity="center"
+                                android:background="@drawable/s3"
                                 android:orientation="vertical">
 
                                 <ImageView
@@ -187,21 +177,23 @@
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
-                            android:layout_margin="15dp"
-                            android:layout_marginBottom="10dp"
+                            android:layout_marginLeft="3dp"
+                            android:clickable="true"
+
                             >
 
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:gravity="center"
+                                android:background="@drawable/s3"
                                 android:orientation="vertical">
 
                                 <ImageView
                                     android:layout_width="64dp"
                                     android:layout_height="64dp"
                                     android:padding="2dp"
-                                    android:src="@drawable/employee1"/>
+                                    android:src="@drawable/employee"/>
 
                                 <TextView
                                     android:layout_width="wrap_content"
@@ -224,7 +216,7 @@
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="140dp"
+                        android:layout_height="150dp"
                         android:orientation="horizontal"
                         android:layout_weight="1"
                         android:clipToPadding="false"
@@ -236,21 +228,23 @@
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
-                            android:layout_margin="15dp"
-                            android:clickable="false"
+                            android:layout_marginRight="3dp"
+                            android:layout_marginTop="3dp"
+                            android:clickable="true"
                             >
 
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:gravity="center"
+                                android:background="@drawable/s3"
                                 android:orientation="vertical">
 
                                 <ImageView
                                     android:layout_width="64dp"
                                     android:layout_height="64dp"
                                     android:padding="2dp"
-                                    android:src="@drawable/studentr"/>
+                                    android:src="@drawable/student"/>
 
                                 <TextView
                                     android:layout_width="wrap_content"
@@ -273,14 +267,16 @@
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
-                            android:layout_margin="15dp"
-                            android:clickable="false"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginTop="3dp"
+                            android:clickable="true"
                             >
 
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:gravity="center"
+                                android:background="@drawable/s3"
                                 android:orientation="vertical">
 
                                 <ImageView
@@ -330,4 +326,4 @@
     </LinearLayout>
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

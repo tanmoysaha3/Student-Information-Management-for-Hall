@@ -87,7 +87,7 @@ public class HallAdminCreate extends AppCompatActivity {
                 signinuser(fullname,email,password);
             }
         });
-        
+
 
 
         mdback_halladmin.setOnClickListener(new View.OnClickListener() {
