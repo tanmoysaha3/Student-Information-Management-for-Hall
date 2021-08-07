@@ -8,6 +8,34 @@
     tools:context=".HallAdmin.Create.NotAssignedStudents">
 
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@drawable/s3">
+        <ImageButton
+            android:id="@+id/back_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_arrow_back_black_24dp"
+            android:background="@null"
+            android:layout_marginLeft="10dp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Assign Student"
+            android:layout_toRightOf="@id/back_button"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="25dp"
+            android:fontFamily="serif"
+            android:textColor="@color/best"
+            android:textStyle="bold"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
+
+    </RelativeLayout>
+
     <ListView
         android:id="@+id/recviewnst"
         android:layout_width="match_parent"

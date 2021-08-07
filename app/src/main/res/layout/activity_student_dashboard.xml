@@ -7,103 +7,100 @@
     android:orientation="vertical"
     android:layout_gravity="center"
     android:gravity="top"
+    android:background="@drawable/s3"
     tools:context=".Student.StudentDashboard">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:background="@color/colorPrimaryDark"
-        >
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/colorPrimaryDark"
-            android:layout_margin="5dp"
-            >
-
-            <com.blogspot.atifsoftwares.circularimageview.CircularImageView
-                android:id="@+id/mainprofileImage"
-                android:layout_width="?attr/actionBarSize"
-                android:layout_height="?attr/actionBarSize"
-                android:src="@drawable/ic_person_black_24dp"
-                android:tint="@color/colorPrimaryDark"
-                app:c_border="false"
-                app:c_border_color="#47A110"
-                app:c_border_width="4dp"
-                app:c_shadow_radius="@android:integer/config_longAnimTime"
-                tools:ignore="MissingConstraints" />
-
-
-            <ImageButton
-                android:id="@+id/Studentmore"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_baseline_more_vert_24"
-                android:background="@null"
-                android:layout_marginTop="10dp"
-                android:layout_alignParentRight="true"
-                android:layout_marginRight="5dp"
-                android:tint="@color/best"
-                />
-
-            <ImageButton
-                android:id="@+id/p"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_power_logout_new_black_24dp"
-                android:background="@null"
-                android:layout_alignParentRight="true"
-                android:layout_toLeftOf="@id/Studentmore"
-                android:tint="@color/best"
-                android:layout_marginTop="10dp"
-                android:layout_marginRight="50dp"
-                android:onClick="logoutstudent"
-                />
-
-
-
-
-
-        </RelativeLayout>
-    </LinearLayout>
-
     <RelativeLayout
+        android:id="@+id/R1"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        >
+        android:layout_height="57dp"
+        android:background="@drawable/s3"
+        tools:ignore="MissingConstraints">
 
-        <EditText
-            android:id="@+id/seachbatchmate"
-            android:layout_width="match_parent"
+        <com.blogspot.atifsoftwares.circularimageview.CircularImageView
+            android:id="@+id/mainprofileImage"
+            android:layout_width="?attr/actionBarSize"
             android:layout_height="?attr/actionBarSize"
-            android:background="@drawable/search"
-            android:drawableTint="#9E989B"
-            android:padding="10dp"
-            android:hint="Search"
-            android:lines="1"
-            android:maxLines="1"
-            android:drawableStart="@drawable/ic_search_black_24dp"
-            android:layout_alignParentEnd="true"
+            android:src="@drawable/ic_person_black_24dp"
+            android:layout_marginLeft="2dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="2dp"
+            tools:ignore="MissingConstraints" />
 
-
+        <Button
+            android:id="@+id/helpbutton1"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginRight="15dp"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@id/logoutButton"
+            android:backgroundTint="@color/best"
+            android:background="@drawable/ic_baseline_help_24"
             />
+
+        <Button
+            android:id="@+id/Studentmore"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:backgroundTint="@color/best"
+            android:background="@drawable/ic_baseline_more_vert_24"
+            />
+
+
+        <Button
+            android:id="@+id/logoutButton"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginRight="15dp"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@id/Studentmore"
+            android:background="@drawable/ic_baseline_power_settings_new_24"
+            android:backgroundTint="@color/best"
+            android:onClick="studentlogout"
+            tools:ignore="OnClick" />
+
+
+
+
+
 
 
 
 
     </RelativeLayout>
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        >
 
-    <LinearLayout
+
+
+        <SearchView
+            android:id="@+id/seachbatchmate1"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@drawable/search"
+            android:iconifiedByDefault="false"
+            />
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerView1"
+        <ListView
+            android:id="@+id/recyclerView"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent" />
 
-    </LinearLayout>
+
+    </RelativeLayout>
 
 </LinearLayout>
