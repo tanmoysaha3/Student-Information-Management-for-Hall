@@ -18,7 +18,7 @@
             android:textAlignment="center"
             android:textSize="20sp"
             android:textColor="@color/best"
-            android:background="#FFF200"
+            android:background="@drawable/s3"
             />
 
         <EditText
@@ -115,10 +115,11 @@
             android:id="@+id/StudentaAssigned"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="40dp"
+            android:layout_margin="20dp"
             android:text="Assign"
+            android:textColor="@color/white"
             android:textStyle="bold"
-            android:background="#FFF200"/>
+            android:background="@drawable/border1"/>
 
 
     </LinearLayout>

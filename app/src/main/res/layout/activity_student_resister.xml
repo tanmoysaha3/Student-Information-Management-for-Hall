@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="@drawable/s3"
     android:gravity="center"
     tools:context=".Student.StudentResister">
 
@@ -37,7 +37,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="arial"
             android:textStyle="bold"
-            android:textColor="#4A148C"
+            android:textColor="@color/best"
             android:text="Jashore University of Science and Technology"
             android:textAlignment="center"
             />
@@ -68,9 +68,10 @@
                         android:layout_alignParentTop="true"
                         android:textSize="20sp"
                         android:padding="26dp"
-                        android:textColor="@color/colorPrimaryDark"
+                        android:fontFamily="sans-serif-black"
+                        android:textColor="@color/best"
                         android:textStyle="bold"
-                        android:background="@drawable/button"/>
+                        />
 
                     <EditText
                         android:id="@+id/fullName"
@@ -79,6 +80,9 @@
                         android:layout_height="wrap_content"
                         android:background="@drawable/bottom_button"
                         android:ems="10"
+                        android:drawableStart="@drawable/ic_person_black_24dp"
+                        android:drawablePadding="10dp"
+                        android:drawableTint="@color/best"
                         android:layout_marginLeft="30dp"
                         android:layout_marginRight="30dp"
                         android:layout_marginTop="25dp"
@@ -96,6 +100,9 @@
                         android:layout_height="wrap_content"
                         android:background="@drawable/bottom_button"
                         android:ems="10"
+                        android:drawableStart="@drawable/ic_mode_edit_black_24dp"
+                        android:drawablePadding="10dp"
+                        android:drawableTint="@color/best"
                         android:layout_marginLeft="30dp"
                         android:layout_marginRight="30dp"
                         android:layout_marginTop="25dp"
@@ -113,6 +120,9 @@
                         android:layout_height="wrap_content"
                         android:background="@drawable/bottom_button"
                         android:ems="10"
+                        android:drawableStart="@drawable/ic_email_black_24dp"
+                        android:drawablePadding="10dp"
+                        android:drawableTint="@color/best"
                         android:layout_marginLeft="30dp"
                         android:layout_marginRight="30dp"
                         android:layout_marginTop="20dp"
@@ -130,6 +140,9 @@
                         android:layout_height="wrap_content"
                         android:background="@drawable/bottom_button"
                         android:ems="10"
+                        android:drawableStart="@drawable/ic_lock_black_24dp"
+                        android:drawablePadding="10dp"
+                        android:drawableTint="@color/best"
                         android:layout_marginLeft="30dp"
                         android:layout_marginRight="30dp"
                         android:layout_marginTop="20dp"
@@ -150,9 +163,9 @@
                         android:layout_marginLeft="30dp"
                         android:layout_marginRight="30dp"
                         android:layout_marginTop="25dp"
-                        android:textColor="@drawable/item"
+                        android:textColor="@color/white"
                         android:textStyle="bold"
-                        android:background="@drawable/item"
+                        android:background="@drawable/border1"
                         />
 
                     <TextView
@@ -163,7 +176,8 @@
                         android:text="New? Create Account Here"
                         android:layout_marginTop="25dp"
                         android:textAlignment="center"
-                        android:textColor="@color/colorPrimaryDark"
+                        android:fontFamily="sans-serif-black"
+                        android:textColor="@color/best"
                         android:textSize="19sp"
                         />
 

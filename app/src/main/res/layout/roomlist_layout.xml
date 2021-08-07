@@ -5,8 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="100dp"
     android:orientation="vertical"
-
-
+    android:background="#00FFFFFF"
     >
 
     <androidx.cardview.widget.CardView
@@ -14,7 +13,6 @@
         android:layout_height="60dp"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="20dp"
-        app:cardCornerRadius="39dp"
         android:layout_marginLeft="14dp"
         android:layout_weight="3"
         android:layout_marginRight="14dp">
@@ -23,8 +21,7 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-
-
+            android:background="#00FFFFFF"
             >
 
             <LinearLayout

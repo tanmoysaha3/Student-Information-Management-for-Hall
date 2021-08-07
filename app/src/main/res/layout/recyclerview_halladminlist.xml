@@ -2,25 +2,23 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="100dp"
+    android:layout_height="80dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_gravity="top"
-    android:gravity="top"
-    android:background="#FAF7F7"
-    android:padding="10dp"
+    android:gravity="center"
     >
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:clipToPadding="true"
-        app:cardCornerRadius="12dp"
-        app:cardBackgroundColor="#FFFFFF"
+        app:cardBackgroundColor="#00FFFFFF"
         tools:ignore="MissingConstraints">
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
+            android:background="#00FFFFFF"
             tools:ignore="MissingConstraints">
 
 
@@ -29,59 +27,30 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAlignment="textStart"
-                android:paddingLeft="15dp"
+                android:paddingLeft="10dp"
                 android:layout_marginTop="10dp"
                 android:text="Hall Admin Name"
-                android:gravity="center"
                 android:textStyle="bold"
                 android:textColor="@color/colorPrimary"
                 android:textSize="20sp"
-                android:fontFamily="sans-serif-black"
+                android:fontFamily="serif"
                 tools:ignore="RtlCompat" />
 
             <TextView
                 android:id="@+id/ASSIGNHALLNAME"
                 android:layout_width="wrap_content"
                 android:layout_height="25dp"
-                android:layout_toRightOf="@id/hint"
                 android:textAlignment="textStart"
                 android:paddingLeft="10dp"
                 android:text="Hall Name"
                 android:layout_marginTop="10dp"
                 android:layout_below="@id/HALLADMINNAME"
                 android:gravity="center"
-                android:textStyle="bold"
                 android:textColor="@color/colorPrimary"
                 android:textSize="15sp"
                 android:fontFamily="serif"
                 android:layout_marginBottom="12dp"
                 tools:ignore="RtlCompat" />
-
-            <TextView
-                android:id="@+id/hint"
-                android:layout_width="wrap_content"
-                android:layout_height="25dp"
-                android:textAlignment="textStart"
-                android:paddingLeft="15dp"
-                android:layout_marginTop="10dp"
-                android:text="Assigned Hall:"
-                android:layout_marginBottom="12dp"
-                android:layout_below="@id/HALLADMINNAME"
-                android:gravity="center"
-                android:textStyle="bold"
-                android:textColor="@color/colorPrimary"
-                android:textSize="15sp"
-                android:fontFamily="serif"
-                tools:ignore="RtlCompat" />
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_baseline_arrow_list_ios_24"
-                android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"
-                android:layout_marginRight="15dp"
-                app:tint="@color/best" />
 
         </RelativeLayout>
 
