@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/colorPrimaryDark"
+    android:background="@drawable/s3"
     android:gravity="center"
     tools:context=".HallOfficials.HallOfficialLogin">
 
@@ -85,6 +85,9 @@
                         android:inputType="textEmailAddress"
                         android:padding="15dp"
                         android:textColor="@color/best"
+                        android:drawableStart="@drawable/ic_email_black_24dp"
+                        android:drawablePadding="10dp"
+                        android:drawableTint="@color/best"
                         android:textColorHint="@color/best"
                         />
 
@@ -96,6 +99,9 @@
                         android:background="@drawable/bottom_button"
                         android:ems="10"
                         android:layout_marginLeft="30dp"
+                        android:drawableStart="@drawable/ic_lock_black_24dp"
+                        android:drawablePadding="10dp"
+                        android:drawableTint="@color/best"
                         android:layout_marginRight="30dp"
                         android:layout_marginTop="20dp"
                         android:hint="Password"
@@ -128,10 +134,10 @@
                         android:layout_marginLeft="30dp"
                         android:layout_marginRight="30dp"
                         android:layout_marginTop="25dp"
-                        android:textColor="@drawable/item"
+                        android:textColor="@color/white"
                         android:textStyle="bold"
                         android:fontFamily="sans-serif-black"
-                        android:background="@drawable/item"
+                        android:background="@drawable/border1"
                         />
 
                 </RelativeLayout>
