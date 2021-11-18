@@ -40,11 +40,7 @@
         <activity android:name=".SuperAdmin.AssignHallAdmin" />
         <activity android:name=".SuperAdmin.SStudent">
 
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".SuperAdmin.Screate.Hall" />
         <activity android:name=".SuperAdmin.Screate.Floor" />
@@ -55,7 +51,15 @@
         <activity android:name=".HallAdmin.HallAdminDashboard" />
         <activity android:name=".Student.StudentResister" />
         <activity android:name=".SuperAdmin.HallAdminCreate" />
-        <activity android:name=".SuperAdmin.SuperLogin" />
+        <activity android:name=".SuperAdmin.SuperLogin">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
         <activity android:name=".HallAdmin.HallAdminLogin" />
         <activity android:name=".SuperAdmin.MainDashboard" />
         <activity android:name=".SpashScreen" />

@@ -1,5 +1,6 @@
 package com.example.simpleapp.Student;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -45,6 +46,7 @@ public class StudentDashboard extends AppCompatActivity {
     DatabaseReference databasestudent;
 
 
+    @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,8 +55,8 @@ public class StudentDashboard extends AppCompatActivity {
 
         mainprofileImage= findViewById(R.id.mainprofileImage);
         Studentmore= findViewById(R.id.Studentmore);
-        recyclerView=findViewById(R.id.recyclerView1);
-        seachbatchmate=findViewById(R.id.seachbatchmate);
+        recyclerView=findViewById(R.id.recyclerView);
+        seachbatchmate=findViewById(R.id.seachbatchmate1);
 
 
 

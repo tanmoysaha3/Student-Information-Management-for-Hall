@@ -15,8 +15,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.simpleapp.HallAdmin.HallAdminDashboard;
 import com.example.simpleapp.HallAdmin.HallAdminLogin;
+import com.example.simpleapp.HallOfficials.HallOfficialLogin;
+import com.example.simpleapp.HallOfficials.HallOfficialsDashboard;
 import com.example.simpleapp.MainActivity;
 import com.example.simpleapp.R;
+import com.example.simpleapp.Student.StudentDashboard;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -33,7 +36,7 @@ public class SuperLogin extends AppCompatActivity {
 
     private static final String TAG = "TAG";
     EditText mEmail, mPassword;
-    Button loginButton, back_button;
+    Button loginButton;
     FirebaseAuth fAuth;
     FirebaseAuth.AuthStateListener mAuthListner;
     FirebaseUser user;
@@ -48,18 +51,11 @@ public class SuperLogin extends AppCompatActivity {
 
         mEmail = findViewById(R.id.lEmail);
         mPassword = findViewById(R.id.lPassword);
-        back_button = findViewById(R.id.back_button);
         loginButton = findViewById(R.id.loginButton);
 
         fAuth = FirebaseAuth.getInstance();
 
 
-        back_button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), MainActivity.class));
-            }
-        });
 
 
         mAuthListner = new FirebaseAuth.AuthStateListener() {
@@ -124,7 +120,7 @@ public class SuperLogin extends AppCompatActivity {
                 if (!task.isSuccessful()) {
 
 
-                    Toast.makeText(SuperLogin.this, "Login not successfull", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(SuperLogin.this, "Login not ", Toast.LENGTH_SHORT).show();
 
                 } else {
 
@@ -161,7 +157,7 @@ public class SuperLogin extends AppCompatActivity {
                 }
                 else {
 
-                    Toast.makeText(SuperLogin.this, "You are not Super Admin", Toast.LENGTH_SHORT).show();
+                    checkIfhalladmin();
                 }
             }
 
@@ -171,24 +167,146 @@ public class SuperLogin extends AppCompatActivity {
             }
         });
 
-        //FirebaseUser users = FirebaseAuth.getInstance().getCurrentUser();
-        //boolean emailVerified = users.isEmailVerified();
-        /*if (!emailVerified) {
-            Toast.makeText(this, "Verify the Email Id", Toast.LENGTH_SHORT).show();
+
+    }
+
+    private void checkIfhalladmin() {
+
+        FirebaseUser users=FirebaseAuth.getInstance().getCurrentUser();
+        boolean emailVerified=users.isEmailVerified();
+        if(!emailVerified){
+            Toast.makeText(this,"Verify the Email Id",Toast.LENGTH_SHORT).show();
             fAuth.signOut();
             finish();
-        } else {
-            mEmail.getText().clear();
+        }
 
-            mPassword.getText().clear();
-            Intent intent = new Intent(SuperLogin.this, MainDashboard.class);
 
-            // Sending Email to Dashboard Activity using intent.
-            intent.putExtra(userEmail, email);
+        final String userEnteredUsername = mEmail.getText().toString().trim();
 
-            startActivity(intent);
+        DatabaseReference reference1 = FirebaseDatabase.getInstance().getReference("HallAdmin Accounts");
+        Query query1 = reference1.orderByChild("email").equalTo(userEnteredUsername);
 
-        }*/
+        query1.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                if (snapshot.exists()) {
+
+                    mEmail.getText().clear();
+
+                    mPassword.getText().clear();
+                    Intent intent = new Intent(SuperLogin.this, HallAdminDashboard.class);
+
+                    // Sending Email to Dashboard Activity using intent.
+                    intent.putExtra(userEmail, email);
+
+                    startActivity(intent);
+
+                }
+                else {
+
+                    checkIfhallofficials();
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
+
+    private void checkIfhallofficials() {
+
+        FirebaseUser users=FirebaseAuth.getInstance().getCurrentUser();
+        boolean emailVerified=users.isEmailVerified();
+        if(!emailVerified){
+            Toast.makeText(this,"Verify the Email Id",Toast.LENGTH_SHORT).show();
+            fAuth.signOut();
+            finish();
+        }
+
+
+        final String userEnteredUsername = mEmail.getText().toString().trim();
+
+        DatabaseReference reference2 = FirebaseDatabase.getInstance().getReference("Hall Officials Accounts");
+        Query query2 = reference2.orderByChild("email").equalTo(userEnteredUsername);
+
+        query2.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                if (snapshot.exists()) {
+
+                    mEmail.getText().clear();
+
+                    mPassword.getText().clear();
+                    Intent intent = new Intent(SuperLogin.this, HallOfficialsDashboard.class);
+
+                    // Sending Email to Dashboard Activity using intent.
+                    intent.putExtra(userEmail, email);
+
+                    startActivity(intent);
+
+                }
+                else {
+
+                    checkIfstudent();
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
+
+    private void checkIfstudent() {
+
+        FirebaseUser users=FirebaseAuth.getInstance().getCurrentUser();
+        boolean emailVerified=users.isEmailVerified();
+        if(!emailVerified){
+            Toast.makeText(this,"Verify the Email Id",Toast.LENGTH_SHORT).show();
+            fAuth.signOut();
+            finish();
+        }
+
+
+        final String userEnteredUsername = mEmail.getText().toString().trim();
+
+        DatabaseReference reference3 = FirebaseDatabase.getInstance().getReference("Student Accounts");
+        Query query3 = reference3.orderByChild("email").equalTo(userEnteredUsername);
+
+        query3.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                if (snapshot.exists()) {
+
+                    mEmail.getText().clear();
+
+                    mPassword.getText().clear();
+                    Intent intent = new Intent(SuperLogin.this, StudentDashboard.class);
+
+                    // Sending Email to Dashboard Activity using intent.
+                    intent.putExtra(userEmail, email);
+
+                    startActivity(intent);
+
+                }
+                else {
+
+                    Toast.makeText(SuperLogin.this,"Email is not resistered", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
     }
 
 }
