@@ -4,346 +4,369 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/b2"
     tools:context=".SuperAdmin.SuperAdminEditProfile"
     android:orientation="vertical">
-
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="@drawable/s3">
-        <ImageButton
-            android:id="@+id/back_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:src="@drawable/ic_arrow_back_black_24dp"
-            android:background="@null"
-            android:layout_marginLeft="10dp"
-            />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Edit Profile"
-            android:layout_toRightOf="@id/back_button"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="25dp"
-            android:fontFamily="sans-serif-black"
-            android:textColor="@color/best"
-            android:textStyle="bold"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
-
-
-
-
-
-
-    </RelativeLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/white"
+        android:background="@drawable/border"
         android:orientation="vertical">
 
-        <ScrollView
+        <RelativeLayout
+            android:id="@+id/R1"
+            android:layout_width="match_parent"
+            android:layout_height="157dp"
+            android:background="@drawable/a"
+            tools:ignore="MissingConstraints">
+
+            <LinearLayout
+                android:id="@+id/l1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/b"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_margin="5dp"
+                    android:src="@drawable/logo"/>
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_margin="5dp"
+                    android:src="@drawable/hall"/>
+            </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/ttt1"
+                android:layout_below="@id/l1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Edit Profile"
+                android:fontFamily="serif"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:textSize="25sp"
+                android:gravity="center"
+                android:layout_marginTop="5dp"
+                />
+
+            <ImageButton
+                android:id="@+id/back_button"
+                android:layout_below="@id/ttt1"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_arrow_back_black_24dp"
+                android:background="@drawable/b"
+                android:layout_marginTop="20dp"
+                android:layout_centerHorizontal="true"
+                />
+        </RelativeLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            >
-            <LinearLayout
+            android:orientation="vertical">
+
+            <ScrollView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical">
-
+                >
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="100dp"
-                    android:background="@drawable/s3"
+                    android:layout_height="match_parent"
                     android:orientation="vertical">
+
+                    <com.blogspot.atifsoftwares.circularimageview.CircularImageView
+                        android:id="@+id/editprofileImage"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_gravity="center"
+                        android:cropToPadding="true"
+                        android:padding="10dp"
+                        android:layout_marginTop="10dp"
+                        android:src="@drawable/ic_person_black_24dp"
+                        android:tint="@color/best"
+                        app:c_border="true"
+                        app:c_border_color="@color/best"
+                        app:c_border_width="4dp"
+                        app:c_shadow_radius="@android:integer/config_longAnimTime" />
+
+                    <ImageButton
+                        android:id="@+id/goeditprofileImage"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/ic_baseline_add_a_photo_24"
+                        android:tint="@color/best"
+                        android:background="@drawable/circle"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="38dp"
+                        android:layout_marginTop="-36dp"
+                        />
+
+
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginRight="15dp"
+                        android:elevation="@dimen/cardview_compat_inset_shadow"
+                        android:layout_marginTop="60dp"
+                        >
+
+                        <RelativeLayout
+                            android:id="@+id/first"
+                            android:background="@drawable/border1"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+
+
+                            <TextView
+                                android:id="@+id/nameField"
+                                android:layout_width="120dp"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/v1"
+                                android:layout_marginStart="20dp"
+                                android:layout_centerVertical="true"
+                                android:fontFamily="sans-serif-black"
+                                android:text="Name :"
+                                android:textColor="@color/best"
+                                android:textSize="18sp" />
+
+                            <EditText
+                                android:id="@+id/editnameField1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/v1"
+                                android:layout_marginStart="4dp"
+                                android:layout_centerVertical="true"
+                                android:layout_marginEnd="20dp"
+                                android:layout_toRightOf="@id/nameField"
+                                android:fontFamily="sans-serif"
+                                android:textColor="@color/best"
+                                android:textSize="18sp" />
+
+
+
+                        </RelativeLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginRight="15dp"
+                        android:elevation="@dimen/cardview_compat_inset_shadow"
+                        android:layout_marginTop="20dp"
+                        >
+
+                        <RelativeLayout
+                            android:background="@drawable/border1"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+
+
+                            <TextView
+                                android:id="@+id/departmentField"
+                                android:layout_width="120dp"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/v1"
+                                android:layout_marginStart="20dp"
+                                android:layout_centerVertical="true"
+                                android:fontFamily="sans-serif-black"
+                                android:text="Department :"
+                                android:textColor="@color/best"
+                                android:textSize="18sp" />
+
+                            <EditText
+                                android:id="@+id/editdepartmentField1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/v1"
+                                android:layout_marginStart="4dp"
+                                android:layout_centerVertical="true"
+                                android:layout_marginEnd="20dp"
+                                android:layout_toRightOf="@id/departmentField"
+                                android:fontFamily="sans-serif"
+                                android:textColor="@color/best"
+                                android:textSize="18sp" />
+
+
+
+                        </RelativeLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginRight="15dp"
+                        android:elevation="@dimen/cardview_compat_inset_shadow"
+                        android:layout_marginTop="20dp"
+                        >
+
+                        <RelativeLayout
+                            android:background="@drawable/border1"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+
+
+                            <TextView
+                                android:id="@+id/designationField"
+                                android:layout_width="120dp"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/v1"
+                                android:layout_marginStart="20dp"
+                                android:layout_centerVertical="true"
+                                android:fontFamily="sans-serif-black"
+                                android:text="Designation :"
+                                android:textColor="@color/best"
+                                android:textSize="18sp" />
+
+                            <EditText
+                                android:id="@+id/editdesignationField1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/v1"
+                                android:layout_marginStart="4dp"
+                                android:layout_centerVertical="true"
+                                android:layout_marginEnd="20dp"
+                                android:layout_toRightOf="@id/designationField"
+                                android:fontFamily="sans-serif"
+                                android:textColor="@color/best"
+                                android:textSize="18sp" />
+
+
+
+                        </RelativeLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginRight="15dp"
+                        android:elevation="@dimen/cardview_compat_inset_shadow"
+                        android:layout_marginTop="20dp"
+                        >
+
+                        <RelativeLayout
+                            android:background="@drawable/border1"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+
+
+                            <TextView
+                                android:id="@+id/phoneField"
+                                android:layout_width="120dp"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/v1"
+                                android:layout_marginStart="20dp"
+                                android:layout_centerVertical="true"
+                                android:fontFamily="sans-serif-black"
+                                android:text="Phone NO :"
+                                android:textColor="@color/best"
+                                android:textSize="18sp" />
+
+                            <EditText
+                                android:id="@+id/editphoneField1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/v1"
+                                android:layout_marginStart="4dp"
+                                android:layout_centerVertical="true"
+                                android:layout_marginEnd="20dp"
+                                android:layout_toRightOf="@id/phoneField"
+                                android:fontFamily="sans-serif"
+                                android:textColor="@color/best"
+                                android:textSize="18sp" />
+
+
+
+                        </RelativeLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginRight="15dp"
+                        android:elevation="@dimen/cardview_compat_inset_shadow"
+                        android:layout_marginTop="20dp"
+                        >
+
+                        <RelativeLayout
+                            android:background="@drawable/border1"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+
+
+                            <TextView
+                                android:id="@+id/emailField"
+                                android:layout_width="120dp"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/v1"
+                                android:layout_marginStart="20dp"
+                                android:layout_centerVertical="true"
+                                android:fontFamily="sans-serif-black"
+                                android:text="Email :"
+                                android:textColor="@color/best"
+                                android:textSize="18sp" />
+
+                            <EditText
+                                android:id="@+id/editemailField1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/v1"
+                                android:layout_marginStart="4dp"
+                                android:layout_centerVertical="true"
+                                android:layout_marginEnd="20dp"
+                                android:layout_toRightOf="@id/emailField"
+                                android:fontFamily="sans-serif"
+                                android:textColor="@color/best"
+                                android:textSize="18sp" />
+
+
+
+                        </RelativeLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <Button
+                        android:id="@+id/updatebtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Update"
+                        android:layout_gravity="center"
+                        android:textColor="@color/best"
+                        android:layout_marginTop="40dp"
+                        android:fontFamily="sans-serif-black"
+                        android:background="@drawable/border1"
+                        />
 
                 </LinearLayout>
 
-
-
-                <com.blogspot.atifsoftwares.circularimageview.CircularImageView
-                    android:id="@+id/editprofileImage"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="-50dp"
-                    android:cropToPadding="true"
-                    android:padding="10dp"
-                    android:src="@drawable/ic_person_black_24dp"
-                    android:tint="@color/best"
-                    app:c_border="true"
-                    app:c_border_color="@color/best"
-                    app:c_border_width="4dp"
-                    app:c_shadow_radius="@android:integer/config_longAnimTime" />
-
-                <ImageButton
-                    android:id="@+id/goeditprofileImage"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:src="@drawable/ic_baseline_add_a_photo_24"
-                    android:tint="@color/best"
-                    android:background="@drawable/circle"
-                    android:layout_gravity="center"
-                    android:layout_marginStart="38dp"
-                    android:layout_marginTop="-36dp"
-                    />
+            </ScrollView>
 
 
 
-                <androidx.cardview.widget.CardView
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginRight="15dp"
-                    android:elevation="@dimen/cardview_compat_inset_shadow"
-                    android:layout_marginTop="60dp"
-                    >
-
-                    <RelativeLayout
-                        android:id="@+id/first"
-                        android:background="@drawable/s3"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
-
-
-
-                        <TextView
-                            android:id="@+id/nameField"
-                            android:layout_width="120dp"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@+id/v1"
-                            android:layout_marginStart="20dp"
-                            android:layout_centerVertical="true"
-                            android:fontFamily="sans-serif-black"
-                            android:text="Name :"
-                            android:textColor="@color/best"
-                            android:textSize="18sp" />
-
-                        <EditText
-                            android:id="@+id/editnameField1"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@+id/v1"
-                            android:layout_marginStart="4dp"
-                            android:layout_centerVertical="true"
-                            android:layout_marginEnd="20dp"
-                            android:layout_toRightOf="@id/nameField"
-                            android:fontFamily="sans-serif"
-                            android:textColor="@color/best"
-                            android:textSize="18sp" />
-
-
-
-                    </RelativeLayout>
-                </androidx.cardview.widget.CardView>
-
-                <androidx.cardview.widget.CardView
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginRight="15dp"
-                    android:elevation="@dimen/cardview_compat_inset_shadow"
-                    android:layout_marginTop="20dp"
-                    >
-
-                    <RelativeLayout
-                        android:background="@drawable/s3"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
-
-
-
-                        <TextView
-                            android:id="@+id/departmentField"
-                            android:layout_width="120dp"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@+id/v1"
-                            android:layout_marginStart="20dp"
-                            android:layout_centerVertical="true"
-                            android:fontFamily="sans-serif-black"
-                            android:text="Department :"
-                            android:textColor="@color/best"
-                            android:textSize="18sp" />
-
-                        <EditText
-                            android:id="@+id/editdepartmentField1"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@+id/v1"
-                            android:layout_marginStart="4dp"
-                            android:layout_centerVertical="true"
-                            android:layout_marginEnd="20dp"
-                            android:layout_toRightOf="@id/departmentField"
-                            android:fontFamily="sans-serif"
-                            android:textColor="@color/best"
-                            android:textSize="18sp" />
-
-
-
-                    </RelativeLayout>
-                </androidx.cardview.widget.CardView>
-
-                <androidx.cardview.widget.CardView
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginRight="15dp"
-                    android:elevation="@dimen/cardview_compat_inset_shadow"
-                    android:layout_marginTop="20dp"
-                    >
-
-                    <RelativeLayout
-                        android:background="@drawable/s3"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
-
-
-
-                        <TextView
-                            android:id="@+id/designationField"
-                            android:layout_width="120dp"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@+id/v1"
-                            android:layout_marginStart="20dp"
-                            android:layout_centerVertical="true"
-                            android:fontFamily="sans-serif-black"
-                            android:text="Designation :"
-                            android:textColor="@color/best"
-                            android:textSize="18sp" />
-
-                        <EditText
-                            android:id="@+id/editdesignationField1"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@+id/v1"
-                            android:layout_marginStart="4dp"
-                            android:layout_centerVertical="true"
-                            android:layout_marginEnd="20dp"
-                            android:layout_toRightOf="@id/designationField"
-                            android:fontFamily="sans-serif"
-                            android:textColor="@color/best"
-                            android:textSize="18sp" />
-
-
-
-                    </RelativeLayout>
-                </androidx.cardview.widget.CardView>
-
-                <androidx.cardview.widget.CardView
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginRight="15dp"
-                    android:elevation="@dimen/cardview_compat_inset_shadow"
-                    android:layout_marginTop="20dp"
-                    >
-
-                    <RelativeLayout
-                        android:background="@drawable/s3"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
-
-
-
-                        <TextView
-                            android:id="@+id/phoneField"
-                            android:layout_width="120dp"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@+id/v1"
-                            android:layout_marginStart="20dp"
-                            android:layout_centerVertical="true"
-                            android:fontFamily="sans-serif-black"
-                            android:text="Phone NO :"
-                            android:textColor="@color/best"
-                            android:textSize="18sp" />
-
-                        <EditText
-                            android:id="@+id/editphoneField1"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@+id/v1"
-                            android:layout_marginStart="4dp"
-                            android:layout_centerVertical="true"
-                            android:layout_marginEnd="20dp"
-                            android:layout_toRightOf="@id/phoneField"
-                            android:fontFamily="sans-serif"
-                            android:textColor="@color/best"
-                            android:textSize="18sp" />
-
-
-
-                    </RelativeLayout>
-                </androidx.cardview.widget.CardView>
-
-                <androidx.cardview.widget.CardView
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginRight="15dp"
-                    android:elevation="@dimen/cardview_compat_inset_shadow"
-                    android:layout_marginTop="20dp"
-                    >
-
-                    <RelativeLayout
-                        android:background="@drawable/s3"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
-
-
-
-                        <TextView
-                            android:id="@+id/emailField"
-                            android:layout_width="120dp"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@+id/v1"
-                            android:layout_marginStart="20dp"
-                            android:layout_centerVertical="true"
-                            android:fontFamily="sans-serif-black"
-                            android:text="Email :"
-                            android:textColor="@color/best"
-                            android:textSize="18sp" />
-
-                        <EditText
-                            android:id="@+id/editemailField1"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@+id/v1"
-                            android:layout_marginStart="4dp"
-                            android:layout_centerVertical="true"
-                            android:layout_marginEnd="20dp"
-                            android:layout_toRightOf="@id/emailField"
-                            android:fontFamily="sans-serif"
-                            android:textColor="@color/best"
-                            android:textSize="18sp" />
-
-
-
-                    </RelativeLayout>
-                </androidx.cardview.widget.CardView>
-
-                <Button
-                    android:id="@+id/updatebtn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Update"
-                    android:layout_gravity="center"
-                    android:textColor="@color/white"
-                    android:layout_marginTop="40dp"
-                    android:fontFamily="sans-serif-black"
-                    android:background="@drawable/border1"
-                    />
-
-            </LinearLayout>
-
-        </ScrollView>
-
-
+        </LinearLayout>
 
     </LinearLayout>
+
+
+
 
 </LinearLayout>

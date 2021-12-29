@@ -6,7 +6,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
@@ -17,6 +19,11 @@ import com.example.simpleapp.SuperAdmin.Screate.Hall;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.smarteist.autoimageslider.IndicatorView.animation.type.IndicatorAnimationType;
@@ -30,10 +37,12 @@ public class MainDashboard extends AppCompatActivity implements View.OnClickList
     FirebaseAuth fAuth;
     ImageView mainprofileImage;
     StorageReference storageReference;
+    TextView countstudent;
+    DatabaseReference databaseReference;
     FirebaseUser user;
+    int countstudents;
 
-    SliderView sliderView;
-    int[] images = {R.drawable.pic1, R.drawable.pic2, R.drawable.pic3,};
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,12 +56,34 @@ public class MainDashboard extends AppCompatActivity implements View.OnClickList
         createall=findViewById(R.id.createall);
         helpbutton1=findViewById(R.id.helpbutton1);
         mainprofileImage= findViewById(R.id.profileImage);
+        countstudent= findViewById(R.id.countstudent);
+        
 
         halladmincard.setOnClickListener(this);
         hallofficialcard.setOnClickListener(this);
         studentcard.setOnClickListener(this);
         createall.setOnClickListener(this);
 
+        databaseReference= FirebaseDatabase.getInstance().getReference("Student Accounts");
+
+        databaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if(snapshot.exists()){
+
+                    countstudents = (int) snapshot.getChildrenCount();
+                    countstudent.setText(Integer.toString(countstudents));
+                }
+                else {
+                    countstudent.setText(0);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
 
         mlcreatehalladmin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -61,14 +92,8 @@ public class MainDashboard extends AppCompatActivity implements View.OnClickList
             }
         });
 
-        sliderView = findViewById(R.id.image_slider);
 
-        SliderAdapter sliderAdapter = new SliderAdapter(images);
 
-        sliderView.setSliderAdapter(sliderAdapter);
-        sliderView.setIndicatorAnimation(IndicatorAnimationType.WORM);
-        sliderView.setSliderTransformAnimation(SliderAnimations.DEPTHTRANSFORMATION);
-        sliderView.startAutoCycle();
 
 
         mainprofileImage.setOnClickListener(new View.OnClickListener() {
@@ -128,6 +153,7 @@ public class MainDashboard extends AppCompatActivity implements View.OnClickList
             Intent intent = new Intent(com.example.simpleapp.SuperAdmin.MainDashboard.this,Hall.class);
             startActivity(intent);
         }
+
 
     }
 

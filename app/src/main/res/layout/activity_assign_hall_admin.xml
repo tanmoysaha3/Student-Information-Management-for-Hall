@@ -5,137 +5,139 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@drawable/b2"
     tools:context=".SuperAdmin.AssignHallAdmin">
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="@drawable/s3">
-        <ImageButton
-            android:id="@+id/back_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:src="@drawable/ic_arrow_back_black_24dp"
-            android:background="@null"
-            android:layout_marginLeft="10dp"
-            />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Hall Admin Assign"
-            android:layout_toRightOf="@id/back_button"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="25dp"
-            android:fontFamily="sans-serif-black"
-            android:textColor="@color/best"
-            android:textStyle="bold"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@drawable/border"
+        >
 
 
-
-
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <ImageView
-            android:id="@+id/logo4"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:layout_centerHorizontal="true"
-            android:src="@drawable/ic_baseline_person_add_alt_1_24"
-            android:layout_margin="20dp"
-            app:tint="@color/best" />
-
-        <TextView
-            android:id="@+id/tt1"
-            android:layout_below="@id/logo4"
+        <RelativeLayout
+            android:id="@+id/R1"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Select Hall Admin :"
-            android:textSize="20sp"
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="20dp"
-            android:textStyle="bold"
-            android:fontFamily="sans-serif-black"
-            android:textColor="@color/best"
-            />
+            android:layout_height="257dp"
+            android:background="@drawable/a"
+            tools:ignore="MissingConstraints">
+
+            <LinearLayout
+                android:id="@+id/l1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/b"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_margin="5dp"
+                    android:src="@drawable/logo"/>
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_margin="5dp"
+                    android:src="@drawable/hall"/>
+            </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/ttt1"
+                android:layout_below="@id/l1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Hall Admin Assign"
+                android:fontFamily="serif"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:textSize="25sp"
+                android:gravity="center"
+                android:layout_marginTop="5dp"
+                />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card2"
+                android:layout_below="@+id/ttt1"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                app:cardCornerRadius="10dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                app:cardBackgroundColor="@null"
+                >
+
+                <Spinner
+                    android:id="@+id/hallname"
+                    android:padding="7dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+
+
+            </androidx.cardview.widget.CardView>
+
+            <ImageButton
+                android:id="@+id/back_button"
+                android:layout_below="@id/card2"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_arrow_back_black_24dp"
+                android:background="@drawable/b"
+                android:layout_marginTop="20dp"
+                android:layout_centerHorizontal="true"
+                />
+        </RelativeLayout>
 
 
 
-        <EditText
-            android:layout_below="@+id/tt1"
-            android:id="@+id/adminname"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:background="@drawable/bottom_button"
-            android:hint="Hall Admin Name"
-            android:padding="15dp"
-            android:layout_marginTop="30dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:inputType="text"
-            android:textColor="@color/best"
-            android:textColorHint="@color/best"/>
-        <TextView
-            android:id="@+id/tt2"
-            android:layout_below="@id/adminname"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Select Hall :"
-            android:textSize="20sp"
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="20dp"
-            android:textStyle="bold"
-            android:textColor="@color/best"
-            android:fontFamily="sans-serif-black"
-            />
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/card2"
-            android:layout_below="@+id/tt2"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            app:cardCornerRadius="40dp"
-            android:layout_marginTop="30dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            app:cardBackgroundColor="@null"
+            android:layout_height="match_parent"
             >
 
-            <Spinner
-                android:id="@+id/hallname"
-                android:padding="18dp"
+
+            <EditText
+                android:id="@+id/adminname"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"/>
+                android:layout_height="60dp"
+                android:background="@drawable/border1"
+                android:hint="Hall Admin Name"
+                android:padding="15dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:inputType="text"
+                android:textColor="@color/best"
+                android:textColorHint="@color/best"/>
+
+            <Button
+                android:id="@+id/assignhallbutton"
+                android:layout_below="@id/adminname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Assign"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginTop="35dp"
+                android:textColor="@color/best"
+                android:textStyle="bold"
+                android:background="@drawable/border1"
+                />
 
 
-        </androidx.cardview.widget.CardView>
-
-        <Button
-            android:id="@+id/assignhallbutton"
-            android:layout_below="@id/card2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Assign"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
-            android:layout_marginTop="35dp"
-            android:textColor="@color/white"
-            android:textStyle="bold"
-            android:background="@drawable/border1"
-            />
 
 
 
 
 
+        </RelativeLayout>
+    </LinearLayout>
 
 
-    </RelativeLayout>
 
 </LinearLayout>

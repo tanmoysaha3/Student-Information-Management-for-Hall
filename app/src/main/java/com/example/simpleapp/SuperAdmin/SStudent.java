@@ -1,22 +1,28 @@
 package com.example.simpleapp.SuperAdmin;
 
+import android.app.Dialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.SearchView;
+import android.widget.Switch;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.simpleapp.HallAdmin.NotAssignedStudentAdapter;
 import com.example.simpleapp.R;
+import com.example.simpleapp.Student.Filter;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -33,6 +39,9 @@ public class SStudent extends AppCompatActivity {
     ListView recyclerView;
     List<SuperAdminHelperClass> stlist;
     EditText seachbatchmate1;
+    Button mcatagory;
+    ImageButton back;
+    TextView gone;
 
 
     DatabaseReference databasestudent;
@@ -44,6 +53,9 @@ public class SStudent extends AppCompatActivity {
 
         recyclerView = findViewById(R.id.recyclerView);
         seachbatchmate1 = findViewById(R.id.seachbatchmate1);
+        mcatagory = findViewById(R.id.catagory1);
+        gone = findViewById(R.id.gone);
+        back = findViewById(R.id.back_button);
 
 
 
@@ -116,9 +128,6 @@ public class SStudent extends AppCompatActivity {
             }
         });
 
-
-
-
         seachbatchmate1.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -127,6 +136,7 @@ public class SStudent extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
+
 
             }
 
@@ -144,9 +154,295 @@ public class SStudent extends AppCompatActivity {
             }
         });
 
+
+
+
+
+
+
+
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder dlg = new AlertDialog.Builder(SStudent.this);
+                        dlg.setTitle("Search by")
+                        .setItems(Filter.catagoryy, new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+
+                                String selected=Filter.catagoryy[which];
+
+                                if(selected.equals("Name")){
+                                    seachbatchmate1.addTextChangedListener(new TextWatcher() {
+                                        @Override
+                                        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+                                        }
+
+                                        @Override
+                                        public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+
+                                        }
+
+                                        @Override
+                                        public void afterTextChanged(Editable s) {
+
+                                            if(s.toString()!=null){
+                                                processsearch(s.toString());
+
+                                            }
+                                            else {
+                                                processsearch("");
+                                            }
+
+                                        }
+                                    });
+                                }
+
+                                else if(selected.equals("Roll No")){
+                                    seachbatchmate1.addTextChangedListener(new TextWatcher() {
+                                        @Override
+                                        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+                                        }
+
+                                        @Override
+                                        public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+
+                                        }
+
+                                        @Override
+                                        public void afterTextChanged(Editable s) {
+
+                                            if(s.toString()!=null){
+                                                processsearch1(s.toString());
+
+                                            }
+                                            else {
+                                                processsearch1("");
+                                            }
+
+                                        }
+                                    });
+                                }
+
+                                else if(selected.equals("Department")){
+                                    seachbatchmate1.addTextChangedListener(new TextWatcher() {
+                                        @Override
+                                        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+                                        }
+
+                                        @Override
+                                        public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+
+                                        }
+
+                                        @Override
+                                        public void afterTextChanged(Editable s) {
+
+                                            if(s.toString()!=null){
+                                                processsearch2(s.toString());
+
+                                            }
+                                            else {
+                                                processsearch2("");
+                                            }
+
+                                        }
+                                    });
+                                }
+
+                                else if(selected.equals("District")){
+                                    seachbatchmate1.addTextChangedListener(new TextWatcher() {
+                                        @Override
+                                        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+                                        }
+
+                                        @Override
+                                        public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+
+                                        }
+
+                                        @Override
+                                        public void afterTextChanged(Editable s) {
+
+                                            if(s.toString()!=null){
+                                                processsearch3(s.toString());
+
+                                            }
+                                            else {
+                                                processsearch3("");
+                                            }
+
+                                        }
+                                    });
+                                }
+
+                                else if(selected.equals("Blood Group")){
+                                    seachbatchmate1.addTextChangedListener(new TextWatcher() {
+                                        @Override
+                                        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+                                        }
+
+                                        @Override
+                                        public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+
+                                        }
+
+                                        @Override
+                                        public void afterTextChanged(Editable s) {
+
+                                            if(s.toString()!=null){
+                                                processsearch4(s.toString());
+
+                                            }
+                                            else {
+                                                processsearch4("");
+                                            }
+
+                                        }
+                                    });
+                                }
+
+                                else if(selected.equals("Phone No")){
+                                    seachbatchmate1.addTextChangedListener(new TextWatcher() {
+                                        @Override
+                                        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+                                        }
+
+                                        @Override
+                                        public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+
+                                        }
+
+                                        @Override
+                                        public void afterTextChanged(Editable s) {
+
+                                            if(s.toString()!=null){
+                                                processsearch5(s.toString());
+
+                                            }
+                                            else {
+                                                processsearch5("");
+                                            }
+
+                                        }
+                                    });
+                                }
+
+                                else if(selected.equals("Batch")){
+                                    seachbatchmate1.addTextChangedListener(new TextWatcher() {
+                                        @Override
+                                        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+                                        }
+
+                                        @Override
+                                        public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+
+                                        }
+
+                                        @Override
+                                        public void afterTextChanged(Editable s) {
+
+                                            if(s.toString()!=null){
+                                                processsearch6(s.toString());
+
+                                            }
+                                            else {
+                                                processsearch6("");
+                                            }
+
+                                        }
+                                    });
+                                }
+
+                            }
+
+
+                        }).show();
+
+            }
+        });
+
     }
 
     private void processsearch(String s) {
+        Query query=FirebaseDatabase.getInstance().getReference().child("Student Accounts").orderByChild("fullname").startAt(s).endAt(s+"\uf8ff");
+
+        query.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot datasnapshot) {
+
+                stlist.clear();
+
+                for (DataSnapshot hallSnapshot : datasnapshot.getChildren()){
+                    SuperAdminHelperClass superAdminHelperClass = hallSnapshot.getValue(SuperAdminHelperClass.class);
+
+                    stlist.add(superAdminHelperClass);
+
+
+                }
+
+                ArrayAdapter adapter= new NotAssignedStudentAdapter(com.example.simpleapp.SuperAdmin.SStudent.this, stlist);
+                recyclerView.setAdapter(adapter);
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+
+        stlist=new ArrayList<>();
+    }
+
+    private void processsearch1(String s) {
+        Query query=FirebaseDatabase.getInstance().getReference().child("Student Accounts").orderByChild("rollno").startAt(s).endAt(s+"\uf8ff");
+
+        query.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot datasnapshot) {
+
+                stlist.clear();
+
+                for (DataSnapshot hallSnapshot : datasnapshot.getChildren()){
+                    SuperAdminHelperClass superAdminHelperClass = hallSnapshot.getValue(SuperAdminHelperClass.class);
+
+                    stlist.add(superAdminHelperClass);
+
+
+                }
+
+                ArrayAdapter adapter= new NotAssignedStudentAdapter(com.example.simpleapp.SuperAdmin.SStudent.this, stlist);
+                recyclerView.setAdapter(adapter);
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+
+        stlist=new ArrayList<>();
+    }
+
+    private void processsearch2(String s) {
         Query query=FirebaseDatabase.getInstance().getReference().child("Student Accounts").orderByChild("department").startAt(s).endAt(s+"\uf8ff");
 
         query.addValueEventListener(new ValueEventListener() {
@@ -177,6 +473,140 @@ public class SStudent extends AppCompatActivity {
 
         stlist=new ArrayList<>();
     }
+
+    private void processsearch3(String s) {
+        Query query=FirebaseDatabase.getInstance().getReference().child("Student Accounts").orderByChild("district").startAt(s).endAt(s+"\uf8ff");
+
+        query.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot datasnapshot) {
+
+                stlist.clear();
+
+                for (DataSnapshot hallSnapshot : datasnapshot.getChildren()){
+                    SuperAdminHelperClass superAdminHelperClass = hallSnapshot.getValue(SuperAdminHelperClass.class);
+
+                    stlist.add(superAdminHelperClass);
+
+
+                }
+
+                ArrayAdapter adapter= new NotAssignedStudentAdapter(com.example.simpleapp.SuperAdmin.SStudent.this, stlist);
+                recyclerView.setAdapter(adapter);
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+
+        stlist=new ArrayList<>();
+    }
+
+    private void processsearch4(String s) {
+        Query query=FirebaseDatabase.getInstance().getReference().child("Student Accounts").orderByChild("bloodgroup").startAt(s).endAt(s+"\uf8ff");
+
+        query.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot datasnapshot) {
+
+                stlist.clear();
+
+                for (DataSnapshot hallSnapshot : datasnapshot.getChildren()){
+                    SuperAdminHelperClass superAdminHelperClass = hallSnapshot.getValue(SuperAdminHelperClass.class);
+
+                    stlist.add(superAdminHelperClass);
+
+
+                }
+
+                ArrayAdapter adapter= new NotAssignedStudentAdapter(com.example.simpleapp.SuperAdmin.SStudent.this, stlist);
+                recyclerView.setAdapter(adapter);
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+
+        stlist=new ArrayList<>();
+    }
+
+    private void processsearch5(String s) {
+        Query query=FirebaseDatabase.getInstance().getReference().child("Student Accounts").orderByChild("phoneno").startAt(s).endAt(s+"\uf8ff");
+
+        query.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot datasnapshot) {
+
+                stlist.clear();
+
+                for (DataSnapshot hallSnapshot : datasnapshot.getChildren()){
+                    SuperAdminHelperClass superAdminHelperClass = hallSnapshot.getValue(SuperAdminHelperClass.class);
+
+                    stlist.add(superAdminHelperClass);
+
+
+                }
+
+                ArrayAdapter adapter= new NotAssignedStudentAdapter(com.example.simpleapp.SuperAdmin.SStudent.this, stlist);
+                recyclerView.setAdapter(adapter);
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+
+        stlist=new ArrayList<>();
+    }
+
+    private void processsearch6(String s) {
+        Query query=FirebaseDatabase.getInstance().getReference().child("Student Accounts").orderByChild("batch").startAt(s).endAt(s+"\uf8ff");
+
+        query.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot datasnapshot) {
+
+                stlist.clear();
+
+                for (DataSnapshot hallSnapshot : datasnapshot.getChildren()){
+                    SuperAdminHelperClass superAdminHelperClass = hallSnapshot.getValue(SuperAdminHelperClass.class);
+
+                    stlist.add(superAdminHelperClass);
+
+
+                }
+
+                ArrayAdapter adapter= new NotAssignedStudentAdapter(com.example.simpleapp.SuperAdmin.SStudent.this, stlist);
+                recyclerView.setAdapter(adapter);
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+
+        stlist=new ArrayList<>();
+    }
+
+
+
+
+
+
 
 
     @Override

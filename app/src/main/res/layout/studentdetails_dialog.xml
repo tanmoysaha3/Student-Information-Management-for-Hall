@@ -10,7 +10,8 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="@drawable/s3">
+        android:background="#00FFFFFF"
+        >
 
         <ImageButton
             android:id="@+id/back_button"
@@ -33,7 +34,6 @@
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/s3"
             android:scrollbarFadeDuration="@integer/dialogplus_animation_default_duration"
             >
             <LinearLayout
@@ -70,7 +70,6 @@
                         android:id="@+id/first"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:background="@drawable/s3"
                         >
 
 
@@ -244,7 +243,6 @@
                         android:id="@+id/second"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:background="@drawable/s3"
                         >
 
 
@@ -399,7 +397,6 @@
                         android:id="@+id/third"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:background="@drawable/s3"
                         >
 
                         <TextView
@@ -548,7 +545,6 @@
                         android:id="@+id/fourth"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:background="@drawable/s3"
                         >
 
                         <TextView
