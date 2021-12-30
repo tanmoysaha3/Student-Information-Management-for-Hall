@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:gravity="center"
     android:orientation="vertical"
-    android:background="@drawable/s3"
+    android:background="@drawable/c"
     tools:context=".SuperAdmin.Screate.Floor">
 
     <androidx.cardview.widget.CardView
@@ -24,9 +24,9 @@
             <LinearLayout
                 android:id="@+id/R1"
                 android:layout_width="match_parent"
-                android:layout_height="170dp"
+                android:layout_height="180dp"
                 android:orientation="vertical"
-                android:background="@null"
+                android:background="@drawable/b1"
                 tools:ignore="MissingConstraints">
 
                 <ScrollView
@@ -46,8 +46,8 @@
                             android:layout_height="wrap_content"
                             android:text="Create Floor"
                             android:textAlignment="center"
-                            android:textColor="@color/colorPrimary"
-                            android:textSize="22sp"
+                            android:textColor="@color/white"
+                            android:textSize="29sp"
                             android:gravity="center"
                             android:layout_marginTop="8dp"
                             android:fontFamily="sans-serif-black"
@@ -66,7 +66,6 @@
                             android:layout_marginTop="25dp"
                             android:layout_marginEnd="5dp"
                             android:layout_marginRight="5dp"
-                            android:backgroundTint="@color/colorPrimary"
                             android:backgroundTintMode="src_in"
                             android:ems="5"
                             android:background="@drawable/bottom_button"
@@ -108,10 +107,10 @@
                             android:layout_height="30dp"
                             android:layout_gravity="center"
                             android:layout_marginTop="21dp"
-                            android:background="@drawable/border1"
+                            android:background="@color/white"
                             android:fontFamily="sans-serif-black"
                             android:text="@string/create"
-                            android:textColor="@color/white"
+                            android:textColor="@color/best"
                             android:textStyle="bold"
                             android:textSize="15sp"/>
 
@@ -132,7 +131,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:layout_below="@id/R1"
-                app:cardBackgroundColor="@color/best"
                 >
 
                 <TextView
@@ -141,7 +139,7 @@
                     android:elevation="5dp"
                     android:text="Floors"
                     android:layout_margin="5dp"
-                    android:textColor="@color/white"
+                    android:textColor="@color/best"
                     android:textSize="17sp"
                     android:textStyle="bold"
                     android:fontFamily="sans-serif-black"
@@ -157,16 +155,12 @@
                 android:layout_height="60dp"
                 android:layout_marginTop="10dp"
                 app:cardCornerRadius="10dp"
-                android:layout_marginLeft="6dp"
-                android:layout_weight="1"
-                android:layout_marginRight="6dp"
 
                 >
 
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@drawable/s3"
                     >
 
                     <TextView
@@ -174,12 +168,10 @@
                         android:layout_width="match_parent"
                         android:layout_height="60dp"
                         android:textAlignment="gravity"
-                        android:paddingLeft="15dp"
                         android:textStyle="bold"
                         android:text="Hall Name"
                         android:gravity="center"
-                        android:textColor="@color/colorPrimary"
-                        android:textSize="15sp"
+                        android:textColor="@color/best"
                         android:fontFamily="sans-serif-black"
                         tools:ignore="RtlCompat" />
 

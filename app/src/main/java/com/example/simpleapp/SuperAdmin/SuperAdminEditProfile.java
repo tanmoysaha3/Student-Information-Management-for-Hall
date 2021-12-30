@@ -151,6 +151,8 @@ public class SuperAdminEditProfile extends AppCompatActivity {
                 Uri imageUri=data.getData();
                 editprofileImage.setImageURI(imageUri);
                 uploadImageToFirebase(imageUri);
+
+
             }
         }
     }
@@ -164,6 +166,28 @@ public class SuperAdminEditProfile extends AppCompatActivity {
                     @Override
                     public void onSuccess(Uri uri) {
                         Picasso.get().load(uri).into(editprofileImage);
+
+
+                        Map<String,Object> edited1=new HashMap<>();
+                        edited1.put("Image",String.valueOf(uri));
+                        edited1.put("Name",mFullName.getText().toString());
+                        edited1.put("Department",mdepartment.getText().toString());
+                        edited1.put("Designation",mdesignation.getText().toString());
+                        edited1.put("Email",mEmail.getText().toString());
+                        edited1.put("Phone",mphoneno.getText().toString());
+
+                        databaseReference=FirebaseDatabase.getInstance().getReference("Super Admin");
+
+                        databaseReference.child(mFullName.getText().toString())
+                                .updateChildren(edited1).addOnSuccessListener(new OnSuccessListener<Void>() {
+                            @Override
+                            public void onSuccess(Void aVoid) {
+                                Toast.makeText(com.example.simpleapp.SuperAdmin.SuperAdminEditProfile.this, "Updated", Toast.LENGTH_SHORT).show();
+                                startActivity(new Intent(getApplicationContext(), SuperAdminProfile.class));
+
+                            }
+                        });
+
                     }
                 });
             }

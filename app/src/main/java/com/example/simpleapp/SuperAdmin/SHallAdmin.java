@@ -2,6 +2,8 @@ package com.example.simpleapp.SuperAdmin;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -10,6 +12,7 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -19,6 +22,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.simpleapp.HallAdmin.Create.HSeat3;
 import com.example.simpleapp.HallAdmin.Create.NotAssignedStudents;
+import com.example.simpleapp.HallAdmin.NotAssignedStudentAdapter;
 import com.example.simpleapp.R;
 import com.example.simpleapp.SuperAdmin.Screate.Floor;
 import com.example.simpleapp.SuperAdmin.Screate.Hall;
@@ -43,11 +47,9 @@ public class SHallAdmin extends AppCompatActivity {
     public static final String HALLAdmin_NAME = "hall_admin_name";
 
     ImageButton back_button;
-    Button assignhalladminpage;
     ListView mListViewHallAdmin;
     List<SHallAdminModel> halladminList;
-
-
+    EditText seachbatchmate1;
     DatabaseReference databaseSHallAdmin;
 
 
@@ -58,8 +60,7 @@ public class SHallAdmin extends AppCompatActivity {
         setContentView(R.layout.activity_s_hall_admin);
 
         back_button=findViewById(R.id.back_button);
-        assignhalladminpage=findViewById(R.id.assignhalladminpage);
-
+        seachbatchmate1 = findViewById(R.id.seachbatchmate1);
         mListViewHallAdmin = findViewById(R.id.recyclerView);
 
 
@@ -70,9 +71,6 @@ public class SHallAdmin extends AppCompatActivity {
         databaseSHallAdmin = FirebaseDatabase.getInstance().getReference("HallAdmin Accounts");
 
 
-
-
-
         back_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -80,12 +78,8 @@ public class SHallAdmin extends AppCompatActivity {
             }
         });
 
-        assignhalladminpage.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), AssignHallAdmin.class));
-            }
-        });
+
+
 
         mListViewHallAdmin.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -103,8 +97,8 @@ public class SHallAdmin extends AppCompatActivity {
 
 
 
-    }
 
+    }
 
 
 

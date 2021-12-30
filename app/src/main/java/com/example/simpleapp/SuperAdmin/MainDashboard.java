@@ -64,6 +64,9 @@ public class MainDashboard extends AppCompatActivity implements View.OnClickList
         studentcard.setOnClickListener(this);
         createall.setOnClickListener(this);
 
+
+        //Count Student
+
         databaseReference= FirebaseDatabase.getInstance().getReference("Student Accounts");
 
         databaseReference.addValueEventListener(new ValueEventListener() {
@@ -85,6 +88,8 @@ public class MainDashboard extends AppCompatActivity implements View.OnClickList
             }
         });
 
+        //Create hall admin
+
         mlcreatehalladmin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -94,6 +99,7 @@ public class MainDashboard extends AppCompatActivity implements View.OnClickList
 
 
 
+        //Show profile image
 
 
         mainprofileImage.setOnClickListener(new View.OnClickListener() {
@@ -120,12 +126,18 @@ public class MainDashboard extends AppCompatActivity implements View.OnClickList
 
 
 
+
+
     }
+
+    //logout
     public void superlogout(View view) {
         FirebaseAuth.getInstance().signOut();
         startActivity(new Intent(getApplicationContext(), MainActivity.class));
         finish();
     }
+
+    //Card views
 
     @Override
     public void onClick(View v) {

@@ -102,7 +102,7 @@
                         android:layout_marginRight="30dp"
                         android:layout_marginTop="25dp"
                         android:hint="Full Name"
-                        android:inputType="textEmailAddress"
+                        android:inputType="textPersonName"
                         android:padding="15dp"
                         android:textColor="@color/best"
                         android:textColorHint="@color/best"

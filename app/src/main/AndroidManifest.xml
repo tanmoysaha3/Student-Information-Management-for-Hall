@@ -10,11 +10,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.SimpleApp">
+        <activity android:name=".HallAdmin.HallAdminProfileEdit"></activity>
         <activity android:name=".Login">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
 
         </activity>
         <activity android:name=".Student.StudentProfile" />
-        <activity android:name=".Student.StudentDashboard"></activity>
+        <activity android:name=".Student.StudentDashboard" />
         <activity android:name=".Student.StudentLogin" />
         <activity android:name=".HallOfficials.HallOfficialLogin" />
         <activity android:name=".HallOfficials.HallOfficialsProfile" />
@@ -38,15 +46,7 @@
         <activity android:name=".HallAdmin.Create.HRoom1" />
         <activity android:name=".HallAdmin.Create.HRoom" />
         <activity android:name=".SuperAdmin.AssignHallAdmin" />
-        <activity android:name=".SuperAdmin.SStudent">
-
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-
-        </activity>
+        <activity android:name=".SuperAdmin.SStudent"></activity>
         <activity android:name=".SuperAdmin.Screate.Hall" />
         <activity android:name=".SuperAdmin.Screate.Floor" />
         <activity android:name=".SuperAdmin.Screate.Room" />
@@ -55,8 +55,7 @@
         <activity android:name=".HallAdmin.HallOfficialRegister" />
         <activity android:name=".HallAdmin.HallAdminDashboard" />
         <activity android:name=".Student.StudentResister" />
-        <activity android:name=".SuperAdmin.HallAdminCreate" />
-        <activity android:name=".SuperAdmin.SuperLogin">
+        <activity android:name=".SuperAdmin.HallAdminCreate">
 
         </activity>
         <activity android:name=".HallAdmin.HallAdminLogin" />

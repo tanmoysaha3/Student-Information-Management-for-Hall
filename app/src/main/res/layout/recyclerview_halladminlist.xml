@@ -2,54 +2,70 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="80dp"
+    android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_gravity="top"
-    android:gravity="center"
+    android:background="@color/white"
     >
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:clipToPadding="true"
-        app:cardBackgroundColor="#00FFFFFF"
+        app:cardBackgroundColor="#FFFFFF"
         tools:ignore="MissingConstraints">
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#00FFFFFF"
+            android:background="#FFFFFF"
             tools:ignore="MissingConstraints">
+
+            <com.blogspot.atifsoftwares.circularimageview.CircularImageView
+                android:id="@+id/profileImage"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_gravity="start"
+                android:background="@null"
+                android:layout_margin="10dp"
+                android:cropToPadding="true"
+                android:src="@drawable/ic_person_black_24dp"
+                app:c_border="true"
+                app:c_background_color="#EC1EEC"
+                android:tint="@color/white"
+                android:layout_centerVertical="true"
+                app:c_border_color="@null"
+                app:c_border_width="1dp"
+                app:c_shadow_radius="@android:integer/config_longAnimTime"
+                tools:ignore="MissingConstraints" />
 
 
             <TextView
+                android:layout_toRightOf="@id/profileImage"
                 android:id="@+id/HALLADMINNAME"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAlignment="textStart"
-                android:paddingLeft="10dp"
-                android:layout_marginTop="10dp"
+                android:paddingLeft="5dp"
                 android:text="Hall Admin Name"
                 android:textStyle="bold"
+                android:layout_marginTop="20dp"
                 android:textColor="@color/colorPrimary"
-                android:textSize="20sp"
                 android:fontFamily="serif"
                 tools:ignore="RtlCompat" />
 
             <TextView
+                android:layout_toRightOf="@id/profileImage"
                 android:id="@+id/ASSIGNHALLNAME"
                 android:layout_width="wrap_content"
-                android:layout_height="25dp"
+                android:layout_height="wrap_content"
                 android:textAlignment="textStart"
-                android:paddingLeft="10dp"
+                android:paddingLeft="5dp"
                 android:text="Hall Name"
-                android:layout_marginTop="10dp"
+                android:layout_centerVertical="true"
                 android:layout_below="@id/HALLADMINNAME"
-                android:gravity="center"
                 android:textColor="@color/colorPrimary"
-                android:textSize="15sp"
                 android:fontFamily="serif"
-                android:layout_marginBottom="12dp"
                 tools:ignore="RtlCompat" />
 
         </RelativeLayout>

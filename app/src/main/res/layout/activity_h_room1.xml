@@ -28,7 +28,6 @@
                 android:id="@+id/R3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:cardBackgroundColor="#B2F8F5F5"
                 >
 
                 <TextView
@@ -38,8 +37,9 @@
                     android:text="@string/hall_list"
                     android:layout_margin="5dp"
                     android:textColor="@color/colorPrimary"
-                    android:textSize="25sp"
                     android:fontFamily="serif"
+                    android:textStyle="bold"
+                    android:textSize="20sp"
                     android:layout_gravity="center"
                     />
 

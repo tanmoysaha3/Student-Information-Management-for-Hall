@@ -9,31 +9,109 @@
 
 
     <RelativeLayout
+        android:id="@+id/R1"
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="@drawable/s3">
-        <ImageButton
-            android:id="@+id/back_button"
+        android:layout_height="192dp"
+        android:background="@drawable/c"
+        tools:ignore="MissingConstraints">
+
+        <LinearLayout
+            android:id="@+id/l1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:src="@drawable/ic_arrow_back_black_24dp"
-            android:background="@null"
+            android:background="@drawable/b"
+            android:layout_marginTop="10dp"
             android:layout_marginLeft="10dp"
-            />
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_margin="5dp"
+                android:src="@drawable/logo"/>
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_margin="5dp"
+                android:src="@drawable/hall"/>
+        </LinearLayout>
+
 
         <TextView
-            android:layout_width="wrap_content"
+            android:id="@+id/ttt1"
+            android:layout_below="@id/l1"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Assign Student"
-            android:layout_toRightOf="@id/back_button"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="25dp"
+            android:text="Not assigned students"
             android:fontFamily="serif"
-            android:textColor="@color/best"
             android:textStyle="bold"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
+            android:textColor="@color/white"
+            android:textSize="25sp"
+            android:gravity="center"
+            android:layout_marginTop="5dp"
+            />
 
+
+
+        <ImageButton
+            android:id="@+id/back_button"
+            android:layout_below="@id/ttt1"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_arrow_back_black_24dp"
+            android:background="@drawable/b"
+            android:layout_marginTop="20dp"
+            android:layout_centerHorizontal="true"
+            />
+
+        <RelativeLayout
+            android:id="@+id/s1"
+            android:layout_marginTop="15dp"
+            android:layout_below="@id/back_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            >
+
+
+
+            <EditText
+                android:id="@+id/seachbatchmate1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/search"
+                android:padding="10dp"
+                android:layout_marginRight="44dp"
+                android:drawableLeft="@drawable/ic_search_black_24dp"
+                />
+
+            <TextView
+                android:visibility="gone"
+                android:id="@+id/gone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Student Forum"
+                android:fontFamily="serif"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:textSize="25sp"
+                android:gravity="center"
+                android:layout_marginTop="5dp"
+                />
+
+
+            <Button
+                android:id="@+id/catagory1"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/ic_dashboard_black_24dp"
+                android:backgroundTint="@color/best" />
+
+
+        </RelativeLayout>
     </RelativeLayout>
 
     <ListView

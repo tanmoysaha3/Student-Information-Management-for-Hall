@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:gravity="center"
     android:orientation="vertical"
-    android:background="@drawable/s3"
+    android:background="@drawable/c"
     tools:context=".SuperAdmin.Screate.Room">
 
     <androidx.cardview.widget.CardView
@@ -24,9 +24,9 @@
             <LinearLayout
                 android:id="@+id/R1"
                 android:layout_width="match_parent"
-                android:layout_height="170dp"
+                android:layout_height="190dp"
                 android:orientation="vertical"
-                android:background="@null"
+                android:background="@drawable/b1"
                 tools:ignore="MissingConstraints">
 
                 <ScrollView
@@ -46,8 +46,8 @@
                             android:layout_height="wrap_content"
                             android:text="Create Room"
                             android:textAlignment="center"
-                            android:textColor="@color/colorPrimary"
-                            android:textSize="22sp"
+                            android:textColor="#FFFFFF"
+                            android:textSize="29sp"
                             android:gravity="center"
                             android:layout_marginTop="8dp"
                             android:fontFamily="sans-serif-black"
@@ -111,7 +111,6 @@
                             android:layout_marginTop="25dp"
                             android:layout_marginEnd="5dp"
                             android:layout_marginRight="5dp"
-                            android:backgroundTint="@color/colorPrimary"
                             android:backgroundTintMode="src_in"
                             android:ems="5"
                             android:background="@drawable/bottom_button"
@@ -132,10 +131,10 @@
                             android:layout_height="30dp"
                             android:layout_gravity="center"
                             android:layout_marginTop="21dp"
-                            android:background="@drawable/border1"
+                            android:background="@drawable/bottom_button"
                             android:fontFamily="serif"
                             android:text="@string/create"
-                            android:textColor="@color/white"
+                            android:textColor="@color/best"
                             android:textStyle="bold"
                             android:textSize="15sp"/>
 
@@ -154,9 +153,9 @@
                 android:id="@+id/R3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+
                 android:layout_below="@id/R1"
-                app:cardBackgroundColor="@color/best"
+                app:cardBackgroundColor="@color/white"
                 >
 
                 <TextView
@@ -165,7 +164,7 @@
                     android:elevation="5dp"
                     android:text="Rooms"
                     android:layout_margin="5dp"
-                    android:textColor="@color/white"
+                    android:textColor="@color/best"
                     android:textSize="17sp"
                     android:textStyle="bold"
                     android:fontFamily="sans-serif-black"
@@ -190,7 +189,7 @@
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@drawable/s3"
+                    android:background="@drawable/bottom_button"
                     >
 
 

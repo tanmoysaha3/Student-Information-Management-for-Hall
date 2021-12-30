@@ -24,9 +24,9 @@
             <LinearLayout
                 android:id="@+id/R1"
                 android:layout_width="match_parent"
-                android:layout_height="170dp"
+                android:layout_height="190dp"
                 android:orientation="vertical"
-                android:background="@null"
+                android:background="@drawable/b1"
                 tools:ignore="MissingConstraints">
 
                 <ScrollView
@@ -121,8 +121,8 @@
                             android:layout_height="wrap_content"
                             android:text="Create Seat"
                             android:textAlignment="center"
-                            android:textColor="@color/colorPrimary"
-                            android:textSize="22sp"
+                            android:textColor="@color/white"
+                            android:textSize="29sp"
                             android:gravity="center"
                             android:layout_marginTop="8dp"
                             android:fontFamily="serif"
@@ -141,7 +141,7 @@
                             android:layout_marginTop="25dp"
                             android:layout_marginEnd="5dp"
                             android:layout_marginRight="5dp"
-                            android:backgroundTint="@color/colorPrimary"
+                            android:background="@drawable/bottom_button"
                             android:backgroundTintMode="src_in"
                             android:ems="5"
                             android:entries="@array/seatname"
@@ -176,16 +176,18 @@
 
 
 
+
+
                         <Button
                             android:id="@+id/createseat"
                             android:layout_width="90dp"
                             android:layout_height="30dp"
                             android:layout_gravity="center"
                             android:layout_marginTop="21dp"
-                            android:background="@drawable/help_button"
+                            android:background="@drawable/bottom_button"
                             android:fontFamily="serif"
                             android:text="@string/create"
-                            android:textColor="@color/colorPrimary"
+                            android:textColor="@color/best"
                             android:textStyle="bold"
                             android:textSize="15sp"/>
 
@@ -204,9 +206,7 @@
                 android:id="@+id/R3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
                 android:layout_below="@id/R1"
-                app:cardBackgroundColor="#B2F8F5F5"
                 >
 
                 <TextView

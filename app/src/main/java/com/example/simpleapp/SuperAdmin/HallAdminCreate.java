@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -15,6 +16,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.simpleapp.HallAdmin.HallAdminHelperClass;
 import com.example.simpleapp.R;
+import com.example.simpleapp.Student.StudentLogin;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -27,10 +29,10 @@ public class HallAdminCreate extends AppCompatActivity {
 
 
     EditText mhdName, mhdEmail, mhdPassword;
-    Button mhdcreateButton,mdback_halladmin;
+    Button mhdcreateButton;
+    ImageButton mdback_halladmin;
     String userID;
     Spinner mdesignation,massignedhall,mphoneno,mdepartment;
-    Button back_button;
     FirebaseDatabase rootNode;
     DatabaseReference reference;
     private FirebaseAuth fAuth;
@@ -79,7 +81,7 @@ public class HallAdminCreate extends AppCompatActivity {
                 }
 
                 if(TextUtils.isEmpty(password)) {
-                    mhdPassword.setError("Password is empty");
+                    mhdPassword.setError("Password cannot be empty");
                     return;
                 }
 
@@ -97,19 +99,18 @@ public class HallAdminCreate extends AppCompatActivity {
             }
         });
     }
+    
+
 
     private void signinuser(String fullname, String email, String password) {
+
         fAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
-
                     sendemail();
-                    if(!user.isEmailVerified()){
-                        Intent intent = new Intent(com.example.simpleapp.SuperAdmin.HallAdminCreate.this, com.example.simpleapp.SuperAdmin.MainDashboard.class);
-                        startActivity(intent);
-                        finish();
-                    }
+
+                    Toast.makeText(com.example.simpleapp.SuperAdmin.HallAdminCreate.this,"Created",Toast.LENGTH_LONG).show();
 
                 }else{
 
@@ -121,20 +122,7 @@ public class HallAdminCreate extends AppCompatActivity {
         });
     }
 
-    private void sendemail() {
-        user = FirebaseAuth.getInstance().getCurrentUser();
-        if(user != null){
-            user.sendEmailVerification().addOnCompleteListener(new OnCompleteListener<Void>() {
-                @Override
-                public void onComplete(@NonNull Task<Void> task) {
-                    if(task.isSuccessful()){
-                        Toast.makeText(com.example.simpleapp.SuperAdmin.HallAdminCreate.this,"check email for verification",Toast.LENGTH_LONG).show();
 
-                    }
-                }
-            });
-        }
-    }
 
     private void addinfo() {
         String fullname = mhdName.getText().toString();
@@ -158,4 +146,22 @@ public class HallAdminCreate extends AppCompatActivity {
         }
 
     }
+
+    public void sendemail() {
+        user = FirebaseAuth.getInstance().getCurrentUser();
+        if(user != null){
+            user.sendEmailVerification().addOnCompleteListener(new OnCompleteListener<Void>() {
+                @Override
+                public void onComplete(@NonNull Task<Void> task) {
+                    if(task.isSuccessful()){
+                        Toast.makeText(com.example.simpleapp.SuperAdmin.HallAdminCreate.this,"verification sent",Toast.LENGTH_LONG).show();
+
+                    }
+                }
+            });
+        }
+    }
+    
+    
+
 }

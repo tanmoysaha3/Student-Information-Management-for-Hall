@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -25,7 +26,8 @@ import com.google.firebase.database.FirebaseDatabase;
 public class HallOfficialRegister extends AppCompatActivity {
 
     EditText mhoName, mhoEmail, mhoPassword;
-    Button mhocreateButton,moback_halladmin;
+    Button mhocreateButton;
+    ImageButton moback_halladmin;
     String userID;
     Spinner mdesignation,massignedhall,mphoneno,mdepartment;
     Button back_button;

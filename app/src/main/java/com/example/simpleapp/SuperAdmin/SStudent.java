@@ -161,7 +161,7 @@ public class SStudent extends AppCompatActivity {
 
 
 
-        back.setOnClickListener(new View.OnClickListener() {
+        mcatagory.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 AlertDialog.Builder dlg = new AlertDialog.Builder(SStudent.this);

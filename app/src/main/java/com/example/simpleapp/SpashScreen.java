@@ -7,7 +7,6 @@ import android.os.Handler;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.airbnb.lottie.LottieAnimationView;
-import com.example.simpleapp.SuperAdmin.SuperLogin;
 
 public class SpashScreen extends AppCompatActivity {
 
@@ -32,7 +31,7 @@ public class SpashScreen extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent = new Intent(SpashScreen.this, SuperLogin.class);
+                Intent intent = new Intent(SpashScreen.this, Login.class);
                 startActivity(intent);
                 finish();
 

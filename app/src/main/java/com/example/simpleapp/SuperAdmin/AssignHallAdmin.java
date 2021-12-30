@@ -50,11 +50,6 @@ public class AssignHallAdmin extends AppCompatActivity {
         mhallname = findViewById(R.id.hallname);
 
 
-
-
-
-
-
         //.....................spinner.......
 
         databasestudent= FirebaseDatabase.getInstance().getReference("Halls");
@@ -78,9 +73,6 @@ public class AssignHallAdmin extends AppCompatActivity {
         assignhallbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-
-
 
                 reference1= FirebaseDatabase.getInstance().getReference("HallAdmin Accounts").child(adminname);
                 Map<String,Object> edited=new HashMap<>();

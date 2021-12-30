@@ -1,5 +1,6 @@
 package com.example.simpleapp.SuperAdmin;
 
+
 public class SHallAdminModel {
 
     String fullname,email,password,assignedhall;
@@ -13,6 +14,7 @@ public class SHallAdminModel {
         this.email = email;
         this.password = password;
         this.assignedhall = assignedhall;
+
     }
 
     public String getFullname() {
@@ -46,4 +48,6 @@ public class SHallAdminModel {
     public void setAssignedhall(String assignedhall) {
         this.assignedhall = assignedhall;
     }
+
+
 }

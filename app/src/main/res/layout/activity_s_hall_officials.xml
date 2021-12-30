@@ -10,7 +10,7 @@
     <RelativeLayout
         android:id="@+id/R1"
         android:layout_width="match_parent"
-        android:layout_height="192dp"
+        android:layout_height="157dp"
         android:background="@drawable/c"
         tools:ignore="MissingConstraints">
 
@@ -64,53 +64,7 @@
             android:layout_centerHorizontal="true"
             />
 
-        <RelativeLayout
-            android:id="@+id/s1"
-            android:layout_marginTop="15dp"
-            android:layout_below="@id/back_button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@null"
-            >
 
-
-
-            <EditText
-                android:id="@+id/seachbatchmate1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/search"
-                android:padding="10dp"
-                android:layout_marginRight="44dp"
-                android:drawableLeft="@drawable/ic_search_black_24dp"
-                />
-
-            <TextView
-                android:visibility="gone"
-                android:id="@+id/gone"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Student Forum"
-                android:fontFamily="serif"
-                android:textStyle="bold"
-                android:textColor="@color/white"
-                android:textSize="25sp"
-                android:gravity="center"
-                android:layout_marginTop="5dp"
-                />
-
-
-            <Button
-                android:id="@+id/catagory1"
-                android:layout_width="45dp"
-                android:layout_height="45dp"
-                android:layout_alignParentEnd="true"
-                android:layout_centerHorizontal="true"
-                android:background="@drawable/ic_dashboard_black_24dp"
-                android:backgroundTint="@color/best" />
-
-
-        </RelativeLayout>
     </RelativeLayout>
 
 

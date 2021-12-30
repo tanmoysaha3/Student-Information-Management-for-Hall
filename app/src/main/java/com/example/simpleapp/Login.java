@@ -16,7 +16,6 @@ import com.example.simpleapp.HallAdmin.HallAdminDashboard;
 import com.example.simpleapp.HallOfficials.HallOfficialsDashboard;
 import com.example.simpleapp.Student.StudentDashboard;
 import com.example.simpleapp.SuperAdmin.MainDashboard;
-import com.example.simpleapp.SuperAdmin.SuperLogin;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
