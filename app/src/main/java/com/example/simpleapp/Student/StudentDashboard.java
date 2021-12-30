@@ -40,9 +40,7 @@ public class StudentDashboard extends AppCompatActivity {
     FirebaseUser user;
     List<SuperAdminHelperClass> stlist;
     RecyclerView recyclerView;
-
     myadapter adapter;
-
     DatabaseReference databasestudent;
 
 

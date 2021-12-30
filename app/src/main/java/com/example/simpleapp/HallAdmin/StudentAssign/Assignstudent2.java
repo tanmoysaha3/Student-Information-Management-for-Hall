@@ -11,6 +11,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.simpleapp.HallAdmin.Create.HSeat3;
 import com.example.simpleapp.R;
 import com.example.simpleapp.SuperAdmin.Screate.Floor;
 import com.example.simpleapp.SuperAdmin.Screate.Rmodel;
@@ -70,7 +71,7 @@ public class Assignstudent2 extends AppCompatActivity {
                 Rmodel rmodel = roomList.get(position);
 
 
-                Intent intent = new Intent(getApplicationContext(), Assignstudent3.class);
+                Intent intent = new Intent(getApplicationContext(), HSeat3.class);
 
                 intent.putExtra(ROOM_ID, rmodel.getRoomid());
                 intent.putExtra(ROOM_NAME, rmodel.getRoomname());

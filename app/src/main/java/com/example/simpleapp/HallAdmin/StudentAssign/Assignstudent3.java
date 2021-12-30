@@ -10,10 +10,12 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.simpleapp.HallAdmin.Create.HSeat3;
 import com.example.simpleapp.HallAdmin.Create.NotAssignedStudents;
 import com.example.simpleapp.HallAdmin.SeatList;
 import com.example.simpleapp.HallAdmin.Smodel;
@@ -88,6 +90,12 @@ public class Assignstudent3 extends AppCompatActivity {
 
         databaseSeat = FirebaseDatabase.getInstance().getReference("Seats").child(id);
 
+        mcreateseat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                saveSeat();
+            }
+        });
 
 
         mListViewSeat.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -134,5 +142,33 @@ public class Assignstudent3 extends AppCompatActivity {
 
             }
         });
+    }
+
+
+
+
+
+
+
+    private void saveSeat(){
+        String sname = mseatname.getSelectedItem().toString();
+        String hname = shallname.getText().toString().trim();
+        String fname = sfloorname.getText().toString().trim();
+        String fid = sfloorid.getText().toString().trim();
+        String rname = sroomname.getText().toString().trim();
+        String rid = sroomid.getText().toString().trim();
+        String assignedstudentid = massignedstudentid.getSelectedItem().toString();
+
+        if (1==1){
+
+            String id = databaseSeat.push().getKey();
+            Smodel smodel= new Smodel(id,sname,assignedstudentid,hname,fname,rname,rid,fid);
+
+            databaseSeat.child(sname).setValue(smodel);
+            Toast.makeText(this, "one Seat Added " , Toast.LENGTH_LONG).show();
+
+        }
+
+
     }
 }

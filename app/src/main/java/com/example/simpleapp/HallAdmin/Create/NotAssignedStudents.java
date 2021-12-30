@@ -23,6 +23,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
@@ -48,26 +49,17 @@ public class NotAssignedStudents extends AppCompatActivity {
 
         recviewnst=(ListView)findViewById(R.id.recviewnst);
 
-
         databasestudent= FirebaseDatabase.getInstance().getReference("Student Accounts");
+        Query query1 = FirebaseDatabase.getInstance().getReference("Student Accounts")
+                .orderByChild("assignedhall").equalTo("Not Assigned");
+        query1.addListenerForSingleValueEvent(valueEventListener);
+
+
 
         stlist=new ArrayList<>();
 
 
-        recviewnst.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-                SuperAdminHelperClass superAdminHelperClass=stlist.get(position);
-                Intent intent= new Intent(getApplicationContext(), NotAssignedStudents.class);
-
-                intent.putExtra(STUDENT_ID, superAdminHelperClass.getRollno());
-                intent.putExtra(STUDENT_NAME, superAdminHelperClass.getFullname());
-
-                startActivity(intent);
-
-            }
-        });
 
         recviewnst.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
@@ -150,39 +142,36 @@ public class NotAssignedStudents extends AppCompatActivity {
 
     }
 
+    ValueEventListener valueEventListener = new ValueEventListener() {
+        @Override
+        public void onDataChange(@NonNull DataSnapshot datasnapshot) {
 
+            stlist.clear();
 
+            for (DataSnapshot hallSnapshot : datasnapshot.getChildren()){
+                SuperAdminHelperClass superAdminHelperClass = hallSnapshot.getValue(SuperAdminHelperClass.class);
 
-    @Override
-    protected void onStart() {
-        super.onStart();
-
-        databasestudent.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot datasnapshot) {
-
-                stlist.clear();
-
-                for (DataSnapshot hallSnapshot : datasnapshot.getChildren()){
-                    SuperAdminHelperClass superAdminHelperClass = hallSnapshot.getValue(SuperAdminHelperClass.class);
-
-                    stlist.add(superAdminHelperClass);
-
-
-                }
-
-                ArrayAdapter adapter= new NotAssignedStudentAdapter(NotAssignedStudents.this, stlist);
-                recviewnst.setAdapter(adapter);
+                stlist.add(superAdminHelperClass);
 
 
             }
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
+            ArrayAdapter adapter= new NotAssignedStudentAdapter(NotAssignedStudents.this, stlist);
+            recviewnst.setAdapter(adapter);
 
-            }
-        });
-    }
+
+        }
+
+        @Override
+        public void onCancelled(@NonNull DatabaseError error) {
+
+        }
+    };
+
+
+
+
+
 
 
 
